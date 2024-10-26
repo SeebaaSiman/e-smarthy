@@ -1,0 +1,8 @@
+# Ignorar archivos de configuración
+node_modules/
+.env
+
+# Ignorar archivos temporales
+*.swp
+
+/ToDo.md

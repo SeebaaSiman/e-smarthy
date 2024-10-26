@@ -1,0 +1,8 @@
+{
+ "livePreview.defaultPreviewPath": "/index.html",
+ "livePreview.customExternalBrowser": "Chrome",
+ "liveServer.settings.useLocalIp": true,
+ "livePreview.httpHeaders": {
+  "Accept-Ranges": "bytes"
+ }
+}

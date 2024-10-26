@@ -1,0 +1,32 @@
+.teleprompter-container {
+  width: 100vw;
+  background-color: var(--black);
+  font-size: 15px;
+  padding-block: 8px;
+  border-block: 1px solid;
+  overflow: hidden;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+}
+.teleprompter-content {
+  width: 100%;
+  display: inline-block;
+  animation: showteleprompter linear infinite;
+  animation-duration: 12s;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: var(--body-bg);
+  @media (min-width: 992px) {
+    animation-duration: 25s;
+  }
+}
+@keyframes showteleprompter {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,124 @@
+:root {
+  --body-bg: #e6e4e2;
+  --card-bg: #e2dfdd;
+  --navbar-bg: #fff;
+  --text-shadow: #4a5c6a;
+  --black: #040404;
+  --font-bold: "Walsheim-bold";
+  --font-light: "Walsheim";
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgb(255, 255, 255);
+}
+
+@font-face {
+  font-family: "Walsheim-bold";
+  src: url("/style/fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
+  font-weight: normal; /* Puedes ajustar esto si es necesario */
+  font-style: normal; /* Cambia a 'italic' si es una fuente en cursiva */
+}
+@font-face {
+  font-family: "Walsheim";
+  src: url("/style/fonts/GT-Walsheim-Pro-Ultra-Light.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
+  font-weight: normal; /* Puedes ajustar esto si es necesario */
+  font-style: normal; /* Cambia a 'italic' si es una fuente en cursiva */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+html,
+body {
+  font-family: var(--font-light);
+  margin: 0px;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background-color: var(--body-bg);
+}
+html {
+  scroll-behavior: smooth;
+  ::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+}
+header,
+footer,
+main,
+section,
+article {
+  container-type: inline-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+input,
+textarea,
+ul {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+p,
+li,
+figcaption {
+  text-wrap: pretty;
+  max-width: 65ch;
+}
+h1 {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 46px;
+  letter-spacing: normal;
+}
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: normal;
+  font-family: var(--font-bold);
+}
+p,
+ul,
+li {
+  font-size: 16px;
+  font-weight: 800;
+}
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin-block-start: 0;
+}
+
+.page {
+  padding: 8px;
+  display: flex;
+  max-width: 992px;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: aquamarine;
+  gap: 8px;
+}
