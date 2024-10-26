@@ -17,9 +17,9 @@ Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 
 ```bash
 ├── index.html
 ├── views
-│   ├── about.html
-│   ├── index.html
-│   ├── lorem.html
+│   ├── cart.html
+│   ├── products.html
+│   ├── contact.html
 │   └── error.html
 ├── styles
 │   └── styles.css
@@ -36,10 +36,10 @@ Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 
 
 ## Colores del proyecto
 
-| Color       | Hex                                                              |
-| ----------- | ---------------------------------------------------------------- |
-| Body bg     | ![#e6e4e2](https://via.placeholder.com/10/e6e4e2?text=+) #e6e4e2 |
-| Card bg     | ![#e2dfdd](https://via.placeholder.com/10/e2dfdd?text=+) #e2dfdd |
-| Navbar bg   | ![#fff] (https://via.placeholder.com/10/fff?text=+) #fff         |
-| Text shadow | ![#4a5c6a](https://via.placeholder.com/10/4a5c6a?text=+) #4a5c6a |
-| Black       | ![#040404](https://via.placeholder.com/10/040404?text=+) #040404 |
+| Color       | Hex                                                               |
+| ----------- | ----------------------------------------------------------------- |
+| Body bg     | ![#e6e4e2](https://via.placeholder.com/10/e6e4e2?text=+) #e6e4e2  |
+| Card bg     | ![#e2dfdd](https://via.placeholder.com/10/e2dfdd?text=+) #e2dfdd  |
+| Navbar bg   | ![#ffffff] (https://via.placeholder.com/10/ffffff?text=+) #ffffff |
+| Text shadow | ![#4a5c6a](https://via.placeholder.com/10/4a5c6a?text=+) #4a5c6a  |
+| Black       | ![#040404](https://via.placeholder.com/10/040404?text=+) #040404  |
