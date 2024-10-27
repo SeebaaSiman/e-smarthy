@@ -36,10 +36,10 @@ Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 
 
 ## Colores del proyecto
 
-| Color       | Hex                                                              |
-| ----------- | ---------------------------------------------------------------- |
-| Body bg     | ![#e6e4e2](https://via.placeholder.com/10/e6e4e2?text=+) #e6e4e2 |
-| Card bg     | ![#e2dfdd](https://via.placeholder.com/10/e2dfdd?text=+) #e2dfdd |
-| Navbar bg   | ![#ffff] (https://via.placeholder.com/10/ffff?text=+) #ffff      |
-| Text shadow | ![#4a5c6a](https://fakeimg.pl/10x10/4a5c6a/4a5c6a) #4a5c6a       |
-| Black       | ![#040404](https://via.placeholder.com/10/040404?text=+) #040404 |
+| Color       | Hex                                                        |
+| ----------- | ---------------------------------------------------------- |
+| Body bg     | ![#e6e4e2](https://fakeimg.pl/10x10/e6e4e2/e6e4e2) #e6e4e2 |
+| Card bg     | ![#e2dfdd](https://fakeimg.pl/10x10/e2dfdd/e2dfdd) #e2dfdd |
+| Navbar bg   | ![#ffff] (https://fakeimg.pl/10x10/ffff/ffff) #ffff        |
+| Text shadow | ![#4a5c6a](https://fakeimg.pl/10x10/4a5c6a/4a5c6a) #4a5c6a |
+| Black       | ![#040404](https://fakeimg.pl/10x10/040404/040404) #040404 |
