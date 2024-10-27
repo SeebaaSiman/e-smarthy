@@ -51,7 +51,7 @@ article {
   container-type: inline-size;
 }
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
@@ -64,7 +64,7 @@ textarea,
 ul {
   margin: 0;
   padding: 0;
-}
+} */
 h1,
 h2,
 h3,
