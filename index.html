@@ -17,54 +17,55 @@
 </head>
 
 <body>
-    <header id="header">
-      <aside class="teleprompter-container">
-        <div class="teleprompter-content">
-          Hoy martes tenes envío gratis con compras mayores a $10.000
-          <ion-icon name="storefront-outline"></ion-icon>
+  <header id="header">
+    <aside class="teleprompter-container">
+      <div class="teleprompter-content">
+        Hoy martes tenes envío gratis con compras mayores a $10.000
+        <ion-icon name="storefront-outline"></ion-icon>
+      </div>
+    </aside>
+
+    <nav id="main-nav">
+
+      <label for="toggle-hamburguer">
+        <input type="checkbox" id="toggle-hamburguer" style="display: none;">
+        <div id="nav-icon-hamburguer">
+          <span class="icon-hamburguer-top"></span>
+          <span class="icon-hamburguer-middle"></span>
+          <span class="icon-hamburguer-bottom"></span>
         </div>
-      </aside>
+      </label>
 
-      <nav id="main-nav">
+      <div class="nav-logo-container">
+        <h1>e-smarthy</h1>
+      </div>
 
-        <label for="toggle-hamburguer">
-          <input type="checkbox" id="toggle-hamburguer" style="display: none;">
-          <div id="nav-icon-hamburguer">
-            <span class="icon-hamburguer-top"></span>
-            <span class="icon-hamburguer-middle"></span>
-            <span class="icon-hamburguer-bottom"></span>
-          </div>
-        </label>
-
-        <div class="nav-logo-container">
-          <h1>e-smarthy</h1>
+      <div class="nav-icons-container">
+        <div class="nav-language">
+          <ion-icon name="language-outline"></ion-icon>
         </div>
-
-        <div class="nav-icons-container">
-          <div class="nav-language">
-            <ion-icon name="language-outline"></ion-icon>
-          </div>
-          <div class="nav-theme">
-            <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
-          </div>
-          <ion-icon name="search-outline" class="icon-search"></ion-icon>
-
-          <div class="cart-icon-container">
-            <a href="/views/cart.html">
-              <ion-icon name="bag-outline" class="icon-bag"></ion-icon>
-              <p>2</p>
-            </a>
-          </div>
+        <div class="nav-theme">
+          <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
         </div>
+        <ion-icon name="search-outline" class="icon-search"></ion-icon>
 
-        <div id="nav-links-container">
-          <a href="/index.html" class="nav-link">Inicio</a>
-          <a href="/views/us.html" class="nav-link">Sobre nosotros</a>
-          <a href="/views/product.html" class="nav-link">productos</a>
+        <div class="cart-icon-container">
+          <a href="cart.html">
+            <ion-icon name="bag-outline" class="icon-bag"></ion-icon>
+            <p>2</p>
+          </a>
         </div>
-        </div>
-      </nav>
-    </header>
+      </div>
+
+      <div id="nav-links-container">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <a href="index.html#section-carousel-logos" class="nav-link">ir a banner</a>
+        <a href="us.html" class="nav-link">Sobre nosotros</a>
+        <a href="product.html" class="nav-link">productos</a>
+      </div>
+      </div>
+    </nav>
+  </header>
   <main>
     <section>
       <d iv class="banner-wrapper">
@@ -165,7 +166,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <section id="section-carousel-logos">
       <div class="carousel-logos-title">
         <h2>
           Empresas que confian en nosotros para vender sus productos
@@ -222,18 +223,18 @@
 
     <div class="footer-support">
       <p>Soporte</p>
-      <a href="/views/warranty.html">
+      <a href="warranty.html">
         Benefíciese de la garantía</a>
-      <a href="/views/QA.html">Preguntas frecuentes</a>
-      <a href="/views/shipping.html">Envíos y devoluciones</a>
-      <a href="/views/tracking.html">Seguimiento del pedido</a>
+      <a href="QA.html">Preguntas frecuentes</a>
+      <a href="shipping.html">Envíos y devoluciones</a>
+      <a href="tracking.html">Seguimiento del pedido</a>
     </div>
     <div class="footer-explore">
       <p>Explore E-Smarthy</p>
-      <a href="/views/us.html">Sobre nosotros</a>
-      <a href="/views/contact.html">Contacto</a>
-      <a href="/views/gift-card.html">Tarjetas de regalo</a>
-      <a href="/views/team.html">Nuestro equipo</a>
+      <a href="us.html">Sobre nosotros</a>
+      <a href="contact.html">Contacto</a>
+      <a href="gift-card.html">Tarjetas de regalo</a>
+      <a href="team.html">Nuestro equipo</a>
     </div>
 
     <div class="footer-follow">
@@ -250,9 +251,9 @@
     <hr class="footer-line">
 
     <div class="footer-terms">
-      <a href="/views/terms/terms-and-conditions.html">Terms & conditions</a> |
-      <a href="/views/terms/withdrawal.html">Terms of Withdrawal</a> |
-      <a href="/views/privacy-and-cookie-policy.html">E-Smarthy's Privacy Policy</a>
+      <a href="terms/terms-and-conditions.html">Terms & conditions</a> |
+      <a href="terms/withdrawal.html">Terms of Withdrawal</a> |
+      <a href="privacy-and-cookie-policy.html">E-Smarthy's Privacy Policy</a>
     </div>
 
     <div class="footer-pay">
