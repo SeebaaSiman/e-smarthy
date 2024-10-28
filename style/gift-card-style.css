@@ -1,11 +1,59 @@
+.gift-card-page {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  @media (min-width: 992px) {
+    flex-direction: row;
+    height: 85vh;
+  }
+}
+.gift-card-left-container {
+  padding: 8px;
+  background-size: 100% 100%;
+  border-radius: 5%;
+  width: 90%;
+  height: 60vh;
+  margin: auto;
+  box-shadow: 5px 5px 5px black;
+  animation: bg-change 12s linear infinite;
+  transition: all 0.4s ease-in-out;
+  @media (min-width: 626px) {
+    width: 45vw;
+    height: 79vh;
+    margin-bottom: auto;
+    margin-top: 0;
+  }
+}
+@keyframes bg-change {
+  0% {
+    background-image: url("/assets/gift-card/cottonbro.jpg");
+  }
+  30% {
+    background-image: url("/assets/gift-card/regalo.jpg");
+  }
+  60% {
+    background-image: url("/assets/gift-card/regalo2.jpg");
+  }
+  100% {
+    background-image: url("/assets/gift-card/regalos.jpg");
+  }
+}
 .gift-card-rigth-container {
   padding: 1rem;
+  margin-top: 8px;
   width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (min-width: 626px) {
+    z-index: 500;
+    margin-top: 0px;
+    width: 45vw;
+    height: 79vh;
+    overflow-y: scroll;
+  }
 }
-
 .details-container {
   display: flex;
   flex-direction: column;
@@ -126,15 +174,11 @@
 .gift-card-select-amounts:hover {
   border: 1px solid #111;
 }
+
 /* Ocultar el radio real */
 .gift-card-select-amounts input[type="radio"] {
   display: none;
 }
-
-/* Estilo normal de los cuadrados */
-/* .gift-card-select-amounts p {
-  pointer-events: none;
-} */
 
 /* Cambiar color al estar seleccionado */
 .gift-card-select-amounts input[type="radio"]:checked + p {

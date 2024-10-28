@@ -101,7 +101,12 @@
 .banner-rating {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   gap: 4px;
+  ion-icon {
+    font-size: 16px;
+  }
 }
 .btn-add {
   cursor: pointer;
