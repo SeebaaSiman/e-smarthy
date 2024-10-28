@@ -98,9 +98,7 @@ li {
   font-size: 16px;
   font-weight: 800;
 }
-ul {
-  /* list-style-type: none; */
-}
+ 
 
 a {
   text-decoration: none;
@@ -112,12 +110,58 @@ p {
 
 .page {
   padding: 8px;
-  display: flex;
   max-width: 992px;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: auto;
   gap: 8px;
+}
+
+.btn-division {
+  position: relative;
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-family: var(--font-bold);
+  cursor: pointer;
+  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-division:hover {
+  color: black;
+}
+
+.btn-division:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.btn-division:hover:after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.btn-division:active {
+  box-shadow: 5px 5px 5px black;
+  scale: 0.9;
 }
