@@ -85,6 +85,90 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
   align-items: center;
 }
 
+/* From Uiverse.io by vnuny */
+.search-container {
+  position: relative;
+  width: fit-content;
+}
+
+.mainbox {
+  background-color: var(--navbar-bg);
+  border: 1px solid var(--text-shadow);
+  position: relative;
+  width: 230px;
+  height: 50px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  border-radius: 160px;
+  transition: all 0.3s ease;
+}
+
+.search-checkbox:focus {
+  border: none;
+  outline: none;
+}
+
+.search-checkbox:checked {
+  right: 10px;
+}
+
+.search-checkbox:checked ~ .mainbox {
+  border: 0px solid var(--text-shadow);
+  background-color: var(--navbar-bg);
+  width: 50px;
+}
+
+.search-checkbox:checked ~ .mainbox .search-input {
+  width: 0;
+  height: 0px;
+}
+
+.search-checkbox:checked ~ .mainbox .search-icon-container {
+  padding-right: 8px;
+}
+.search-checkbox {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 17px;
+  top: 10px;
+  z-index: 9;
+  cursor: pointer;
+  appearance: none;
+}
+
+.search-input {
+  height: 100%;
+  width: 170px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  font-size: 1em;
+  color: var(--text-shadow);
+  transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+  color: var(--text-shadow);
+}
+
+.search-icon-container {
+  padding-top: 5px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.icon-search {
+  fill: white;
+  font-size: 1.3em;
+}
+
+/* From Uiverse.io by vnuny */
+
 .nav-icons-container {
   grid-area: icons;
   width: 100%;
@@ -219,7 +303,7 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
 }
 
 /* Pantallas grandes */
-@media (min-width: 992px) {
+@media (min-width: 792px) {
   #nav-icon-hamburguer {
     display: none;
   }

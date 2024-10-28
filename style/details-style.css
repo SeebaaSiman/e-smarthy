@@ -1,13 +1,25 @@
 .details-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   padding: 1rem;
   border-bottom: 1px solid var(--text-shadow);
+  transition: all 0.5s ease-in-out;
+  a {
+    text-decoration: solid;
+    color: blue;
+    text-decoration: underline;
+  }
 }
-.details-title {
+.details-container label {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: all 0.5s ease-in-out;
+}
+.details-container label p:first-of-type {
+  font-size: 18px;
+  font-weight: 900;
 }
 .details-icon-cross {
   position: relative;
@@ -15,6 +27,7 @@
   height: 25px;
   transition: 0.5s ease-in-out;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
   span {
     display: block;
     position: absolute;
@@ -51,32 +64,45 @@
 }
 .details-icon-cross:hover span::before {
   width: 100%; /* Expande el color */
+  transition: all 0.5s ease-in-out;
 }
 
 .icon-cross-vertical {
   transform: rotate(90deg);
+  transition: all 0.5s ease-in-out;
 }
 
 .toggle-cross:checked + .details-icon-cross .icon-cross-vertical {
   transform: rotate(180deg);
   scale: 0.8;
+  transition: all 0.5s ease-in-out;
 }
 
 .toggle-cross:checked + .details-icon-cross .icon-cross-horizontal {
   transform: rotate(90deg);
   scale: 0.8;
   opacity: 0;
+  transition: all 0.5s ease-in-out;
 }
 
 .details-menu {
   height: 0;
   overflow: hidden;
   transition: all 0.5s ease-in-out;
-  ul {
-    padding: 8px;
-  }
 }
-
+.details-menu ul,
+p {
+  padding: 8px;
+  transition: all 0.5s ease-in-out;
+}
+.details-menu ol {
+  padding: 1rem;
+  list-style-type: decimal;
+}
+.details-menu li,
+p {
+  max-width: 992px;
+}
 .details-container:has(.toggle-cross:checked) .details-menu {
   height: 100%;
   transition: all 0.5s ease-in-out;
