@@ -42,13 +42,83 @@
   justify-content: start;
   align-items: center;
   gap: 8px;
-  input {
-    width: 80%;
-  }
   p {
     text-align: center;
   }
 }
+
+.footer-input-subscribe {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.input-subscribe-wrapper {
+  width: 170px;
+  height: 40px;
+  outline: none;
+  padding-left: 15px;
+  font-size: 0.7em;
+  background-color: var(--navbar-bg);
+  border-radius: 6px;
+  border: 1px solid var(--card-bg);
+  transition: all 0.4s ease-in-out;
+  color: var(--text-shadow);
+}
+.btn-subscribe {
+  height: 40px;
+  padding: 0 15px;
+  border: none;
+  border-radius: 6px;
+  color: var(--navbar-bg);
+  cursor: pointer;
+  background-color: var(--grey);
+  transition: all 0.4s ease-in-out;
+  font-size: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.btn-subscribe:hover {
+  transition: all 0.4s ease-in-out;
+  color: var(--text-shadow);
+}
+.btn-subscribe:hover .icon-arrow-subscribe {
+  margin-right: 0;
+  animation: jello-vertical 0.9s both;
+  transition: all 0.4s ease-in-out;
+  transform-origin: left;
+  fill: var(--text-shadow);
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+.btn-subscribe:active {
+  transform: scale(0.9);
+}
+
 .footer-logo-container {
   display: inline-flex;
   justify-content: start;
@@ -139,18 +209,16 @@
 }
 @media (min-width: 992px) {
   #footer {
-    width: 100%;
+    width: 100vw;
     grid-template-areas:
       "logo  support explore rrss"
       "line line line line"
       "terms pay pay copy";
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
+
   .footer-newsletter {
-    width: 60vw;
-    input {
-      width: 60%;
-    }
+    width: 40vw;
   }
   .footer-pay {
     width: auto;

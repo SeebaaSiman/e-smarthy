@@ -6,8 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/assets/smiley.png" />
   <link rel="stylesheet" href="style/globalstyles.css">
-  <link rel="stylesheet" href="style/carousel-logos-style.css">
-  <link rel="stylesheet" href="style/carousel-banner-style.css">
+  <link rel="stylesheet" href="style/product-detail-style.css">
   <link rel="stylesheet" href="style/navbar-style.css">
   <link rel="stylesheet" href="style/footer-style.css">
   <link rel="stylesheet" href="style/teleprompter-style.css">
@@ -76,138 +75,182 @@
       </div>
     </nav>
   </header>
+
   <main>
-    <section>
-      <d iv class="banner-wrapper">
-        <span>
-          <h2>Productos con descuento del mes</h2>
-          <hr>
-          <ion-icon name="pricetag-outline"></ion-icon>
-        </span>
+    <article class="page-product-detail">
+      <a href="product.html" class="icon-arrow-product-detail"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+      <section class="first-section-product-detail">
 
-        <div class="banner-carousel">
-          <div class="arrow-rigth"><ion-icon name="chevron-forward-outline"></ion-icon></div>
-          <div class="arrow-left"><ion-icon name="chevron-back-outline"></ion-icon></div>
-          <div class="indicators">
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
+        <div class="image-product-container">
+          <div class="aside-image-container">
+            <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png"
+              class="active" alt="">
+            <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png" alt="">
+            <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png" alt="">
           </div>
-          <div id="top-descount" class="banner-container">
-            <div class="banner-slide"
-              style="background-image: url(https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/thumbnail.png);">
+          <div class="image-product-show">
+            <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png"
+              alt="">
+          </div>
+        </div>
+        <div class="details-product-container">
 
-              <div class="banner-overlay">
-                <div class="banner-overlay-left">
-                  <p class="banner-titulo">iPad Mini 2021 Starlight
-                  </p>
-                  <p class="banner-description">The iPad Mini 2021 in Starlight is a compact and powerful tablet
-                    from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design,
-                    it offers a premium tablet experience.
-                  </p>
+          <h1>House Showpiece Plant</h1>
+          <p>The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the
+            need for maintenance. It adds greenery and style to any space.</p>
+
+          <div class="details-product-price">
+            <span>
+              <ion-icon name="caret-down-outline"></ion-icon>
+              19.45 %
+            </span>
+            <p class="price-card-product">&#8364; 19.99</p>
+
+          </div>
+
+
+          <a href="cart.html" class="btn-division">Agregar al carrito</a>
+          <div class="footer-pay">
+            <img src="assets/cards/amex.png" alt="card amex image">
+            <img src="assets/cards/apple-pay.png" alt="card apple pay image">
+            <img src="assets/cards/google-pay.jpg" alt="card google pay image">
+            <img src="assets/cards/mastercard.png" alt="card mastercard image">
+            <img src="assets/cards/paypal.jpg" alt="paypal image">
+            <img src="assets/cards/shop-pay.webp" alt="card shop pay image">
+            <img src="assets/cards/visa.png" alt="card visa image">
+          </div>
+        </div>
+      </section>
+      <section class="information-section-product-detail">
+
+        <div class="product-detail-tags">
+          <span>
+            <p>home decoration</p><ion-icon name="pricetags-outline"></ion-icon>
+          </span>
+          <span>
+            <p>artificial plants</p><ion-icon name="pricetags-outline"></ion-icon>
+          </span>
+        </div>
+        <div class="product-detail-info">
+          <span>
+            <p>Stock:</p>
+            <p>89</p>
+          </span>
+
+          <span>
+            <p>Peso (libras):</p>
+            <p>9</p>
+          </span>
+          <span>
+            <p>Ancho:</p>
+            <p>27.15</p>
+
+          </span>
+          <span>
+            <p>Altura:</p>
+            <p>14.43</p>
+          </span>
+          <span>
+            <p>Profundidad:</p>
+            <p>10.05</p>
+          </span>
+        </div>
+        <p>Garantía de 5 años</p>
+        <p>Envíos en 1 semana</p>
+        <div class="product-detail-stock true">
+          <ion-icon class="icon-product-stock check" name="checkmark-outline"></ion-icon>
+          <ion-icon class="icon-product-stock close" name="close-outline"></ion-icon>
+          <p>En stock</p>
+        </div>
+        <p>Política de retorno de 7 días</p>
+        <p>Orden mínima de 7 productos</p>
+
+      </section>
+      <section class="reviews-section-product-detail">
+        <div class="reviews-rating-product-detail">
+          <h3>Rating</h3>
+          <div class="banner-rating">
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-outline"></ion-icon>
+            <ion-icon name="star-half-outline"></ion-icon> (3.61)
+          </div>
+        </div>
+        <div class="reviews-container-product-detail">
+
+          <div class="review-user-product-detail">
+            <div class="review-user-user-container">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>
+                <p>Olivia Anderson</p>
+                <p>olivia.anderson@x.dummyjson.com</p>
+              </span>
+            </div>
+            <div class="review-comment-container">
+              <span>
+                <div class="banner-rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon> (5)
                 </div>
-                <div class="banner-overlay-rigth">
-                  <p class="banner-discountPercentage">
-                    - 19.48 %
-                  </p>
-                  <p class="banner-price"> &#8364;499.99</p>
-                  <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-              </div>
+                <p>2024-05-23</p>
+              </span>
+              <p>Great value for money!</p>
             </div>
           </div>
         </div>
-        </div>
-    </section>
-    <section>
-      <div class="banner-wrapper">
-        <span>
-          <h2>Productos con mejor rating del mes </h2>
-          <hr>
-          <ion-icon name="star-half-outline"></ion-icon>
-        </span>
-        <div class="banner-carousel">
-          <div class="arrow-rigth"><ion-icon name="chevron-forward-outline"></ion-icon></div>
-          <div class="arrow-left"><ion-icon name="chevron-back-outline"></ion-icon></div>
-          <div class="indicators">
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator "></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-          </div>
-          <div id="top-descount" class="banner-container">
-            <div class="banner-slide"
-              style="background-image: url(https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/thumbnail.png);">
-              <div class="banner-overlay">
-                <div class="banner-overlay-left">
-                  <p class="banner-titulo"> Rolex Datejust
-                  </p>
-                  <p class="banner-description">The Rolex Datejust is an iconic and versatile timepiece with a date
-                    window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking
-                    excellence.
-                  </p>
+        <div class="reviews-container-product-detail">
 
+          <div class="review-user-product-detail">
+            <div class="review-user-user-container">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>
+                <p>Grace Perry</p>
+                <p>grace.perry@x.dummyjson.com</p>
+              </span>
+            </div>
+            <div class="review-comment-container">
+              <span>
+                <div class="banner-rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon> (2)
                 </div>
-                <div class="banner-overlay-rigth">
-                  <div class="banner-rating">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    (5)
-                  </div>
-                  <p class="banner-price"> &#8364; 10999.99
-                  </p>
-                  <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
-
-                </div>
-              </div>
+                <p>2024-05-23</p>
+              </span>
+              <p>Very unhappy with my purchase!</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="carousel-logos-title">
-        <h2>
-          Empresas que confian en nosotros para vender sus productos
-        </h2>
-      </div>
-      <div class="carousel-logos">
-        <div class="logos-slide">
-          <img src="assets/logos/3m.svg" alt="logo 3m" />
-          <img src="assets/logos/barstool-store.svg" alt="logo barstool" />
-          <img src="assets/logos/budweiser.svg" alt="logo budweiser" />
-          <img src="assets/logos/buzzfeed.svg" alt="logo buzzfeed" />
-          <img src="assets/logos/forbes.svg" alt="logo forbes" />
-          <img src="assets/logos/macys.svg" alt="logo macys" />
-          <img src="assets/logos/menshealth.svg" alt=" logo menshealth" />
-          <img src="assets/logos/mrbeast.svg" alt="logo mrbeast" />
+        <div class="reviews-container-product-detail">
+
+          <div class="review-user-product-detail">
+            <div class="review-user-user-container">
+              <ion-icon name="person-outline"></ion-icon>
+              <span>
+                <p>Emma Wilson</p>
+                <p>emma.wilson@x.dummyjson.com</p>
+              </span>
+            </div>
+            <div class="review-comment-container">
+              <span>
+                <div class="banner-rating">
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon>
+                  <ion-icon name="star-outline"></ion-icon> (5)
+                </div>
+                <p>2024-05-23</p>
+              </span>
+              <p>Highly recommended!</p>
+            </div>
+          </div>
         </div>
-        <div class="logos-slide">
-          <img src="assets/logos/3m.svg" alt="logo 3m" />
-          <img src="assets/logos/barstool-store.svg" alt="logo barstool" />
-          <img src="assets/logos/budweiser.svg" alt="logo budweiser" />
-          <img src="assets/logos/buzzfeed.svg" alt="logo buzzfeed" />
-          <img src="assets/logos/forbes.svg" alt="logo forbes" />
-          <img src="assets/logos/macys.svg" alt="logo macys" />
-          <img src="assets/logos/menshealth.svg" alt=" logo menshealth" />
-          <img src="assets/logos/mrbeast.svg" alt="logo mrbeast" />
-        </div>
-      </div>
 
-    </section>
-
-
-
+      </section>
+    </article>
 
 
   </main>
@@ -290,6 +333,6 @@
       &copy; <span id="current-year"></span> E-Smarthy.
     </div>
   </footer>
-</body>1
+</body>
 
 </html>

@@ -2,6 +2,8 @@
 
 Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 24225, profesores Nicolás Fernandez y Paz Aliaga.
 
+E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios productos de diversas marcas que se encarga de la distribución y garantía de diversos productos.
+
 ## Tech Stack
 
 **Client / front:**

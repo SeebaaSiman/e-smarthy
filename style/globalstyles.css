@@ -3,6 +3,8 @@
   --card-bg: #e2dfdd;
   --navbar-bg: #fff;
   --text-shadow: #4a5c6a;
+  --green: rgb(84, 190, 132);
+  --grey: #292524;
   --black: #040404;
   --font-bold: "Walsheim-bold";
   --font-light: "Walsheim";
@@ -150,4 +152,3 @@ p {
   box-shadow: 5px 5px 5px black;
   scale: 0.9;
 }
-

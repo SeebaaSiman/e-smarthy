@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/assets/smiley.png" />
     <link rel="stylesheet" href="style/globalstyles.css">
-    <link rel="stylesheet" href="style/carousel-logos-style.css">
-    <link rel="stylesheet" href="style/carousel-banner-style.css">
+    <link rel="stylesheet" href="style/product-style.css">
     <link rel="stylesheet" href="style/navbar-style.css">
     <link rel="stylesheet" href="style/footer-style.css">
     <link rel="stylesheet" href="style/teleprompter-style.css">
@@ -78,7 +77,270 @@
     </header>
 
     <main>
-        <section class="page">
+        <section class="filter-container">
+            <ion-icon name="filter-outline" class="icon-filter"></ion-icon>
+            <div class="filter-category">
+                <p>Categoría:</p>
+                <input type="text" list="category">
+                <datalist id="category">
+                    <option value="Beauty"></option>
+                    <option value="fragrances"></option>
+                    <option value="furniture"></option>
+                    <option value="groceries"></option>
+                    <option value="home-decoration"></option>
+                    <option value="kitchen-accessories"></option>
+                    <option value="laptops"></option>
+                    <option value="mens-shirts"></option>
+                    <option value="mens-shoes"></option>
+                    <option value="mens-watches"></option>
+                    <option value="mobile-accessories"></option>
+                    <option value="motorcycle"></option>
+                    <option value="skin-care"></option>
+                    <option value="smartphones"></option>
+                    <option value="sports-accessories"></option>
+                    <option value="sunglasses"></option>
+                    <option value="tablets"></option>
+                    <option value="tops"></option>
+                    <option value="vehicle"></option>
+                    <option value="womens-bags"></option>
+                    <option value="womens-dresses"></option>
+                    <option value="womens-jewellery"></option>
+                    <option value="womens-shoes"></option>
+                    <option value="womens-watches"></option>
+                </datalist>
+            </div>
+            <div class="filter-rating-container">
+                <p>Calificación del producto</p>
+                <div class="filter-rating">
+                    <input class="star s1" type="radio" id="value-1" name="value-radio" value="value-1" />
+                    <input class="star s2" type="radio" id="value-2" name="value-radio" value="value-2" />
+                    <input class="star s3" type="radio" id="value-3" name="value-radio" value="value-3" />
+                    <input class="star s4" type="radio" id="value-4" name="value-radio" value="value-4" />
+                    <input class="star s5" type="radio" id="value-5" name="value-radio" value="value-5" />
+                </div>
+            </div>
+            <div class="filter-price-minmax">
+                <div class="filter-price-container">
+                    <p>Precio mínimo</p>
+                    <div class="price-container">
+                        <span>&#8364;</span>
+                        <input type="number" min="0">
+                    </div>
+                </div>
+                <div class="filter-price-container">
+                    <p>Precio máximo</p>
+                    <div class="price-container">
+                        <span>&#8364;</span>
+                        <input type="number" min="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="filter-range">
+                <p>Filtrar por precio</p>
+                <input type="range" id="priceRange" min="0" max="16000" step="10"
+                    oninput="priceOutput.value = this.value" />
+
+                <output id="priceOutput"> 250</output>
+                &#8364;
+            </div>
+
+
+        </section>
+
+
+
+
+        <section class="page page-product">
+
+            <div class="card-product">
+                <a href="product-detail-plant.html">
+                    <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                    <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                </a>
+                <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">House Showpiece Plant</p>
+                <abbr class="description-card-product">The House Showpiece Plant is an artificial plant that brings a
+                    touch of nature to your home without the need for maintenance. It adds greenery and style to any
+                    space.</abbr>
+                <p class="price-card-product">&#8364; 39.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Rolex Cellini Moonphase</p>
+                <abbr class="description-card-product">The Rolex Cellini Moonphase watch is a masterpiece of horology.
+                    Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is
+                    renowned for.</abbr>
+                <p class="price-card-product">&#8364; 15999.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Chanel Coco Noir Eau De</p>
+                <abbr class="description-card-product">Coco Noir by Chanel is an elegant and mysterious fragrance,
+                    featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.</abbr>
+                <p class="price-card-product">&#8364; 129.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Annibale Colombo Sofa</p>
+                <abbr class="description-card-product">The Annibale Colombo Sofa is a sophisticated and comfortable
+                    seating option, featuring exquisite design and premium upholstery for your living room.</abbr>
+                <p class="price-card-product">&#8364; 2499.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Prada Women Bag</p>
+                <abbr class="description-card-product">The Prada Women Bag is an iconic designer bag that exudes
+                    elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for
+                    fashion enthusiasts.</abbr>
+                <p class="price-card-product">&#8364; 599.99 </p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png" alt="">
+                <p class="title-card-product">iPhone 13 Pro</p>
+                <abbr class="description-card-product">The iPhone 13 Pro is a cutting-edge smartphone with a powerful
+                    camera system, high-performance chip, and stunning display. It offers advanced features for users
+                    who demand top-notch technology.</abbr>
+                <p class="price-card-product">&#8364; 1099.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Sportbike Motorcycle</p>
+                <abbr class="description-card-product">The Sportbike Motorcycle is designed for speed and agility, with
+                    a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding
+                    experience.</abbr>
+                <p class="price-card-product">&#8364; 7499.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/thumbnail.png" alt="">
+                <p class="title-card-product">Party Glasses</p>
+                <abbr class="description-card-product">The Party Glasses are designed to add flair to your party outfit.
+                    With unique shapes or colorful frames, they're perfect for adding a playful touch to your look
+                    during celebrations.</abbr>
+                <p class="price-card-product">&#8364; 19.99</p>
+                <a href="#" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <a href="product-detail-plant.html">
+                    <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                    <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                </a>
+                <img src="https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">House Showpiece Plant</p>
+                <abbr class="description-card-product">The House Showpiece Plant is an artificial plant that brings a
+                    touch of nature to your home without the need for maintenance. It adds greenery and style to any
+                    space.</abbr>
+                <p class="price-card-product">&#8364; 39.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Rolex Cellini Moonphase</p>
+                <abbr class="description-card-product">The Rolex Cellini Moonphase watch is a masterpiece of horology.
+                    Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is
+                    renowned for.</abbr>
+                <p class="price-card-product">&#8364; 15999.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Chanel Coco Noir Eau De</p>
+                <abbr class="description-card-product">Coco Noir by Chanel is an elegant and mysterious fragrance,
+                    featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.</abbr>
+                <p class="price-card-product">&#8364; 129.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Annibale Colombo Sofa</p>
+                <abbr class="description-card-product">The Annibale Colombo Sofa is a sophisticated and comfortable
+                    seating option, featuring exquisite design and premium upholstery for your living room.</abbr>
+                <p class="price-card-product">&#8364; 2499.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Prada Women Bag</p>
+                <abbr class="description-card-product">The Prada Women Bag is an iconic designer bag that exudes
+                    elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for
+                    fashion enthusiasts.</abbr>
+                <p class="price-card-product">&#8364; 599.99 </p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png" alt="">
+                <p class="title-card-product">iPhone 13 Pro</p>
+                <abbr class="description-card-product">The iPhone 13 Pro is a cutting-edge smartphone with a powerful
+                    camera system, high-performance chip, and stunning display. It offers advanced features for users
+                    who demand top-notch technology.</abbr>
+                <p class="price-card-product">&#8364; 1099.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/thumbnail.png"
+                    alt="">
+                <p class="title-card-product">Sportbike Motorcycle</p>
+                <abbr class="description-card-product">The Sportbike Motorcycle is designed for speed and agility, with
+                    a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding
+                    experience.</abbr>
+                <p class="price-card-product">&#8364; 7499.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
+            <div class="card-product">
+                <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
+                <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
+                <img src="https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/thumbnail.png" alt="">
+                <p class="title-card-product">Party Glasses</p>
+                <abbr class="description-card-product">The Party Glasses are designed to add flair to your party outfit.
+                    With unique shapes or colorful frames, they're perfect for adding a playful touch to your look
+                    during celebrations.</abbr>
+                <p class="price-card-product">&#8364; 19.99</p>
+                <a href="cart.html" class="btn-division">Agregar al carrito</a>
+            </div>
 
         </section>
 
@@ -103,7 +365,19 @@
                 a
                 nuestra newsletter y recibe un 10% de descuento en tu primera compra
             </p>
-            <input type="text" />
+
+            <div class="footer-input-subscribe">
+                <input placeholder="email@gmail.com" class="input-subscribe-wrapper" name="email" type="email" />
+                <button class="btn-subscribe">
+                    Subscribe
+                    <svg class="icon-arrow-subscribe" viewBox="0 0 38 15" height="20" width="20"
+                        xmlns="http://www.w3.org/2000/svg" fill="white">
+                        <path
+                            d="M10 7.519l-.939-.344h0l.939.344zm14.386-1.205l-.981-.192.981.192zm1.276 5.509l.537.843.148-.094.107-.139-.792-.611zm4.819-4.304l-.385-.923h0l.385.923zm7.227.707a1 1 0 0 0 0-1.414L31.343.448a1 1 0 0 0-1.414 0 1 1 0 0 0 0 1.414l5.657 5.657-5.657 5.657a1 1 0 0 0 1.414 1.414l6.364-6.364zM1 7.519l.554.833.029-.019.094-.061.361-.23 1.277-.77c1.054-.609 2.397-1.32 3.629-1.787.617-.234 1.17-.392 1.623-.455.477-.066.707-.008.788.034.025.013.031.021.039.034a.56.56 0 0 1 .058.235c.029.327-.047.906-.39 1.842l1.878.689c.383-1.044.571-1.949.505-2.705-.072-.815-.45-1.493-1.16-1.865-.627-.329-1.358-.332-1.993-.244-.659.092-1.367.305-2.056.566-1.381.523-2.833 1.297-3.921 1.925l-1.341.808-.385.245-.104.068-.028.018c-.011.007-.011.007.543.84zm8.061-.344c-.198.54-.328 1.038-.36 1.484-.032.441.024.94.325 1.364.319.45.786.64 1.21.697.403.054.824-.001 1.21-.09.775-.179 1.694-.566 2.633-1.014l3.023-1.554c2.115-1.122 4.107-2.168 5.476-2.524.329-.086.573-.117.742-.115s.195.038.161.014c-.15-.105.085-.139-.076.685l1.963.384c.192-.98.152-2.083-.74-2.707-.405-.283-.868-.37-1.28-.376s-.849.069-1.274.179c-1.65.43-3.888 1.621-5.909 2.693l-2.948 1.517c-.92.439-1.673.743-2.221.87-.276.064-.429.065-.492.057-.043-.006.066.003.155.127.07.099.024.131.038-.063.014-.187.078-.49.243-.94l-1.878-.689zm14.343-1.053c-.361 1.844-.474 3.185-.413 4.161.059.95.294 1.72.811 2.215.567.544 1.242.546 1.664.459a2.34 2.34 0 0 0 .502-.167l.15-.076.049-.028.018-.011c.013-.008.013-.008-.524-.852l-.536-.844.019-.012c-.038.018-.064.027-.084.032-.037.008.053-.013.125.056.021.02-.151-.135-.198-.895-.046-.734.034-1.887.38-3.652l-1.963-.384zm2.257 5.701l.791.611.024-.031.08-.101.311-.377 1.093-1.213c.922-.954 2.005-1.894 2.904-2.27l-.771-1.846c-1.31.547-2.637 1.758-3.572 2.725l-1.184 1.314-.341.414-.093.117-.025.032c-.01.013-.01.013.781.624zm5.204-3.381c.989-.413 1.791-.42 2.697-.307.871.108 2.083.385 3.437.385v-2c-1.197 0-2.041-.226-3.19-.369-1.114-.139-2.297-.146-3.715.447l.771 1.846z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
         </div>
 
         <div class="footer-support">
@@ -154,7 +428,515 @@
             &copy; <span id="current-year"></span> E-Smarthy.
         </div>
     </footer>
-
 </body>
 
 </html>
+
+<!--
+{
+  "id": 45,
+  "title": "House Showpiece Plant",
+  "description": "The House Showpiece Plant is an artificial plant that brings a touch of nature to your home without the need for maintenance. It adds greenery and style to any space.",
+  "category": "home-decoration",
+  "price": 39.99,
+  "discountPercentage": 19.45,
+  "rating": 3.61,
+  "stock": 89,
+  "tags": [
+   "home decor",
+   "artificial plants"
+  ],
+  "sku": "LLNHNIFU",
+  "weight": 9,
+  "dimensions": {
+   "width": 27.15,
+   "height": 14.43,
+   "depth": 10.05
+  },
+  "warrantyInformation": "5 year warranty",
+  "shippingInformation": "Ships in 1 week",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Great value for money!",
+    "date": "2024-05-23T08:56:21.621Z",
+    "reviewerName": "Olivia Anderson",
+    "reviewerEmail": "olivia.anderson@x.dummyjson.com"
+   },
+   {
+    "rating": 2,
+    "comment": "Very unhappy with my purchase!",
+    "date": "2024-05-23T08:56:21.621Z",
+    "reviewerName": "Grace Perry",
+    "reviewerEmail": "grace.perry@x.dummyjson.com"
+   },
+   {
+    "rating": 5,
+    "comment": "Highly recommended!",
+    "date": "2024-05-23T08:56:21.621Z",
+    "reviewerName": "Emma Wilson",
+    "reviewerEmail": "emma.wilson@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "7 days return policy",
+  "minimumOrderQuantity": 7,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.621Z",
+   "updatedAt": "2024-05-23T08:56:21.621Z",
+   "barcode": "1895440764997",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/1.png",
+   "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/2.png",
+   "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/home-decoration/House%20Showpiece%20Plant/thumbnail.png"
+ }, -->
+
+
+
+<!-- {
+  "id": 191,
+  "title": "Rolex Cellini Moonphase",
+  "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
+  "category": "womens-watches",
+  "price": 15999.99,
+  "discountPercentage": 18.76,
+  "rating": 3.41,
+  "stock": 66,
+  "tags": [
+   "watches",
+   "luxury watches"
+  ],
+  "brand": "Rolex",
+  "sku": "E8CYFYQL",
+  "weight": 5,
+  "dimensions": {
+   "width": 22.54,
+   "height": 20.15,
+   "depth": 25.37
+  },
+  "warrantyInformation": "2 year warranty",
+  "shippingInformation": "Ships in 1-2 business days",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Great value for money!",
+    "date": "2024-05-23T08:56:21.628Z",
+    "reviewerName": "Logan Lee",
+    "reviewerEmail": "logan.lee@x.dummyjson.com"
+   },
+   {
+    "rating": 1,
+    "comment": "Would not recommend!",
+    "date": "2024-05-23T08:56:21.628Z",
+    "reviewerName": "Leah Henderson",
+    "reviewerEmail": "leah.henderson@x.dummyjson.com"
+   },
+   {
+    "rating": 5,
+    "comment": "Very pleased!",
+    "date": "2024-05-23T08:56:21.628Z",
+    "reviewerName": "Mateo Nguyen",
+    "reviewerEmail": "mateo.nguyen@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "60 days return policy",
+  "minimumOrderQuantity": 1,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.628Z",
+   "updatedAt": "2024-05-23T08:56:21.628Z",
+   "barcode": "3517608890772",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/1.png",
+   "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/2.png",
+   "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/womens-watches/Rolex%20Cellini%20Moonphase/thumbnail.png"
+ }, -->
+
+<!-- {
+  "id": 7,
+  "title": "Chanel Coco Noir Eau De",
+  "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+  "category": "fragrances",
+  "price": 129.99,
+  "discountPercentage": 18.64,
+  "rating": 2.76,
+  "stock": 41,
+  "tags": [
+   "fragrances",
+   "perfumes"
+  ],
+  "brand": "Chanel",
+  "sku": "K71HBCGS",
+  "weight": 4,
+  "dimensions": {
+   "width": 21.27,
+   "height": 28,
+   "depth": 11.89
+  },
+  "warrantyInformation": "1 week warranty",
+  "shippingInformation": "Ships in 1 month",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 1,
+    "comment": "Disappointing product!",
+    "date": "2024-05-23T08:56:21.619Z",
+    "reviewerName": "Lincoln Kelly",
+    "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
+   },
+   {
+    "rating": 4,
+    "comment": "Great product!",
+    "date": "2024-05-23T08:56:21.619Z",
+    "reviewerName": "Lincoln Kelly",
+    "reviewerEmail": "lincoln.kelly@x.dummyjson.com"
+   },
+   {
+    "rating": 4,
+    "comment": "Excellent quality!",
+    "date": "2024-05-23T08:56:21.619Z",
+    "reviewerName": "Lucas Allen",
+    "reviewerEmail": "lucas.allen@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "60 days return policy",
+  "minimumOrderQuantity": 5,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.619Z",
+   "updatedAt": "2024-05-23T08:56:21.619Z",
+   "barcode": "1435582999795",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/1.png",
+   "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/2.png",
+   "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/fragrances/Chanel%20Coco%20Noir%20Eau%20De/thumbnail.png"
+ }, -->
+
+<!-- {
+  "id": 12,
+  "title": "Annibale Colombo Sofa",
+  "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
+  "category": "furniture",
+  "price": 2499.99,
+  "discountPercentage": 18.54,
+  "rating": 3.08,
+  "stock": 16,
+  "tags": [
+   "furniture",
+   "sofas"
+  ],
+  "brand": "Annibale Colombo",
+  "sku": "LUU95CQP",
+  "weight": 3,
+  "dimensions": {
+   "width": 20.97,
+   "height": 19.11,
+   "depth": 25.81
+  },
+  "warrantyInformation": "1 month warranty",
+  "shippingInformation": "Ships overnight",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Very satisfied!",
+    "date": "2024-05-23T08:56:21.620Z",
+    "reviewerName": "Tyler Davis",
+    "reviewerEmail": "tyler.davis@x.dummyjson.com"
+   },
+   {
+    "rating": 5,
+    "comment": "Excellent quality!",
+    "date": "2024-05-23T08:56:21.620Z",
+    "reviewerName": "Hannah Robinson",
+    "reviewerEmail": "hannah.robinson@x.dummyjson.com"
+   },
+   {
+    "rating": 3,
+    "comment": "Waste of money!",
+    "date": "2024-05-23T08:56:21.620Z",
+    "reviewerName": "Madison Collins",
+    "reviewerEmail": "madison.collins@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "7 days return policy",
+  "minimumOrderQuantity": 1,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.620Z",
+   "updatedAt": "2024-05-23T08:56:21.620Z",
+   "barcode": "0426785817074",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/1.png",
+   "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/2.png",
+   "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/furniture/Annibale%20Colombo%20Sofa/thumbnail.png"
+ }, -->
+
+<!--
+ {
+  "id": 174,
+  "title": "Prada Women Bag",
+  "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts.",
+  "category": "womens-bags",
+  "price": 599.99,
+  "discountPercentage": 18.3,
+  "rating": 3.52,
+  "stock": 43,
+  "tags": [
+   "fashion accessories",
+   "designer bags"
+  ],
+  "brand": "Prada",
+  "sku": "WXX4YTJM",
+  "weight": 4,
+  "dimensions": {
+   "width": 23.45,
+   "height": 16.1,
+   "depth": 5.78
+  },
+  "warrantyInformation": "1 week warranty",
+  "shippingInformation": "Ships overnight",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Excellent quality!",
+    "date": "2024-05-23T08:56:21.627Z",
+    "reviewerName": "Samantha Howard",
+    "reviewerEmail": "samantha.howard@x.dummyjson.com"
+   },
+   {
+    "rating": 4,
+    "comment": "Would buy again!",
+    "date": "2024-05-23T08:56:21.627Z",
+    "reviewerName": "Henry Hill",
+    "reviewerEmail": "henry.hill@x.dummyjson.com"
+   },
+   {
+    "rating": 3,
+    "comment": "Not worth the price!",
+    "date": "2024-05-23T08:56:21.627Z",
+    "reviewerName": "Lucas Ramirez",
+    "reviewerEmail": "lucas.ramirez@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "7 days return policy",
+  "minimumOrderQuantity": 1,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.627Z",
+   "updatedAt": "2024-05-23T08:56:21.627Z",
+   "barcode": "4590351278063",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/1.png",
+   "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/2.png",
+   "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/womens-bags/Prada%20Women%20Bag/thumbnail.png"
+ },
+  -->
+<!--
+ {
+  "id": 123,
+  "title": "iPhone 13 Pro",
+  "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+  "category": "smartphones",
+  "price": 1099.99,
+  "discountPercentage": 18.3,
+  "rating": 3.42,
+  "stock": 26,
+  "tags": [
+   "smartphones",
+   "apple"
+  ],
+  "brand": "Apple",
+  "sku": "YGQKHPGK",
+  "weight": 8,
+  "dimensions": {
+   "width": 22.39,
+   "height": 9.77,
+   "depth": 19.6
+  },
+  "warrantyInformation": "1 year warranty",
+  "shippingInformation": "Ships in 2 weeks",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Highly impressed!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Aria Roberts",
+    "reviewerEmail": "aria.roberts@x.dummyjson.com"
+   },
+   {
+    "rating": 4,
+    "comment": "Great product!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Ryan Graham",
+    "reviewerEmail": "ryan.graham@x.dummyjson.com"
+   },
+   {
+    "rating": 2,
+    "comment": "Poor quality!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Mason Wright",
+    "reviewerEmail": "mason.wright@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "7 days return policy",
+  "minimumOrderQuantity": 1,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.625Z",
+   "updatedAt": "2024-05-23T08:56:21.625Z",
+   "barcode": "2986724589988",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/1.png",
+   "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/2.png",
+   "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/smartphones/iPhone%2013%20Pro/thumbnail.png"
+ }, -->
+
+<!-- {
+  "id": 117,
+  "title": "Sportbike Motorcycle",
+  "description": "The Sportbike Motorcycle is designed for speed and agility, with a sleek and aerodynamic profile. It's suitable for riders looking for a dynamic and thrilling riding experience.",
+  "category": "motorcycle",
+  "price": 7499.99,
+  "discountPercentage": 18.07,
+  "rating": 2.97,
+  "stock": 12,
+  "tags": [
+   "motorcycles",
+   "sportbikes"
+  ],
+  "brand": "SpeedMaster",
+  "sku": "MW0SG302",
+  "weight": 9,
+  "dimensions": {
+   "width": 17.16,
+   "height": 15.02,
+   "depth": 15.03
+  },
+  "warrantyInformation": "Lifetime warranty",
+  "shippingInformation": "Ships in 1 month",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 2,
+    "comment": "Disappointing product!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Aurora Lawson",
+    "reviewerEmail": "aurora.lawson@x.dummyjson.com"
+   },
+   {
+    "rating": 3,
+    "comment": "Very unhappy with my purchase!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Penelope Harper",
+    "reviewerEmail": "penelope.harper@x.dummyjson.com"
+   },
+   {
+    "rating": 4,
+    "comment": "Very pleased!",
+    "date": "2024-05-23T08:56:21.625Z",
+    "reviewerName": "Lily Lee",
+    "reviewerEmail": "lily.lee@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "90 days return policy",
+  "minimumOrderQuantity": 1,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.625Z",
+   "updatedAt": "2024-05-23T08:56:21.625Z",
+   "barcode": "0047068612003",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/1.png",
+   "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/2.png",
+   "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/3.png",
+   "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/4.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/motorcycle/Sportbike%20Motorcycle/thumbnail.png"
+ }, -->
+
+<!--  {
+  "id": 157,
+  "title": "Party Glasses",
+  "description": "The Party Glasses are designed to add flair to your party outfit. With unique shapes or colorful frames, they're perfect for adding a playful touch to your look during celebrations.",
+  "category": "sunglasses",
+  "price": 19.99,
+  "discountPercentage": 19.52,
+  "rating": 3.21,
+  "stock": 35,
+  "tags": [
+   "eyewear",
+   "party glasses"
+  ],
+  "brand": "Fashion Fun",
+  "sku": "CBO6BLYV",
+  "weight": 1,
+  "dimensions": {
+   "width": 17.04,
+   "height": 25.52,
+   "depth": 12.34
+  },
+  "warrantyInformation": "2 year warranty",
+  "shippingInformation": "Ships in 2 weeks",
+  "availabilityStatus": "In Stock",
+  "reviews": [
+   {
+    "rating": 5,
+    "comment": "Great value for money!",
+    "date": "2024-05-23T08:56:21.626Z",
+    "reviewerName": "Connor Baker",
+    "reviewerEmail": "connor.baker@x.dummyjson.com"
+   },
+   {
+    "rating": 5,
+    "comment": "Fast shipping!",
+    "date": "2024-05-23T08:56:21.626Z",
+    "reviewerName": "Elena Baker",
+    "reviewerEmail": "elena.baker@x.dummyjson.com"
+   },
+   {
+    "rating": 5,
+    "comment": "Highly recommended!",
+    "date": "2024-05-23T08:56:21.626Z",
+    "reviewerName": "Grayson Coleman",
+    "reviewerEmail": "grayson.coleman@x.dummyjson.com"
+   }
+  ],
+  "returnPolicy": "90 days return policy",
+  "minimumOrderQuantity": 19,
+  "meta": {
+   "createdAt": "2024-05-23T08:56:21.626Z",
+   "updatedAt": "2024-05-23T08:56:21.626Z",
+   "barcode": "0425848276443",
+   "qrCode": "https://assets.dummyjson.com/public/qr-code.png"
+  },
+  "images": [
+   "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/1.png",
+   "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/2.png",
+   "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/3.png"
+  ],
+  "thumbnail": "https://cdn.dummyjson.com/products/images/sunglasses/Party%20Glasses/thumbnail.png"
+ }, -->
