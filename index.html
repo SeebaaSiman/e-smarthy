@@ -78,11 +78,11 @@
   </header>
   <main>
     <section>
-      <d iv class="banner-wrapper">
+      <div iv class="banner-wrapper">
         <span>
           <h2>Productos con descuento del mes</h2>
           <hr>
-          <ion-icon name="pricetag-outline"></ion-icon>
+          <ion-icon name="pricetag-outline" class="icon-banner-wrapper"></ion-icon>
         </span>
 
         <div class="banner-carousel">
@@ -111,9 +111,10 @@
                   </p>
                 </div>
                 <div class="banner-overlay-rigth">
-                  <p class="banner-discountPercentage">
-                    - 19.48 %
-                  </p>
+                  <div class="banner-discountPercentage">
+                    <ion-icon name="caret-down-outline"></ion-icon>
+                    - 19.45 %
+                  </div>
                   <p class="banner-price"> &#8364;499.99</p>
                   <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
                 </div>
@@ -121,14 +122,14 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </section>
     <section>
       <div class="banner-wrapper">
         <span>
           <h2>Productos con mejor rating del mes </h2>
           <hr>
-          <ion-icon name="star-half-outline"></ion-icon>
+          <ion-icon name="star-half-outline" class="icon-banner-wrapper"></ion-icon>
         </span>
         <div class="banner-carousel">
           <div class="arrow-rigth"><ion-icon name="chevron-forward-outline"></ion-icon></div>
@@ -167,7 +168,6 @@
                   <p class="banner-price"> &#8364; 10999.99
                   </p>
                   <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
-
                 </div>
               </div>
             </div>
@@ -290,6 +290,6 @@
       &copy; <span id="current-year"></span> E-Smarthy.
     </div>
   </footer>
-</body>1
+</body>
 
 </html>

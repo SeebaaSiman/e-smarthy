@@ -1,3 +1,6 @@
+.footer-terms a {
+  font-size: 9px !important;
+}
 #footer {
   background-color: var(--text-shadow);
   color: var(--navbar-bg);
@@ -175,6 +178,7 @@
   gap: 4px;
   margin: 8px auto;
 }
+
 .footer-pay {
   grid-area: pay;
   display: inline-flex;

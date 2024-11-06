@@ -99,11 +99,7 @@ p {
   padding: 1rem;
   list-style-type: decimal;
 }
-.details-menu li,
-p {
-  max-width: 992px;
-}
+
 .details-container:has(.toggle-cross:checked) .details-menu {
   height: 100%;
-  transition: all 0.5s ease-in-out;
 }

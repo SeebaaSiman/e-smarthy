@@ -89,6 +89,7 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
 .search-container {
   position: relative;
   width: fit-content;
+  background-color: transparent;
 }
 
 .mainbox {
@@ -116,7 +117,7 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
 
 .search-checkbox:checked ~ .mainbox {
   border: 0px solid var(--text-shadow);
-  background-color: var(--navbar-bg);
+  background-color: transparent;
   width: 50px;
 }
 

@@ -22,7 +22,7 @@
   width: 90%;
   height: 80vh;
   margin: auto;
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 4px 4px 4px black;
   animation: bg-change 12s linear infinite;
   transition: all 0.4s ease-in-out;
   @media (min-width: 626px) {

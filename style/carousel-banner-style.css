@@ -2,11 +2,16 @@
   position: relative;
   background-color: var(--body-bg);
   span {
-    margin-left: 20px;
+    margin-left: 0px;
     display: flex;
     align-items: center;
     gap: 0rem;
     font-family: var(--font-bold);
+    text-align: center;
+    @media (min-width: 600px) {
+      margin-left: 20px;
+      text-align: start;
+    }
   }
 
   span hr {
@@ -16,11 +21,11 @@
     background-color: var(--black);
     width: 70px;
   }
-  ion-icon {
-    font-size: 25px;
-  }
 }
-
+.icon-banner-wrapper {
+  display: none;
+  font-size: 25px;
+}
 .banner-carousel {
   overflow: hidden;
   width: 100vw;
@@ -53,7 +58,7 @@
   width: 100vw;
   height: 300px;
   background-size: contain;
-  background-position: center;
+  background-position: right;
   background-repeat: no-repeat;
 }
 .banner-overlay {
@@ -61,6 +66,7 @@
   width: 100vw;
   color: black;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 .banner-overlay-left,
@@ -74,29 +80,44 @@
   background-color: transparent;
   backdrop-filter: blur(6px);
   border-radius: 10px;
-  box-shadow: 10px 10px 10px black;
+  /* box-shadow: 10px 10px 10px black; */
 }
 .banner-titulo {
-  font-size: 30px;
+  font-size: 28px;
   text-transform: bold;
 }
+.banner-description {
+  font-size: 13px;
+}
 .banner-overlay-rigth {
-  width: 25vw;
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: end;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   gap: 8px;
-  margin-right: 8px;
+  margin-top: 10px;
+  @media (min-width: 600px) {
+    width: 60%;
+  }
 }
 .banner-discountPercentage {
-  background-color: var(--text-shadow);
-  border-radius: 8px;
-  padding: 8px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border: solid 1px transparent;
+  background-color: var(--green);
+  border-radius: 22px;
   color: var(--navbar-bg);
-  box-shadow: 1px 1px 1px black;
-  text-shadow: 1px 1px 1px var(--text-shadow);
-  font-weight: 400;
+  p {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  ion-icon {
+    font-size: 20px;
+  }
 }
 .banner-rating {
   display: flex;
@@ -161,14 +182,26 @@
       display: block;
     }
   }
+  .icon-banner-wrapper {
+    display: block;
+  }
+  .banner-slide {
+    background-position: center;
+  }
+  .banner-overlay {
+    flex-direction: row;
+    justify-content: space-between;
+  }
   .banner-overlay-left {
-    width: 50vw;
+    width: 40vw;
     background-color: transparent;
     backdrop-filter: blur(0px);
     border-radius: 10px;
-    box-shadow: 0px 0px 0px black;
+    box-shadow: 0px 0px 0px transparent;
   }
   .banner-overlay-rigth {
-    align-items: center;
+    width: 50%;
+    flex-direction: column;
+    margin-top: 1rem;
   }
 }
