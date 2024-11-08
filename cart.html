@@ -7,6 +7,7 @@
     <link rel="icon" type="image/svg+xml" href="/assets/smiley.png" />
     <link rel="stylesheet" href="style/globalstyles.css">
     <link rel="stylesheet" href="style/cart-style.css">
+    <link rel="stylesheet" href="style/footer-style.css">
     <title>E-Smarthy</title>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -121,8 +122,29 @@
                 </div>
             </div>
 
-            <div class="cart-total-price">
-
+            <div class="cart-price-container">
+                <div class="cart-price-subtotal">
+                    <p>Subtotal</p>
+                    <p>16413.96</p>
+                </div>
+                <div class="cart-price-cupon">
+                    <p>Cupon <ion-icon name="ticket-outline"></ion-icon></p>
+                    <input type="text" minlength="0" maxlength="8" class="ticket-cupon" placeholder="cupon number">
+                </div>
+                <div class="cart-price-total">
+                    <p>Total</p>
+                    <p>16413.96</p>
+                </div>
+            </div>
+            <a href="#" class="btn-division btn-cart-buy">Comprar</a>
+            <div class="footer-pay">
+                <img src="assets/cards/amex.png" alt="card amex image">
+                <img src="assets/cards/apple-pay.png" alt="card apple pay image">
+                <img src="assets/cards/google-pay.jpg" alt="card google pay image">
+                <img src="assets/cards/mastercard.png" alt="card mastercard image">
+                <img src="assets/cards/paypal.jpg" alt="paypal image">
+                <img src="assets/cards/shop-pay.webp" alt="card shop pay image">
+                <img src="assets/cards/visa.png" alt="card visa image">
             </div>
         </section>
     </main>

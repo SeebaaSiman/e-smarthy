@@ -20,14 +20,13 @@
   justify-content: start;
   align-items: start;
   gap: 8px;
-  /* border-bottom: #4a5c6a 1px solid; */
   border-bottom: rgba(74, 92, 106, 0.5) 1px solid;
 }
 .cart-product-image {
   max-width: 100px;
   img {
     border-radius: 22px;
-    object-fit: contain;
+    object-fit: cover;
     width: 100%;
   }
 }
@@ -76,8 +75,6 @@
   flex-direction: row;
   justify-content: space-between;
 }
-.cart-product-price {
-}
 .cart-product-delete {
   cursor: pointer;
   ion-icon {
@@ -93,6 +90,47 @@
 }
 .cart-product-delete:active {
   scale: 0.9;
+}
+.cart-price-container {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.cart-price-subtotal,
+.cart-price-cupon,
+.cart-price-total {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  p {
+    font-family: var(--font-bold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: var(--text-shadow);
+  }
+}
+.ticket-cupon {
+  width: 100px;
+  padding: 4px;
+  border: none;
+  appearance: none;
+  border-radius: 22px;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+.ticket-cupon:focus {
+  width: 125px;
+}
+
+.btn-cart-buy {
+  width: 80%;
+  margin: auto;
+  max-width: 500px;
 }
 @media (min-width: 500px) {
   .cart-product-container {
