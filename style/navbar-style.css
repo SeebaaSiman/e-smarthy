@@ -85,7 +85,6 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
   align-items: center;
 }
 
-/* From Uiverse.io by vnuny */
 .search-container {
   position: relative;
   width: fit-content;
@@ -168,8 +167,6 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
   font-size: 1.3em;
 }
 
-/* From Uiverse.io by vnuny */
-
 .nav-icons-container {
   grid-area: icons;
   width: 100%;
@@ -188,6 +185,9 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
     top: -15px;
     right: -4px;
   }
+}
+.cart-icon-container:active {
+  scale: 0.9;
 }
 
 .nav-link {

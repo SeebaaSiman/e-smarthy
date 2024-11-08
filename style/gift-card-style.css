@@ -72,12 +72,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  button {
+  gap: 8px;
+  a {
     width: 90%;
   }
   ion-icon {
     color: white;
-    margin-top: 4px;
+    /* margin-top: 4px; */
   }
 }
 

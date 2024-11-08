@@ -17,6 +17,9 @@
 .icon-filter:hover {
   color: var(--text-shadow);
 }
+.icon-filter:active {
+  scale: 0.8;
+}
 .filter-menu-container {
   padding: 0rem 0rem 0rem 0rem;
   width: 100%;
@@ -287,6 +290,12 @@ output {
 }
 .icon-arrow-circle {
   right: 1%;
+}
+.icon-arrow-circle:active {
+  scale: 0.8;
+}
+.icon-eye:active {
+  scale: 0.8;
 }
 .description-card-product {
   font-size: 14px;
