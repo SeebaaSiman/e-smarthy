@@ -1,66 +1,79 @@
 .form-wrapper {
+  margin: auto;
   padding: 1rem;
-  width: 90%;
-  box-shadow: 5px 5px 5px black;
+  width: 100%;
+  max-width: 900px;
   border-radius: 5%;
-  background-color: var(--card-bg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 4px;
 }
 
 .input-group {
-  margin-top: 0.25rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  width: 200px;
+  font-size: 14px;
+  line-height: 22px;
+  transition: all 0.4s ease-in-out;
 }
 
 .input-group label {
-  color: var(--text-shadow);
-  font-size: 16px;
-  display: block;
-  /* color: rgba(156, 163, 175, 1); */
   margin-bottom: 4px;
+  font-size: 14px;
+  display: block;
+  color: var(--text-shadow);
+  font-weight: 800;
 }
 
 .input-group input {
-  font-size: 18px;
-  width: 100%;
+  font-size: 14px;
   border-radius: 0.375rem;
   border: 1px solid var(--text-shadow);
   outline: 0;
   background-color: var(--body-bg);
-  padding: 0.75rem 1rem;
-  color: rgba(243, 244, 246, 1);
+  padding: 8px 12px;
+  color: var(--text-shadow);
+  caret-color: var(--text-shadow);
 }
 
 .input-group input:focus {
   border-color: var(--black);
 }
-
+.input-group input:invalid {
+  border-color: red;
+}
+.input-group input:invalid ~ .error-message {
+  display: block;
+  color: red;
+  font-size: 0.9em;
+  font-weight: 800;
+}
 .input-grou:has(input:focus) label {
   border-color: var(--black);
 }
+.error-message {
+  display: none;
+}
 
 .file-upload-container {
+  grid-column: 1 / -1;
+  margin: 1rem auto;
   height: 300px;
   width: 300px;
   border-radius: 10px;
-  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   padding: 10px;
   gap: 5px;
-  background-color: rgba(0, 110, 255, 0.041);
+  background-color: var(--text-shadow);
 }
 
 .file-upload-top {
   flex: 1;
   width: 100%;
-  border: 2px dashed royalblue;
+  border: 2px dashed var(--black);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -74,8 +87,8 @@
 }
 
 .file-upload-bottom {
-  background-color: rgba(0, 110, 255, 0.075);
-  width: 100%;
+  background-color: var(--body-bg);
+  width: 60%;
   height: 40px;
   padding: 8px;
   border-radius: 10px;
@@ -104,4 +117,21 @@
 
 #file {
   display: none;
+}
+.text-info-warranty {
+  grid-column: 1 / -1;
+  margin: auto;
+}
+.warranty-submit {
+  grid-column: 1 / -1;
+  margin: auto;
+  width: 80%;
+}
+@media (min-width: 550px) {
+  .form-wrapper {
+    padding: 2rem;
+    width: 70%;
+    box-shadow: 4px 4px 4px black;
+    background-color: var(--card-bg);
+  }
 }

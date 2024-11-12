@@ -72,7 +72,8 @@ h1 {
   font-weight: 800;
   line-height: 46px;
   letter-spacing: normal;
-  font-family: var(--font-light);
+  font-family: var(--font-bold);
+  color: var(--text-shadow);
 }
 h2 {
   font-size: 28px;

@@ -1,0 +1,17 @@
+.shipping-page-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 4px;
+}
+.shipping-page-info-container span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.shipping-page-info-container span p:first-of-type {
+  text-decoration: underline;
+}
