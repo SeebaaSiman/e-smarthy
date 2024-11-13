@@ -18,10 +18,14 @@
     cursor: pointer;
   }
   h1 {
+    display: none;
     font-size: 32px;
     font-weight: normal;
     line-height: 46px;
     letter-spacing: normal;
+    @media (min-width:400px) {
+display: flex;
+    }
   }
 }
 
@@ -312,7 +316,7 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
     grid-template-areas: "logo links icons";
     grid-template-columns: auto 1fr auto;
     align-items: center;
-  }
+
 
   .nav-logo-container {
     position: relative;

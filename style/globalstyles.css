@@ -45,6 +45,12 @@ html {
     display: none;
   }
 }
+hr {
+  width: 95%;
+  height: 1px;
+  color: var(--text-shadow);
+  border-radius: 50%;
+}
 header,
 footer,
 main,
@@ -68,12 +74,15 @@ figcaption {
   /* max-width: 65ch; */
 }
 h1 {
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 800;
   line-height: 46px;
   letter-spacing: normal;
   font-family: var(--font-bold);
   color: var(--text-shadow);
+  @media (min-width: 600px) {
+    font-size: 42px;
+  }
 }
 h2 {
   font-size: 28px;
@@ -129,11 +138,9 @@ p {
   justify-content: center;
   align-items: center;
 }
-
 .btn-division:hover {
   color: black;
 }
-
 .btn-division:after {
   content: "";
   background: white;
@@ -146,7 +153,6 @@ p {
   transform: skewX(-45deg) scale(0, 1);
   transition: all 0.5s;
 }
-
 .btn-division:hover:after {
   transform: skewX(-45deg) scale(1, 1);
   -webkit-transition: all 0.5s;
@@ -155,4 +161,57 @@ p {
 .btn-division:active {
   box-shadow: 5px 5px 5px black;
   scale: 0.9;
+}
+
+.btn-circular {
+  width: 10em;
+  display: flex;
+  background: transparent;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto;
+}
+
+.btn-circular div {
+  color: #ccc;
+  cursor: pointer;
+  transition: all 0.6s ease;
+  transform-style: preserve-3d;
+  transform-origin: 100% 50%;
+  width: 10em;
+  height: 4em;
+}
+
+.btn-circular div:hover {
+  transform: rotateX(-90deg);
+}
+.btn-circular div:active {
+  scale: 0.9;
+}
+
+.side {
+  border-radius: 22px;
+  position: absolute;
+  box-shadow: 4px 4px 4px var(--black);
+  top: 0;
+  left: 0;
+  display: inline-block;
+  height: 4em;
+  width: 10em;
+  text-align: center;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 1.2em;
+  font-weight: bold;
+}
+.top {
+  background: var(--text-shadow);
+  color: var(--navbar-bg);
+  transform: rotateX(90deg) translate3d(0, 0, 2em);
+}
+
+.front {
+  background: var(--black);
+  color: var(--navbar-bg);
+  transform: translate3d(0, 0, 2em);
 }

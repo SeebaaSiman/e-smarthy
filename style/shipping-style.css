@@ -1,3 +1,6 @@
+.shipping-page-title {
+  font-size: 22px;
+}
 .shipping-page-info-container {
   display: flex;
   flex-direction: column;
@@ -14,4 +17,9 @@
 
 .shipping-page-info-container span p:first-of-type {
   text-decoration: underline;
+}
+.shipping-info {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 12px;
 }

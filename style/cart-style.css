@@ -6,12 +6,7 @@
 .icon-arrow-back:active {
   scale: 0.9;
 }
-.cart-line {
-  width: 95%;
-  height: 1px;
-  color: var(--text-shadow);
-  border-radius: 50%;
-}
+
 .cart-product-container {
   padding: 1rem;
   width: 100%;

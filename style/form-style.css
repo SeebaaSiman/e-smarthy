@@ -1,4 +1,27 @@
-.form-wrapper {
+.form-contact {
+  margin: auto;
+  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  gap: 4px;
+}
+.form-contact .input-group {
+  width: 70%;
+  margin: auto;
+  input,
+  textarea {
+    width: 100%;
+    resize: vertical;
+  }
+  textarea {
+    min-height: 150px;
+  }
+}
+
+.form-warranty {
   margin: auto;
   padding: 1rem;
   width: 100%;
@@ -8,7 +31,33 @@
   grid-template-columns: repeat(2, minmax(200px, 1fr));
   gap: 4px;
 }
-
+.form-tracking {
+  /* background-color: aqua; */
+  width: 100vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  gap: 8px;
+  ion-icon {
+    font-size: 35px;
+    color: #caa57b;
+  }
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+}
+.form-tracking .input-group {
+  width: 100%;
+  display: flex;
+  place-content: center;
+  gap: 4px;
+  ion-icon {
+    font-size: 35px;
+    color: #caa57b;
+  }
+}
 .input-group {
   width: 200px;
   font-size: 14px;
@@ -24,7 +73,8 @@
   font-weight: 800;
 }
 
-.input-group input {
+.input-group input,
+textarea {
   font-size: 14px;
   border-radius: 0.375rem;
   border: 1px solid var(--text-shadow);
@@ -35,21 +85,25 @@
   caret-color: var(--text-shadow);
 }
 
-.input-group input:focus {
-  border-color: var(--black);
+.input-group input:focus,
+textarea:focus {
+  border: 1px solid var(--black);
 }
-.input-group input:invalid {
+.input-group input:invalid,
+textarea:invalid {
   border-color: red;
 }
-.input-group input:invalid ~ .error-message {
+.input-group input:invalid ~ .error-message,
+.input-group textarea:invalid ~ .error-message {
   display: block;
   color: red;
   font-size: 0.9em;
   font-weight: 800;
 }
-.input-grou:has(input:focus) label {
+
+/* .input-group:has(input:focus) label {
   border-color: var(--black);
-}
+} */
 .error-message {
   display: none;
 }
@@ -125,10 +179,11 @@
 .warranty-submit {
   grid-column: 1 / -1;
   margin: auto;
-  width: 80%;
+  width: 60%;
+  max-width: 200px;
 }
-@media (min-width: 550px) {
-  .form-wrapper {
+@media (min-width: 650px) {
+  .form-warranty {
     padding: 2rem;
     width: 70%;
     box-shadow: 4px 4px 4px black;
