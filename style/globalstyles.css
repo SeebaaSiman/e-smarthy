@@ -137,6 +137,9 @@ p {
   p {
     margin: 4px 0;
   }
+  ul {
+    padding: 1rem;
+  }
 }
 .page-terms .page-terms-title {
   font-size: 21px;
