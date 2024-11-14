@@ -34,16 +34,16 @@
 }
 @keyframes bg-change {
   0% {
-    background-image: url("/assets/gift-card/cottonbro.jpg");
+    background-image: url("./assets/gift-card/cottonbro.jpg");
   }
   30% {
-    background-image: url("/assets/gift-card/regalo.jpg");
+    background-image: url("./assets/gift-card/regalo.jpg");
   }
   60% {
-    background-image: url("/assets/gift-card/regalo2.jpg");
+    background-image: url("./assets/gift-card/regalo2.jpg");
   }
   100% {
-    background-image: url("/assets/gift-card/regalos.jpg");
+    background-image: url("./assets/gift-card/regalos.jpg");
   }
 }
 .gift-card-rigth-container {

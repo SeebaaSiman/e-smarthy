@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: "Walsheim-bold";
-  src: url("style/fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
+  src: url("./fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
   font-weight: normal; /* Puedes ajustar esto si es necesario */
   font-style: normal; /* Cambia a 'italic' si es una fuente en cursiva */
 }
