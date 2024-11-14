@@ -60,7 +60,7 @@
     border: none;
     border-radius: 16px;
     color: var(--text-shadow);
-    font-family: var(--font-light);
+    font-family: "Walsheim";
   }
 }
 .filter-rating-container {
@@ -106,7 +106,7 @@
     border: none;
     border-radius: 16px;
     color: var(--text-shadow);
-    font-family: var(--font-light);
+    font-family: "Walsheim";
   }
   input:focus {
     appearance: none;

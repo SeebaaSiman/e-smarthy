@@ -7,7 +7,6 @@
   --grey: #292524;
   --black: #040404;
   --font-bold: "Walsheim-bold";
-  --font-light: "Walsheim";
   --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgb(255, 255, 255);
 }
 
@@ -31,7 +30,7 @@
 }
 html,
 body {
-  font-family: var(--font-light);
+  font-family: "Walsheim";
   margin: 0px;
   min-height: 100dvh;
   overflow-x: hidden;
@@ -98,7 +97,7 @@ li {
   font-size: 14px;
   letter-spacing: normal;
   font-weight: 800;
-  font-family: var(--font-light);
+  font-family: "Walsheim";
 }
 a {
   text-decoration: none;
