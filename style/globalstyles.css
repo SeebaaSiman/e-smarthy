@@ -118,6 +118,17 @@ p {
   align-items: start;
   margin: auto;
   gap: 8px;
+  overflow: hidden;
+}
+.page-tracking {
+  display: flex;
+  flex-direction: column;
+  h1,
+  p {
+    padding: 1rem;
+    margin: 16px auto;
+    max-width: 900px;
+  }
 }
 .page-terms {
   padding: 1rem;

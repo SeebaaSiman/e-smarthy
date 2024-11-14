@@ -32,9 +32,6 @@
   gap: 4px;
 }
 .form-tracking {
-  /* background-color: aqua; */
-  width: 100vw;
-  height: 90vh;
   display: flex;
   flex-direction: column;
   place-content: center;
@@ -45,7 +42,7 @@
   }
   img {
     object-fit: cover;
-    height: 100%;
+    width: 100%;
   }
 }
 .form-tracking .input-group {
