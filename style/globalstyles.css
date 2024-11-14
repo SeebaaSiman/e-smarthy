@@ -71,7 +71,6 @@ p,
 li,
 figcaption {
   text-wrap: pretty;
-  /* max-width: 65ch; */
 }
 h1 {
   font-size: 32px;
@@ -119,6 +118,13 @@ p {
   margin: auto;
   gap: 8px;
   overflow: hidden;
+
+  li {
+    padding: 1rem;
+    /* list-style: circle; */
+    list-style: inside;
+    list-style-type: disc;
+  }
 }
 .page-tracking {
   display: flex;
