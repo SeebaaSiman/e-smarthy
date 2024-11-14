@@ -23,8 +23,8 @@
     font-weight: normal;
     line-height: 46px;
     letter-spacing: normal;
-    @media (min-width:400px) {
-display: flex;
+    @media (min-width: 400px) {
+      display: flex;
     }
   }
 }
@@ -317,33 +317,33 @@ nav:has(#toggle-hamburguer:checked) #nav-links-container .nav-link:hover {
     grid-template-columns: auto 1fr auto;
     align-items: center;
 
-
-  .nav-logo-container {
-    position: relative;
-    top: 0%;
-    left: 0%;
-    transform: translate(-0%, -0%);
-  }
-  #nav-links-container {
-    position: relative;
-    top: 0%;
-    left: 0%;
-    transform: translate(-0%, 0%);
-    opacity: 1;
-    width: 100%;
-    min-height: 20px;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
-  .nav-language,
-  .nav-theme {
-    display: flex;
-  }
-  .nav-icons-container {
-    width: auto;
-    justify-content: center;
-    gap: 4px;
+    .nav-logo-container {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(-0%, -0%);
+    }
+    #nav-links-container {
+      position: relative;
+      top: 0%;
+      left: 0%;
+      transform: translate(-0%, 0%);
+      opacity: 1;
+      width: 100%;
+      min-height: 20px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-language,
+    .nav-theme {
+      display: flex;
+    }
+    .nav-icons-container {
+      width: auto;
+      justify-content: center;
+      gap: 4px;
+    }
   }
 }

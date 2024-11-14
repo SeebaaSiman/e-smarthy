@@ -2,12 +2,13 @@
   font-size: 9px !important;
 }
 #footer {
+  width: 100%;
   background-color: var(--text-shadow);
   color: var(--navbar-bg);
   padding: 1rem;
   grid-template-areas:
     "logo  logo"
-    "support  explore"
+    "support-explore support-explore"
     "rrss rrss"
     "line line"
     "terms terms"
@@ -139,26 +140,43 @@
     height: 80px;
   }
 }
-
-.footer-support,
-.footer-explore {
-  padding: 16px;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: start;
-  gap: 8px;
-}
-.footer-support {
+/* .footer-support {
   grid-area: support;
 }
 .footer-explore {
   grid-area: explore;
+} */
+.footer-container-support-explore {
+  grid-area: support-explore;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.footer-support,
+.footer-explore {
+  width: auto;
+  padding: 16px;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-support,
+.footer-explore,
+.footer-follow {
+  p {
+    font-size: 16px;
+    font-weight: 800;
+  }
 }
 .footer-follow {
   grid-area: rrss;
   padding: 16px;
   width: 100%;
-  display: inline-flex;
+  max-width: 400px;
+  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 8px;
@@ -187,6 +205,8 @@
   justify-content: space-evenly;
   align-items: center;
   margin: 8px auto;
+  transform: translateY(0px);
+
   img {
     width: 45px;
     height: 30px;
@@ -203,19 +223,11 @@
   width: 100%;
 }
 
-.footer-support,
-.footer-explore,
-.footer-follow {
-  p {
-    font-size: 16px;
-    font-weight: 800;
-  }
-}
 @media (min-width: 992px) {
   #footer {
     width: 100vw;
     grid-template-areas:
-      "logo  support explore rrss"
+      "logo  support-explore rrss"
       "line line line line"
       "terms pay pay copy";
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -224,13 +236,24 @@
   .footer-newsletter {
     width: 40vw;
   }
+  .footer-container-support-explore,
+  .footer-follow {
+    display: inline-flex;
+    width: auto;
+  }
+  .footer-follow {
+    max-width: none;
+  }
   .footer-pay {
     width: auto;
     gap: 4px;
+    transform: translateY(10px);
+    margin: 0;
   }
   .footer-follow-links {
     display: inline-flex;
     flex-direction: column;
+    margin-right: auto;
     width: auto;
     gap: 8px;
   }
@@ -238,5 +261,6 @@
   .footer-follow,
   .footer-copy {
     width: auto;
+    height: 100%;
   }
 }
