@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 
 
 //* Depur
-const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
+const productsFromLocalStorage = getProductsFromLocalStorage().data.products;
 console.log(productsFromLocalStorage, "productsFromLocalStorage");
 
 
@@ -65,7 +65,7 @@ const renderProducts = (products, productsContainer) => {
   productsContainer.innerHTML = products
     .map(product => `
         <div class="card-product">
-        <a href="/products/product-detail-${product.id}" data-link class="product-link" data-id="${product.id}">
+        <a href="#/products/product-detail-${product.id}" class="product-link" data-id="${product.id}">
             <ion-icon name="eye-outline" class="icon-eye"></ion-icon>
             <ion-icon name="arrow-forward-circle-outline" class="icon-arrow-circle"></ion-icon>
           </a>
@@ -73,7 +73,7 @@ const renderProducts = (products, productsContainer) => {
           <p class="title-card-product">${product.title}</p>
           <abbr class="description-card-product">${product.description}</abbr>
           <p class="price-card-product">&#8364; ${product.price.toFixed(2)}</p>
-          <a href="/cart" data-link class="btn-division">Agregar al carrito</a>
+          <a href="#/cart" class="btn-division">Agregar al carrito</a>
         </div>
       `)
     .join('');
@@ -218,7 +218,7 @@ const initializeProductDetailPage = (productId) => {
   const productDetailContainer = document.getElementById("product-detail");
   if (productDetailContainer) {
     productDetailContainer.innerHTML = `
-     <a href="/products" data-link class="icon-arrow-product-detail"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+     <a href="#/products" class="icon-arrow-product-detail"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
       <section class="first-section-product-detail">
         <div class="image-product-container">
           <div class="aside-image-container">
@@ -238,7 +238,7 @@ const initializeProductDetailPage = (productId) => {
             </span>
             <p class="price-card-product">&#8364; ${selectedProduct.price.toFixed(2)}</p>
           </div>
-          <a href="/cart" data-link class="btn-division">Agregar al carrito</a>
+          <a href="#/cart" class="btn-division">Agregar al carrito</a>
           <div class="footer-pay">
             <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
             <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">

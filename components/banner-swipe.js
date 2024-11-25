@@ -54,7 +54,7 @@ class BannerSwipe {
           <div class="banner-overlay-right">
              ${additionalContent}
             <p class="banner-price"> &#8364;${slideData.price}</p>
-            <a href="/products/product-detail-${slideData.id}" data-link class="btn-division">Ver <ion-icon name="eye-outline" class="icon-eye"></ion-icon></ion-icon></a>
+            <a href="#/products/product-detail-${slideData.id}"class="btn-division">Ver <ion-icon name="eye-outline" class="icon-eye"></ion-icon></ion-icon></a>
           </div>
         </div>
       </div>

@@ -77,111 +77,18 @@ document.addEventListener("DOMContentLoaded", function () {
    document.head.appendChild(link);
   }
  };
-
- // const handleHashLocation = async () => {
- //  const path = window.location.hash.replace("#", "") || "/";
- //  const isProductDetail = path.startsWith("/products/product-detail-");
- //  const dynamicSegment = isProductDetail ? path.split("/product-detail-")[1] : null;
- //  const basePath = isProductDetail ? "/products/product-detail" : path;
-
- //  // Verificar si la ruta base existe en `routes`
- //  const routeHandler = routes[basePath];
- //  window.scrollTo({ top: 0, behavior: "smooth" });
-
- //  if (!routeHandler) {
- //   // Mostrar página de error si la ruta no existe
- //   try {
- //    const errorResponse = await fetch(routes["error"]());
- //    const errorHtml = await errorResponse.text();
- //    mainRouter.innerHTML = errorHtml;
- //    loadCSS("/error");
- //    header.style.display = "none";
- //    footer.style.display = "none";
- //    showToast({ message: "Página no encontrada, vuelve a inicio para seguir en E-Smarthy", type: 'error' });
-
- //   } catch (error) {
- //    console.error("Error al cargar la página de error:", error);
- //   }
- //   return;
- //  }
-
- //  try {
- //   let html;
-
- //   if (isProductDetail) {
- //    // Cargar página de detalle de producto si es una ruta dinámica
- //    html = await fetch("/views/navbar/product-detail.html").then(response => {
- //     if (!response.ok) {
- //      throw new Error("Error al cargar la página de detalle de producto");
- //     }
- //     return response.text();
- //    });
- //   } else {
- //    // Cargar otras páginas normales
- //    html = await fetch(routeHandler()).then(response => {
- //     if (!response.ok) {
- //      throw new Error("Error al cargar la página");
- //     }
- //     return response.text();
- //    });
- //   }
-
- //   // Insertar el HTML en el <main id="main-router"></main>
- //   mainRouter.classList.add("hidden");
- //   mainRouter.innerHTML = html;
- //   setTimeout(() => {
- //    mainRouter.classList.remove("hidden");
- //   }, 600); // Tiempo para la animación
-
- //   // Cargar dinámicamente CSS según la ruta
- //   loadCSS(isProductDetail ? "/products/product-detail" : path);
-
- //   // Configurar visibilidad de header y footer
- //   const hideHeaderFooter = path === "/cart";
- //   header.style.display = hideHeaderFooter ? "none" : "block";
- //   footer.style.display = hideHeaderFooter ? "none" : "block";
-
- //   // Inicializar contenido dinámico
- //   if (isProductDetail) {
- //    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
- //    initializeSliderProductDetail();
- //   } else if (path === "/") {
- //    initializeHomePage();
- //   } else if (path === "/products") {
- //    initializeProductsPage();
- //   }
- //  } catch (error) {
- //   // Manejo de errores
- //   try {
- //    const errorResponse = await fetch(routes["error"]());
- //    const errorHtml = await errorResponse.text();
- //    mainRouter.innerHTML = errorHtml;
- //    loadCSS("/error");
- //    header.style.display = "none";
- //    footer.style.display = "none";
-
- //   } catch (error) {
- //    console.error("Error al cargar la página de error:", error);
- //   }
- //   console.error("Error al cargar la página:", error);
- //  }
- // };
- // window.addEventListener("hashchange", handleHashLocation);
- // handleHashLocation(); // Inicializar la carga en la primera visita
-
-
- const handleNavigation = async (path, addToHistory = true) => {
+ const handleHashLocation = async () => {
+  const path = window.location.hash.replace("#", "") || "/";
   const isProductDetail = path.startsWith("/products/product-detail-");
   const dynamicSegment = isProductDetail ? path.split("/product-detail-")[1] : null;
   const basePath = isProductDetail ? "/products/product-detail" : path;
 
-  if (addToHistory) {
-   history.pushState({}, '', path);
-  }
-
+  // Verificar si la ruta base existe en `routes`
   const routeHandler = routes[basePath];
+  window.scrollTo({ top: 0, behavior: "smooth" });
 
   if (!routeHandler) {
+   // Mostrar página de error si la ruta no existe
    try {
     const errorResponse = await fetch(routes["error"]());
     const errorHtml = await errorResponse.text();
@@ -189,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
     loadCSS("/error");
     header.style.display = "none";
     footer.style.display = "none";
+    showToast({ message: "Página no encontrada, vuelve a inicio para seguir en E-Smarthy", type: 'error' });
+
    } catch (error) {
     console.error("Error al cargar la página de error:", error);
    }
@@ -199,31 +108,41 @@ document.addEventListener("DOMContentLoaded", function () {
    let html;
 
    if (isProductDetail) {
+    // Cargar página de detalle de producto si es una ruta dinámica
     html = await fetch("/views/navbar/product-detail.html").then(response => {
-     if (!response.ok) throw new Error("Error al cargar la página de detalle de producto");
+     if (!response.ok) {
+      throw new Error("Error al cargar la página de detalle de producto");
+     }
      return response.text();
     });
    } else {
+    // Cargar otras páginas normales
     html = await fetch(routeHandler()).then(response => {
-     if (!response.ok) throw new Error("Error al cargar la página");
+     if (!response.ok) {
+      throw new Error("Error al cargar la página");
+     }
      return response.text();
     });
    }
 
+   // Insertar el HTML en el <main id="main-router"></main>
    mainRouter.classList.add("hidden");
    mainRouter.innerHTML = html;
    setTimeout(() => {
     mainRouter.classList.remove("hidden");
-   }, 600);
+   }, 600); // Tiempo para la animación
 
+   // Cargar dinámicamente CSS según la ruta
    loadCSS(isProductDetail ? "/products/product-detail" : path);
 
+   // Configurar visibilidad de header y footer
    const hideHeaderFooter = path === "/cart";
    header.style.display = hideHeaderFooter ? "none" : "block";
    footer.style.display = hideHeaderFooter ? "none" : "block";
 
+   // Inicializar contenido dinámico
    if (isProductDetail) {
-    initializeProductDetailPage(dynamicSegment);
+    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
     initializeSliderProductDetail();
    } else if (path === "/") {
     initializeHomePage();
@@ -231,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeProductsPage();
    }
   } catch (error) {
+   // Manejo de errores
    try {
     const errorResponse = await fetch(routes["error"]());
     const errorHtml = await errorResponse.text();
@@ -238,6 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadCSS("/error");
     header.style.display = "none";
     footer.style.display = "none";
+
    } catch (error) {
     console.error("Error al cargar la página de error:", error);
    }
@@ -245,28 +166,19 @@ document.addEventListener("DOMContentLoaded", function () {
   }
  };
 
- document.body.addEventListener('click', (event) => {
-  if (event.target.tagName === 'A' && event.target.href.startsWith(window.location.origin)) {
-   event.preventDefault();
-   const path = new URL(event.target.href).pathname;
-   handleNavigation(path);
+
+ window.addEventListener("hashchange", handleHashLocation);
+ handleHashLocation(); // Inicializar la carga en la primera visita
+
+ const initializeLoremPage = () => {
+  const addMessageButton = document.getElementById('addMessage');
+  if (addMessageButton) {
+   addMessageButton.addEventListener('click', () => {
+    showToast({ message: 'Formulario enviado correctamente', type: 'sucess' });
+    console.log('Botón de mensaje agregado y evento de click funcionando');
+   });
+  } else {
+   console.log("Botón no encontrado en la página");
   }
- });
-
- window.addEventListener("popstate", () => {
-  handleNavigation(window.location.pathname, false);
- });
-
- handleNavigation(window.location.pathname, false);
+ };
 });
-const initializeLoremPage = () => {
- const addMessageButton = document.getElementById('addMessage');
- if (addMessageButton) {
-  addMessageButton.addEventListener('click', () => {
-   showToast({ message: 'Formulario enviado correctamente', type: 'sucess' });
-   console.log('Botón de mensaje agregado y evento de click funcionando');
-  });
- } else {
-  console.log("Botón no encontrado en la página");
- }
-};
