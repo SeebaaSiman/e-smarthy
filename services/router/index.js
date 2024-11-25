@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
    }, 600); // Tiempo para la animación
 
    // Cargar dinámicamente CSS según la ruta
-   loadCSS(isProductDetail ? "/products/product-detail" : path);
+   // loadCSS(isProductDetail ? "/products/product-detail" : path);
 
    // Configurar visibilidad de header y footer
    const hideHeaderFooter = path === "/cart";
