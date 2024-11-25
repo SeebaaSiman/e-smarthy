@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 
 
 //* Depur
-const productsFromLocalStorage = getProductsFromLocalStorage().data.products;
+const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
 console.log(productsFromLocalStorage, "productsFromLocalStorage");
 
 
