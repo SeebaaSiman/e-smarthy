@@ -19,10 +19,11 @@
   a {
     color: var(--navbar-bg);
     font-size: 14px;
-    &:hover {
-      color: var(--black);
-      font-weight: 600;
-    }
+    position: relative;
+  }
+  a:hover {
+    color: var(--black);
+    font-weight: 600;
   }
   p {
     color: var(--black);
@@ -140,12 +141,7 @@
     height: 80px;
   }
 }
-/* .footer-support {
-  grid-area: support;
-}
-.footer-explore {
-  grid-area: explore;
-} */
+
 .footer-container-support-explore {
   grid-area: support-explore;
   width: 100%;

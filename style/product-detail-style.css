@@ -34,10 +34,11 @@
 .aside-image-container {
   width: 100%;
   display: flex;
-  cursor: pointer;
+  flex-wrap: wrap;
 
   img {
-    width: 30%;
+    width: 20%;
+    cursor: pointer;
     object-fit: cover;
     margin: auto;
     box-shadow: 4px 4px 4px black;

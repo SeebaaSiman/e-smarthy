@@ -26,7 +26,8 @@
   height: 0%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+  align-items: center;
   border-bottom: 1px solid var(--text-shadow);
   opacity: 0;
   transition: all 0.4s ease-in-out;
@@ -114,44 +115,6 @@
   }
 }
 
-.filter-range {
-  display: none;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-.filter-range p {
-  margin-right: 8px;
-}
-
-input[type="range"] {
-  appearance: none;
-  height: 8px;
-  background: var(--navbar-bg);
-  border-radius: 9999px;
-  transition: height 0.3s ease-in-out;
-  overflow: hidden;
-  cursor: inherit;
-}
-input[type="range"]::-webkit-slider-thumb {
-  appearance: none;
-  width: 15px;
-  height: 15px;
-  background: var(--text-shadow);
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 1px 2px 3px var(--black);
-}
-input[type="range"]:hover {
-  overflow: visible;
-}
-
-output {
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .star {
   appearance: none;
   --color: var(--navbar-bg);
@@ -216,6 +179,9 @@ output {
   }
   @media (min-width: 992px) {
     grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1260px) {
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 .card-product {
@@ -303,4 +269,10 @@ output {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.price-card-product {
+  margin: auto;
+}
+.filtered-count {
+  padding: 0 1rem;
 }

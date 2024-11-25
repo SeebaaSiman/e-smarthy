@@ -1,0 +1,50 @@
+<section class="filter-container">
+
+    <input type="checkbox" id="toggle-filter" style="display: none;">
+    <label for="toggle-filter">
+        <ion-icon name="filter-outline" class="icon-filter"></ion-icon>
+    </label>
+    <div class="filter-menu-container">
+        <div class="filter-category">
+            <p>Categoría:</p>
+            <input type="text" list="category">
+            <datalist id="category"></datalist>
+        </div>
+        <div class="filter-rating-container">
+            <p>Calificación del producto</p>
+            <div class="filter-rating">
+                <input class="star s1" type="radio" id="value-1" name="value-radio" value="value-1" />
+                <input class="star s2" type="radio" id="value-2" name="value-radio" value="value-2" />
+                <input class="star s3" type="radio" id="value-3" name="value-radio" value="value-3" />
+                <input class="star s4" type="radio" id="value-4" name="value-radio" value="value-4" />
+                <input class="star s5" type="radio" id="value-5" name="value-radio" value="value-5" />
+            </div>
+        </div>
+        <div class="filter-price-minmax">
+            <div class="filter-price-container">
+                <p>Precio mínimo</p>
+                <div class="price-container">
+                    <span>&#8364;</span>
+                    <input type="number" min="0">
+                </div>
+            </div>
+            <div class="filter-price-container">
+                <p>Precio máximo</p>
+                <div class="price-container">
+                    <span>&#8364;</span>
+                    <input type="number" min="0">
+                </div>
+            </div>
+        </div>
+        <div class="filter-category">
+            <p>Stock:</p>
+            <input type="text" list="availability">
+            <datalist id="availability"></datalist>
+        </div>
+    </div>
+
+</section>
+<section id="filtered-count" class="filtered-count">Productos encontrados: 0</section>
+<section class=" page-product" id="card-products-list">
+    <!-- fx renderProducts(products) -->
+</section>

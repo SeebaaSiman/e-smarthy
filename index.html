@@ -6,11 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/svg+xml" href="/assets/smiley.png" />
   <link rel="stylesheet" href="style/globalstyles.css">
-  <link rel="stylesheet" href="style/carousel-logos-style.css">
-  <link rel="stylesheet" href="style/carousel-banner-style.css">
+  <link rel="stylesheet" href="style/details-style.css">
+  <link rel="stylesheet" href="style/teleprompter-style.css">
   <link rel="stylesheet" href="style/navbar-style.css">
   <link rel="stylesheet" href="style/footer-style.css">
-  <link rel="stylesheet" href="style/teleprompter-style.css">
+  <link rel="stylesheet" href="style/toast.css">
+
+
   <title>E-Smarthy</title>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -19,30 +21,45 @@
 <body>
   <header id="header">
     <aside class="teleprompter-container">
-      <div class="teleprompter-content">
-        Hoy martes tenes envío gratis con compras mayores a &#8364; 1.000
+      <div class="teleprompter-content language spanish">
+        Today <span class="current-day"></span> you have free shipping with purchases over 10,000&#8364;
+        <ion-icon name="storefront-outline"></ion-icon>
+      </div>
+      <div class="teleprompter-content language english">
+        Hoy <span class="current-day"></span> tenes envío gratis con compras mayores a 10.000 &#8364;
         <ion-icon name="storefront-outline"></ion-icon>
       </div>
     </aside>
-
+    <aside id="aside-info">
+      <div id="clicks-counter">
+        <p>Historial de clicks en E-Smarthy:</p>
+        <p id="click-counter"></p>
+        <button id="reset-counter">
+          <p>Reset</p>
+        </button>
+      </div>
+      <div id="my-clock"></div>
+    </aside>
     <nav id="main-nav">
 
-      <label for="toggle-hamburguer">
-        <input type="checkbox" id="toggle-hamburguer" style="display: none;">
-        <div id="nav-icon-hamburguer">
-          <span class="icon-hamburguer-top"></span>
-          <span class="icon-hamburguer-middle"></span>
-          <span class="icon-hamburguer-bottom"></span>
-        </div>
-      </label>
-
+      <div id="nav-icon-hamburguer">
+        <span class="icon-hamburguer-top"></span>
+        <span class="icon-hamburguer-middle"></span>
+        <span class="icon-hamburguer-bottom"></span>
+      </div>
       <div class="nav-logo-container">
         <h1>e-smarthy</h1>
       </div>
 
       <div class="nav-icons-container">
+
         <div class="nav-language">
-          <ion-icon name="language-outline"></ion-icon>
+          <div class="language english">
+            <img src="/assets/flag-language/spain.png" alt="spain flag">
+          </div>
+          <div class="language spanish">
+            <img src="/assets/flag-language/eeuu.png" alt="eeuu flag">
+          </div>
         </div>
         <div class="nav-theme">
           <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
@@ -61,7 +78,7 @@
 
 
         <div class="cart-icon-container">
-          <a href="cart.html">
+          <a href="#/cart">
             <ion-icon name="bag-outline" class="icon-bag"></ion-icon>
             <p>5</p>
           </a>
@@ -69,168 +86,64 @@
       </div>
 
       <div id="nav-links-container">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="us.html" class="nav-link">Sobre nosotros</a>
-        <a href="product.html" class="nav-link">productos</a>
-      </div>
+        <div class="nav-links-language-theme-container">
+          <p class="language english">Language</p>
+          <p class="language spanish">Idioma</p>
+          <div class="nav-language-menu" onclick="onCloseMenu()">
+            <div class="language english">
+              <img src="/assets/flag-language/spain.png" alt="spain flag">
+            </div>
+            <div class="language spanish">
+              <img src="/assets/flag-language/eeuu.png" alt="eeuu flag">
+            </div>
+          </div>
+          <p class="language english">Theme</p>
+          <p class="language spanish">Tema</p>
+          <div class="nav-theme-menu">
+            <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
+          </div>
+        </div>
+
+
+        <a onclick="onCloseMenu()" href="#/" class="nav-link language spanish">Inicio</a>
+        <a onclick="onCloseMenu()" href="#/us" class="nav-link language spanish">Sobre nosotros</a>
+        <a onclick="onCloseMenu()" href="#/products" class="nav-link language spanish">Productos</a>
+
+        <a onclick="onCloseMenu()" href="#/" class="nav-link language english">Home</a>
+        <a onclick="onCloseMenu()" href="#/us" class="nav-link language english">About us</a>
+        <a onclick="onCloseMenu()" href="#/products" class="nav-link language english">Products</a>
       </div>
     </nav>
   </header>
-  <main>
-    <section>
-      <div iv class="banner-wrapper">
-        <span>
-          <h2>Productos con descuento del mes</h2>
-          <hr>
-          <ion-icon name="pricetag-outline" class="icon-banner-wrapper"></ion-icon>
-        </span>
 
-        <div class="banner-carousel">
-          <div class="arrow-rigth"><ion-icon name="chevron-forward-outline"></ion-icon></div>
-          <div class="arrow-left"><ion-icon name="chevron-back-outline"></ion-icon></div>
-          <div class="indicators">
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-          </div>
-          <div id="top-descount" class="banner-container">
-            <div class="banner-slide"
-              style="background-image: url(https://cdn.dummyjson.com/products/images/tablets/iPad%20Mini%202021%20Starlight/thumbnail.png);">
-
-              <div class="banner-overlay">
-                <div class="banner-overlay-left">
-                  <p class="banner-titulo">iPad Mini 2021 Starlight
-                  </p>
-                  <p class="banner-description">The iPad Mini 2021 in Starlight is a compact and powerful tablet
-                    from Apple. Featuring a stunning Retina display, powerful A-series chip, and a sleek design,
-                    it offers a premium tablet experience.
-                  </p>
-                </div>
-                <div class="banner-overlay-rigth">
-                  <div class="banner-discountPercentage">
-                    <ion-icon name="caret-down-outline"></ion-icon>
-                    - 19.45 % desc.
-                  </div>
-                  <p class="banner-price"> &#8364;499.99</p>
-                  <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="banner-wrapper">
-        <span>
-          <h2>Productos con mejor rating del mes </h2>
-          <hr>
-          <ion-icon name="star-half-outline" class="icon-banner-wrapper"></ion-icon>
-        </span>
-        <div class="banner-carousel">
-          <div class="arrow-rigth"><ion-icon name="chevron-forward-outline"></ion-icon></div>
-          <div class="arrow-left"><ion-icon name="chevron-back-outline"></ion-icon></div>
-          <div class="indicators">
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator "></div>
-            <div class="indicator"></div>
-            <div class="indicator"></div>
-            <div class="indicator active"></div>
-            <div class="indicator"></div>
-          </div>
-          <div id="top-descount" class="banner-container">
-            <div class="banner-slide"
-              style="background-image: url(https://cdn.dummyjson.com/products/images/mens-watches/Rolex%20Datejust/thumbnail.png);">
-              <div class="banner-overlay">
-                <div class="banner-overlay-left">
-                  <p class="banner-titulo"> Rolex Datejust
-                  </p>
-                  <p class="banner-description">The Rolex Datejust is an iconic and versatile timepiece with a date
-                    window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking
-                    excellence.
-                  </p>
-
-                </div>
-                <div class="banner-overlay-rigth">
-                  <div class="banner-rating">
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    <ion-icon name="star-outline"></ion-icon>
-                    (5)
-                  </div>
-                  <p class="banner-price"> &#8364; 10999.99
-                  </p>
-                  <a href="cart.html" class="btn-division">Agregar<ion-icon name="cart-outline"></ion-icon></a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="carousel-logos-title">
-        <h2>
-          Empresas que confian en nosotros para vender sus productos
-        </h2>
-      </div>
-      <div class="carousel-logos">
-        <div class="logos-slide">
-          <img loading="lazy" src="assets/logos/3m.svg" alt="logo 3m" />
-          <img loading="lazy" src="assets/logos/barstool-store.svg" alt="logo barstool" />
-          <img loading="lazy" src="assets/logos/budweiser.svg" alt="logo budweiser" />
-          <img loading="lazy" src="assets/logos/buzzfeed.svg" alt="logo buzzfeed" />
-          <img loading="lazy" src="assets/logos/forbes.svg" alt="logo forbes" />
-          <img loading="lazy" src="assets/logos/macys.svg" alt="logo macys" />
-          <img loading="lazy" src="assets/logos/menshealth.svg" alt=" logo menshealth" />
-          <img loading="lazy" src="assets/logos/mrbeast.svg" alt="logo mrbeast" />
-        </div>
-        <div class="logos-slide">
-          <img loading="lazy" src="assets/logos/3m.svg" alt="logo 3m" />
-          <img loading="lazy" src="assets/logos/barstool-store.svg" alt="logo barstool" />
-          <img loading="lazy" src="assets/logos/budweiser.svg" alt="logo budweiser" />
-          <img loading="lazy" src="assets/logos/buzzfeed.svg" alt="logo buzzfeed" />
-          <img loading="lazy" src="assets/logos/forbes.svg" alt="logo forbes" />
-          <img loading="lazy" src="assets/logos/macys.svg" alt="logo macys" />
-          <img loading="lazy" src="assets/logos/menshealth.svg" alt=" logo menshealth" />
-          <img loading="lazy" src="assets/logos/mrbeast.svg" alt="logo mrbeast" />
-        </div>
-      </div>
-
-    </section>
-
-
-
-
-
+  <main id="main-router" style="min-height: 100vh;">
   </main>
+
+  <div id="toast-container"></div>
+  <button id="btn-scrollTop"><ion-icon name="chevron-up-outline" class="icon-arrow-up"></ion-icon></button>
   <footer id="footer">
-
-
     <div class="footer-newsletter">
       <div class="footer-logo-container">
         <img loading="lazy" src="assets/smiley.png" alt="logo image">
         <p>E-Smarthy</p>
       </div>
-
-      <p>Sólo recibirás lo imprescindible: lanzamientos de productos, promociones exclusivas
+      <p class="language spanish">Sólo recibirás lo imprescindible: lanzamientos de productos, promociones exclusivas
         y
         contenido inspirador. Suscribir
         a
         nuestra newsletter y recibe un 10% de descuento en tu primera compra
       </p>
+      <p class="language english">You will only receive what is essential: product launches, exclusive promotions
+        and
+        inspiring content. Subscribe
+        to
+        our newsletter and receive a 10% discount on your first purchase</p>
 
       <div class="footer-input-subscribe">
         <input placeholder="email@gmail.com" class="input-subscribe-wrapper" name="email" type="email" />
         <button class="btn-subscribe">
-          Subscribe
+          <span class="language english">Subscribe</span>
+          <span class="language spanish">Suscribirse</span>
           <svg class="icon-arrow-subscribe" viewBox="0 0 38 15" height="20" width="20"
             xmlns="http://www.w3.org/2000/svg" fill="white">
             <path
@@ -243,24 +156,36 @@
     <div class="footer-container-support-explore">
 
       <div class="footer-support">
-        <p>Soporte</p>
-        <a href="warranty.html">
-          Beneficios de la garantía</a> <a href="FAQ.html">Preguntas frecuentes</a>
-        <a href="shipping.html">Envíos y devoluciones</a>
-        <a href="tracking.html">Seguimiento del pedido</a>
+        <p class="language spanish">Soporte</p>
+        <p class="language english">Support</p>
+        <a class="language spanish" href="#/warranty">Beneficios de la garantía</a>
+        <a class="language spanish" href="#/FAQ">Preguntas frecuentes</a>
+        <a class="language spanish" href="#/shipping">Envíos y devoluciones</a>
+        <a class="language spanish" href="#/tracking">Seguimiento del pedido</a>
+
+        <a class="language english" href="#/warranty">Warranty benefits</a>
+        <a class="language english" href="#/FAQ">Frequently asked questions</a>
+        <a class="language english" href="#/shipping">Shipping and returns</a>
+        <a class="language english" href="#/tracking">Order Tracking</a>
       </div>
 
       <div class="footer-explore">
         <p>Explore E-Smarthy</p>
-        <a href="us.html">Sobre nosotros</a>
-        <a href="contact.html">Contacto</a>
-        <a href="gift-card.html">Tarjetas de regalo</a>
-        <a href="team.html">Nuestro equipo</a>
+        <a class="language spanish" href="#/us">Sobre nosotros</a>
+        <a class="language spanish" href="#/contact">Contacto</a>
+        <a class="language spanish" href="#/gift-card">Tarjetas de regalo</a>
+        <a class="language spanish" href="#/team">Nuestro equipo</a>
+
+        <a class="language english" href="#/us">About us</a>
+        <a class="language english" href="#/contact">Contact</a>
+        <a class="language english" href="#/gift-card">Gift card</a>
+        <a class="language english" href="#/team">Our team</a>
       </div>
     </div>
 
     <div class="footer-follow">
-      <p>Nuestras redes</p>
+      <p class="language spanish">Nuestras redes</p>
+      <p class="language english">Follow us</p>
       <div class="footer-follow-links">
 
         <a href="#">Instagram</a>
@@ -273,9 +198,13 @@
     <hr class="footer-line">
 
     <div class="footer-terms">
-      <a href="terms-and-conditions.html">Terms & conditions</a> |
-      <a href="withdrawal.html">Terms of Withdrawal</a> |
-      <a href="privacy-and-cookie-policy.html">E-Smarthy's Privacy Policy</a>
+      <a class="language english" href="#/privacy-and-cookies-policy">Terms & conditions |</a>
+      <a class="language english" href="#/withdrawal">Terms of Withdrawal |</a>
+      <a class="language english" href="#/privacy-and-cookies-policy">E-Smarthy's Privacy Policy</a>
+
+      <a class="language spanish" href="#/privacy-and-cookies-policy">Términos & condiciones |</a>
+      <a class="language spanish" href="#/withdrawal">Condiciones de retiro |</a>
+      <a class="language spanish" href="#/privacy-and-cookies-policy">Política de privacidad de E-Smarthy</a>
     </div>
 
     <div class="footer-pay">
@@ -291,6 +220,16 @@
       &copy; <span id="current-year"></span> E-Smarthy.
     </div>
   </footer>
+  <script src="services/router/index.js"></script>
+  <script src="services/api/products.js"></script>
+  <script src="components/language.js"></script>
+  <script src="components/toast.js"></script>
+  <script src="components/banner-swipe.js"></script>
+  <script src="components/clicks-counter.js"></script>
+  <script src="components/usePageVisibility.js"></script>
+  <script src="components/clock.js"></script>
+  <script src="components/navbar.js"></script>
+  <script src="components/teleprompter.js"></script>
 </body>
 
 </html>

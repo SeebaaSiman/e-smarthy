@@ -1,0 +1,45 @@
+<section class="page">
+  <h1 class="language english" style="margin-left: 14px;max-width: 990px;">Contact us</h1>
+  <h1 class="language spanish" style="margin-left: 14px;max-width: 990px;">Contactanos</h1>
+  <hr>
+  <form action="#" method="post" novalidate class="form-contact">
+
+    <div class="input-group">
+      <label class="language spanish" for="username">Nombre</label>
+      <label class="language english" for="username">Name</label>
+      <input type="text" name="username" id="username" placeholder="E-Smarthy" minlength="4" required>
+      <span class="error-message language spanish">Nombre requerido con al menos 4 caracteres</span>
+      <span class="error-message language english">Name required with at least 4 characters</span>
+    </div>
+    <div class=" input-group">
+      <label class="language spanish" for="email">Correo</label>
+      <label class="language english" for="email">Mail</label>
+      <input type="email" name="email" id="email" placeholder="example@esmarthy.com" required>
+      <span class="error-message language spanish">Correo inválido o requerido</span>
+      <span class="error-message language english">Invalid or required email</span>
+    </div>
+    <div class=" input-group">
+      <label for="asunto">Asunto</label>
+      <input type="text" name="asunto" id="asunto" required list="asunto-category">
+      <datalist id="asunto-category">
+        <option value="Ayuda con la garantía"></option>
+        <option value="Cambiar/Cancelar pedido"></option>
+        <option value="Devolución de producto"></option>
+        <option value="Devolver pedido"></option>
+        <option value="Estado de la pedido"></option>
+        <option value="Les cuento que..."></option>
+        <option value="Me llegó otro producto"></option>
+        <option value="Opinión"></option>
+      </datalist>
+      <span class="error-message">Elige un asunto</span>
+    </div>
+
+    <div class=" input-group">
+
+      <label for="msj">Mensaje</label>
+      <textarea type="textarea" name="msj" id="msj" placeholder="Dejanos tu opinión" required></textarea>
+      <span class="error-message">Escribinos un mensaje</span>
+    </div>
+    <a href="#" class="btn-division warranty-submit">Completar registro</a>
+  </form>
+</section>

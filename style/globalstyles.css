@@ -37,6 +37,9 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   background-color: var(--body-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 html {
   scroll-behavior: smooth;
@@ -57,6 +60,18 @@ main,
 section,
 article {
   container-type: inline-size;
+}
+main {
+  opacity: 1;
+  /* scale: 1; */
+  transform: translateX(0px);
+  transition: all 0.4s ease-in-out;
+}
+
+main.hidden {
+  opacity: 0;
+  /* scale: 0.5; */
+  transform: translateX(-1000px);
 }
 
 h1,
@@ -266,4 +281,86 @@ p {
   background: var(--black);
   color: var(--navbar-bg);
   transform: translate3d(0, 0, 2em);
+}
+
+#btn-scrollTop {
+  appearance: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: var(--body-bg);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 999;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  opacity: 0;
+  scale: 0;
+
+  background: linear-gradient(315deg, var(--black), var(--text-shadow));
+  /* box-shadow: -5px -5px 10px var(--black), 5px 5px 10px var(--text-shadow); */
+  box-shadow: 2px 4px 6px black;
+  transition: all 0.4s ease-in-out;
+}
+
+#btn-scrollTop.active {
+  opacity: 1;
+  scale: 1;
+}
+#btn-scrollTop .icon-arrow-up {
+  font-size: 25px;
+}
+#btn-scrollTop:active {
+  scale: 0.8;
+}
+#aside-info {
+  background-color: var(--navbar-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 4px; */
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 800;
+  font-family: var(--font-light);
+}
+#my-clock {
+  padding: 4px;
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 800;
+  font-family: var(--font-light);
+  color: var(--text-shadow);
+}
+#clicks-counter {
+  padding: 4px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 800;
+  color: var(--text-shadow);
+  font-family: var(--font-light);
+  @media (min-width: 500px) {
+    display: flex;
+  }
+}
+#clicks-counter button {
+  font-size: 14px;
+  letter-spacing: normal;
+  font-weight: 800;
+  font-family: var(--font-light);
+  border: none;
+  padding: 0px 4px;
+  border-radius: 4px 8px;
+  cursor: pointer;
+  scale: 0.8;
+  background-color: var(--text-shadow);
+  color: var(--navbar-bg);
+}
+#clicks-counter button:active {
+  scale: 0.9;
+  background-color: #6a4a4a;
 }

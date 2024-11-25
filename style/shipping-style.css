@@ -23,3 +23,8 @@
   margin-bottom: 1rem;
   font-size: 12px;
 }
+
+.shipping-page-info-container a {
+  width: 50%;
+  margin: 1rem auto;
+}
