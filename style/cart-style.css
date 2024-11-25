@@ -6,7 +6,9 @@
 .icon-arrow-back:active {
   scale: 0.9;
 }
-
+#cart-container {
+  width: 100%;
+}
 .cart-product-container {
   padding: 1rem;
   width: 100%;
@@ -44,9 +46,9 @@
   align-items: center;
   gap: 4px;
   button {
-    display: flex;
     height: 25px;
     width: 30px;
+    display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--body-bg);
@@ -57,6 +59,8 @@
     border: none;
   }
   button:hover {
+    background-color: var(--text-shadow);
+    color: var(--navbar-bg);
     box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
     transform: translateY(-2px);
   }
@@ -72,6 +76,12 @@
 }
 .cart-product-delete {
   cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
   ion-icon {
     font-size: 18px;
     color: red;
@@ -79,6 +89,7 @@
   }
 }
 .cart-product-delete:hover {
+  background-color: var(--navbar-bg);
   ion-icon {
     color: var(--text-shadow);
   }
@@ -93,8 +104,13 @@
   flex-direction: column;
   gap: 4px;
 }
-.cart-price-subtotal,
-.cart-price-cupon,
+.cart-product-price {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+
 .cart-price-total {
   width: 100%;
   display: flex;

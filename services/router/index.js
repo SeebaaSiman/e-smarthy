@@ -147,6 +147,8 @@ const handleHashLocation = async () => {
    initializeHomePage();
   } else if (path === "/products") {
    initializeProductsPage();
+  } else if (path === "/cart") {
+   initializeCartPage();
   }
  } catch (error) {
   // Manejo de errores

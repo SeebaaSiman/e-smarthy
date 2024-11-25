@@ -196,22 +196,27 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .cart-icon-container {
   position: relative;
-  a {
-    color: var(--black);
-  }
-  p {
-    color: var(--text-shadow);
-    position: absolute;
-    top: -15px;
-    right: -4px;
-  }
+}
+.cart-icon-container:hover ion-icon {
+  color: var(--text-shadow);
+}
+.cart-icon-container a {
+  color: var(--black);
 }
 .cart-icon-container:active {
   scale: 0.9;
 }
-
+.cart-number {
+  color: var(--black);
+  position: absolute;
+  top: -20px;
+  left: -14px;
+  font-weight: 900;
+  font-family: var(--font-bold);
+}
 .nav-link {
   font-size: 16px;
   color: var(--text-shadow);

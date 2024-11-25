@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 
 
 //* Depur
-const productsFromLocalStorage = getProductsFromLocalStorage().data.products;
+const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
 console.log(productsFromLocalStorage, "productsFromLocalStorage");
 
 
@@ -73,7 +73,12 @@ const renderProducts = (products, productsContainer) => {
           <p class="title-card-product">${product.title}</p>
           <abbr class="description-card-product">${product.description}</abbr>
           <p class="price-card-product">&#8364; ${product.price.toFixed(2)}</p>
-          <a href="#/cart" class="btn-division">Agregar al carrito</a>
+          <button onclick="addToCart({
+                               id: ${product.id},
+                               title: '${product.title}',
+                               price: ${product.price},
+                               thumbnail: '${product.thumbnail}'
+                             });" class="btn-division">Agregar al carrito</button>
         </div>
       `)
     .join('');
@@ -178,6 +183,7 @@ const initializeProductsPage = () => {
 
 const initializeProductDetailPage = (productId) => {
   const selectedProduct = productsFromLocalStorage.find(product => product.id == productId);
+  console.log(selectedProduct, "selectedProduct");
 
   if (!selectedProduct) {
     console.error("Producto no encontrado");
@@ -238,8 +244,12 @@ const initializeProductDetailPage = (productId) => {
             </span>
             <p class="price-card-product">&#8364; ${selectedProduct.price.toFixed(2)}</p>
           </div>
-          <a href="#/cart" class="btn-division">Agregar al carrito</a>
-          <div class="footer-pay">
+               <button onclick="addToCart({
+                               id: ${selectedProduct.id},
+                               title: '${selectedProduct.title}',
+                               price: ${selectedProduct.price},
+                               thumbnail: '${selectedProduct.thumbnail}'
+                             });" class="btn-division">Agregar al carrito</button>          <div class="footer-pay">
             <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
             <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
             <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">

@@ -192,7 +192,7 @@ p {
   width: 6.5em;
   height: 2.3em;
   margin: 0.5rem;
-  background-color: black;
+  background-color: var(--black);
   color: white;
   border: none;
   border-radius: 0.625em;
@@ -206,11 +206,11 @@ p {
   align-items: center;
 }
 .btn-division:hover {
-  color: black;
+  color: var(--black);
 }
 .btn-division:after {
   content: "";
-  background: white;
+  background: var(--navbar-bg);
   position: absolute;
   z-index: -1;
   left: -20%;
@@ -226,61 +226,8 @@ p {
   transition: all 0.5s;
 }
 .btn-division:active {
-  box-shadow: 5px 5px 5px black;
+  box-shadow: 5px 5px 5px var(--black);
   scale: 0.9;
-}
-
-.btn-circular {
-  width: 10em;
-  display: flex;
-  background: transparent;
-  justify-content: center;
-  align-items: center;
-  margin: 1rem auto;
-}
-
-.btn-circular div {
-  color: #ccc;
-  cursor: pointer;
-  transition: all 0.6s ease;
-  transform-style: preserve-3d;
-  transform-origin: 100% 50%;
-  width: 10em;
-  height: 4em;
-}
-
-.btn-circular div:hover {
-  transform: rotateX(-90deg);
-}
-.btn-circular div:active {
-  scale: 0.9;
-}
-
-.side {
-  border-radius: 22px;
-  position: absolute;
-  box-shadow: 4px 4px 4px var(--black);
-  top: 0;
-  left: 0;
-  display: inline-block;
-  height: 4em;
-  width: 10em;
-  text-align: center;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 1.2em;
-  font-weight: bold;
-}
-.top {
-  background: var(--text-shadow);
-  color: var(--navbar-bg);
-  transform: rotateX(90deg) translate3d(0, 0, 2em);
-}
-
-.front {
-  background: var(--black);
-  color: var(--navbar-bg);
-  transform: translate3d(0, 0, 2em);
 }
 
 #btn-scrollTop {

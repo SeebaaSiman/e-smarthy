@@ -111,7 +111,7 @@ class BannerSwipe {
 const initializeHomePage = () => {
   const banner = document.querySelector('.banner-container');
 
-  if (banner) {
+  if (banner && top6DiscountPercentage && top6Rating) {
     new BannerSwipe('#top-descount', top6DiscountPercentage, {
       autoPlayInterval: 3000
     });

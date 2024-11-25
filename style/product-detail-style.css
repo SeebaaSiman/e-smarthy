@@ -35,7 +35,7 @@
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-
+  transition: all 0.6s ease-in-out;
   img {
     width: 20%;
     cursor: pointer;
@@ -58,6 +58,7 @@
   filter: grayscale(0);
   scale: 1;
 }
+
 .image-product-show {
   width: 100%;
   display: flex;
