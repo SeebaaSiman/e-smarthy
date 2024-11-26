@@ -89,12 +89,12 @@ textarea:focus {
 }
 .input-group input:invalid,
 textarea:invalid {
-  border-color: red;
+  border-color: var(--error);
 }
 .input-group input:invalid ~ .error-message,
 .input-group textarea:invalid ~ .error-message {
   display: block;
-  color: red;
+  color: var(--error);
   font-size: 0.9em;
   font-weight: 800;
 }

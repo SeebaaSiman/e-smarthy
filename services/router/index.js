@@ -171,14 +171,3 @@ const handleHashLocation = async () => {
 window.addEventListener("hashchange", handleHashLocation);
 handleHashLocation(); // Inicializar la carga en la primera visita
 
-const initializeLoremPage = () => {
- const addMessageButton = document.getElementById('addMessage');
- if (addMessageButton) {
-  addMessageButton.addEventListener('click', () => {
-   showToast({ message: 'Formulario enviado correctamente', type: 'sucess' });
-   console.log('Botón de mensaje agregado y evento de click funcionando');
-  });
- } else {
-  console.log("Botón no encontrado en la página");
- }
-};

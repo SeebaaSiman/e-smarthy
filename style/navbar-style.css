@@ -203,6 +203,9 @@
 .cart-icon-container:hover ion-icon {
   color: var(--text-shadow);
 }
+.cart-icon-container:hover .cart-number {
+  color: var(--text-shadow);
+}
 .cart-icon-container a {
   color: var(--black);
 }

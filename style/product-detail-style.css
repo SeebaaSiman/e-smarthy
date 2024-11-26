@@ -87,7 +87,7 @@
   h1 {
     text-align: center;
   }
-  a {
+  button {
     width: 80%;
     margin: auto;
   }
@@ -157,18 +157,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: red;
   gap: 4px;
 }
-.icon-product-stock.check,
-.icon-product-stock.close {
-  display: none;
+.product-detail-stock.low {
+  color: var(--warning);
 }
-.product-detail-stock.true {
-  color: var(--green);
-  .icon-product-stock.check {
-    display: flex;
-  }
+.product-detail-stock.in {
+  color: var(--success);
+}
+.product-detail-stock.out {
+  color: var(--error);
 }
 .reviews-rating-product-detail {
   padding: 1rem;

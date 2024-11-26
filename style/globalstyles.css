@@ -8,9 +8,11 @@
   --black: #040404;
   --font-bold: "Walsheim-bold";
   --font-light: "Walsheim";
-  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 4px 6px rgb(255, 255, 255);
+  --success: #3ab65c;
+  --error: #bf333b;
+  --warning: #bc8c12;
+  --info: #1898c0;
 }
-
 @font-face {
   font-family: "Walsheim-bold";
   src: url("./fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
@@ -205,6 +207,7 @@ p {
   justify-content: center;
   align-items: center;
 }
+
 .btn-division:hover {
   color: var(--black);
 }

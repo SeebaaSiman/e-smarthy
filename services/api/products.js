@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 
 //* Depur
 const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
-console.log(productsFromLocalStorage, "productsFromLocalStorage");
+console.log(productsFromLocalStorage, "productos en mi localStorage");
 
 
 const categories = new Set(productsFromLocalStorage.map(producto => producto.category));
@@ -73,12 +73,17 @@ const renderProducts = (products, productsContainer) => {
           <p class="title-card-product">${product.title}</p>
           <abbr class="description-card-product">${product.description}</abbr>
           <p class="price-card-product">&#8364; ${product.price.toFixed(2)}</p>
-          <button onclick="addToCart({
-                               id: ${product.id},
-                               title: '${product.title}',
-                               price: ${product.price},
-                               thumbnail: '${product.thumbnail}'
-                             });" class="btn-division">Agregar al carrito</button>
+   <button
+  onclick="addToCart({
+                      id: ${product.id},
+                      title: '${product.title}',
+                      price: ${product.price},
+                      thumbnail: '${product.thumbnail}'
+                    });
+                               showToast({ message: 'Agregaste ${product.title} a tu carrito', type: 'success' });"
+  class="btn-division">
+  Agregar al carrito
+</button>
         </div>
       `)
     .join('');
@@ -183,7 +188,7 @@ const initializeProductsPage = () => {
 
 const initializeProductDetailPage = (productId) => {
   const selectedProduct = productsFromLocalStorage.find(product => product.id == productId);
-  console.log(selectedProduct, "selectedProduct");
+  console.log(selectedProduct, "producto seleccionado para product-detail-page");
 
   if (!selectedProduct) {
     console.error("Producto no encontrado");
@@ -219,6 +224,7 @@ const initializeProductDetailPage = (productId) => {
       </div>
     </div>
   `).join("");
+  console.log(selectedProduct.availabilityStatus.toLowerCase(), "stock de product selected");
 
   // Renderizar los detalles en el contenedor
   const productDetailContainer = document.getElementById("product-detail");
@@ -244,12 +250,17 @@ const initializeProductDetailPage = (productId) => {
             </span>
             <p class="price-card-product">&#8364; ${selectedProduct.price.toFixed(2)}</p>
           </div>
-               <button onclick="addToCart({
-                               id: ${selectedProduct.id},
-                               title: '${selectedProduct.title}',
-                               price: ${selectedProduct.price},
-                               thumbnail: '${selectedProduct.thumbnail}'
-                             });" class="btn-division">Agregar al carrito</button>          <div class="footer-pay">
+           <button
+  onclick="addToCart({
+                      id: ${selectedProduct.id},
+                      title: '${selectedProduct.title}',
+                      price: ${selectedProduct.price},
+                      thumbnail: '${selectedProduct.thumbnail}'
+                    });
+ showToast({ message: 'Agregaste ${selectedProduct.title} a tu carrito', type: 'success' });"  class="btn-division">
+  Agregar al carrito
+</button>
+       <div class="footer-pay">
             <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
             <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
             <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">
@@ -278,7 +289,6 @@ const initializeProductDetailPage = (productId) => {
         <p>${selectedProduct.warrantyInformation}</p>
         <p>${selectedProduct.shippingInformation}</p>
         <div class="product-detail-stock ${selectedProduct.availabilityStatus.toLowerCase()}">
-          <ion-icon class="icon-product-stock ${selectedProduct.availabilityStatus === "In Stock" ? "check" : "close"}" name="${selectedProduct.availabilityStatus === "In Stock" ? "checkmark-outline" : "close-outline"}"></ion-icon>
           <p>${selectedProduct.availabilityStatus}</p>
         </div>
         <p>${selectedProduct.returnPolicy}</p>
