@@ -273,6 +273,12 @@
 .price-card-product {
   margin: auto;
 }
-.filtered-count {
-  padding: 0 1rem;
+.filtered-count-container {
+  /* padding: 0 1rem; */
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
+/* .filtered-count {
+  padding: 0 1rem;
+} */

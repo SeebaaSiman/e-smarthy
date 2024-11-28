@@ -126,6 +126,7 @@ const filterProducts = (products) => {
 
 const initializeProductsPage = () => {
   const filteredCountElement = document.getElementById("filtered-count");
+
   const availabilityDatalist = document.getElementById('availability');
   const categoriesDataList = document.getElementById('category');
 
@@ -149,7 +150,7 @@ const initializeProductsPage = () => {
 
     // Renderiza los productos
     renderProducts(productsFromLocalStorage, cardProducts);
-    filteredCountElement.textContent = `Productos encontrados: ${productsFromLocalStorage.length}`;
+    filteredCountElement.textContent = `${productsFromLocalStorage.length}`;
 
     // Asignar eventos a los filtros
     document.querySelector("[list='category']").addEventListener("input", (e) => {
@@ -180,7 +181,8 @@ const initializeProductsPage = () => {
       const filteredProducts = filterProducts(productsFromLocalStorage);
       renderProducts(filteredProducts, cardProducts);
       // Actualizar el número de productos filtrados
-      filteredCountElement.textContent = `Productos encontrados: ${filteredProducts.length}`;
+      filteredCountElement.textContent = `${filteredProducts.length}`;
+
       console.log(filteredProducts, "productos filtrados")
     };
   }

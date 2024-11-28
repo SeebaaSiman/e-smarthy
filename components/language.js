@@ -1,48 +1,54 @@
-
 document.addEventListener("DOMContentLoaded", function () {
- // Selecciona el botón para cambiar el idioma
+ // Configuración inicial de idioma
  const navLanguage = document.querySelector('.nav-language');
  const navLanguageMenu = document.querySelector(".nav-language-menu");
- let isEnglish = localStorage.getItem('isEnglish') === 'true'; // Obtener el estado del idioma del localStorage (por defecto español)
+ 
+ let isEnglish = localStorage.getItem('isEnglish') === 'true';
+ let languageOption = isEnglish ? "en-EN" : "es-ES";
 
  const updateLanguageDisplay = () => {
-  const languageElementsEnglish = document.querySelectorAll('.language.english'); // Selecciona los elementos en inglés
-  const languageElementsSpanish = document.querySelectorAll('.language.spanish'); // Selecciona los elementos en español
- 
+  const languageElementsEnglish = document.querySelectorAll('.language.english');
+  const languageElementsSpanish = document.querySelectorAll('.language.spanish');
+
   if (isEnglish) {
-   // Si el idioma es inglés, mostrar el contenido en inglés y ocultar el español
-   languageElementsEnglish.forEach(element => {
-    element.style.display = 'block'; // Mostrar elementos en inglés
-   });
-   languageElementsSpanish.forEach(element => {
-    element.style.display = 'none'; // Ocultar elementos en español
-   });
+   languageElementsEnglish.forEach(element => element.style.display = 'block');
+   languageElementsSpanish.forEach(element => element.style.display = 'none');
+   languageOption = "en-EN";
   } else {
-   // Si el idioma es español, mostrar el contenido en español y ocultar el inglés
-   languageElementsEnglish.forEach(element => {
-    element.style.display = 'none'; // Ocultar elementos en inglés
-   });
-   languageElementsSpanish.forEach(element => {
-    element.style.display = 'block'; // Mostrar elementos en español
-   });
+   languageElementsEnglish.forEach(element => element.style.display = 'none');
+   languageElementsSpanish.forEach(element => element.style.display = 'block');
+   languageOption = "es-ES";
   }
  };
 
- // Al hacer clic en el botón de cambio de idioma
- navLanguage.addEventListener('click', function () {
-  isEnglish = !isEnglish; // Alternar el estado del idioma
-  localStorage.setItem('isEnglish', isEnglish); // Guardar el estado en localStorage
-  updateLanguageDisplay(); // Actualizar la visibilidad de los elementos
- });
- navLanguageMenu.addEventListener('click', function () {
-  isEnglish = !isEnglish; // Alternar el estado del idioma
-  localStorage.setItem('isEnglish', isEnglish); // Guardar el estado en localStorage
-  updateLanguageDisplay(); // Actualizar la visibilidad de los elementos
- });
+ // Manejadores para cambiar idioma
+ const toggleLanguage = () => {
+  isEnglish = !isEnglish;
+  localStorage.setItem('isEnglish', isEnglish);
+  updateLanguageDisplay();
+  updateCurrentDay(); // Actualiza el día de la semana al cambiar idioma
+ };
 
+ navLanguage?.addEventListener('click', toggleLanguage);
+ navLanguageMenu?.addEventListener('click', toggleLanguage);
 
- // Actualizar la visibilidad cuando se carga la página
+ // Función para actualizar el día actual
+ const updateCurrentDay = () => {
+  const today = new Date();
+  const optionsDay = { weekday: 'long' };
+  const day = today.toLocaleDateString(languageOption, optionsDay);
+
+  const currentDayElements = document.getElementsByClassName('current-day');
+  Array.from(currentDayElements).forEach(element => {
+   element.textContent = day;
+  });
+ };
+
+ // Asignar el año actual
+ const currentYear = new Date().getFullYear();
+ document.getElementById("current-year").textContent = currentYear;
+
+ // Configuración inicial
  updateLanguageDisplay();
+ updateCurrentDay();
 });
-
-//* Forma de uso  class="language english" | "language spanish"

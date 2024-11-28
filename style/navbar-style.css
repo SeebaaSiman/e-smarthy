@@ -55,7 +55,6 @@
   min-height: 120px;
   z-index: 900;
   transition: all 0.4s ease-in-out;
-  overflow: hidden;
 }
 #nav-links-container.open {
   opacity: 1;
@@ -221,12 +220,12 @@
   font-family: var(--font-bold);
 }
 .nav-link {
-  font-size: 16px;
+  position: relative;
+  font-size: 18px;
   color: var(--text-shadow);
   font-family: inherit;
   font-weight: 600;
   cursor: pointer;
-  position: relative;
   border: none;
   background: none;
   text-transform: uppercase;
@@ -253,6 +252,7 @@
   position: absolute;
   width: 0%;
   height: 1px;
+  z-index: 200;
   background-color: var(--black);
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
