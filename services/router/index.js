@@ -140,7 +140,7 @@ const handleHashLocation = async () => {
   footer.style.display = hideHeaderFooter ? "none" : "block";
 
   // Inicializar contenido dinámico
-  if (isProductDetail) {
+  if (isProductDetail && initializeHomePage) {
    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
    initializeSliderProductDetail();
   } else if (path === "/") {
