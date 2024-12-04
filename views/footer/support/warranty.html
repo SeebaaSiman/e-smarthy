@@ -1,16 +1,16 @@
 <section class="page">
 
-  <h1>Registro de garantía </h1>
-  <p>
-    Para registrar su producto y beneficiarse de la garantía de E-Smarthy, complete el formulario de registro a
-    continuación.
-  </p>
-  <p>
-    El período de garantía de E-Smarthy que obtiene al registrar el producto difiere, dependiendo del tipo de
-    producto:
-  </p>
-
-  <ul>
+  <h1 class="language spanish">Registro de garantía</h1>
+  <h1 class="language english">Warranty Registration</h1>
+  <p class="language spanish">Para registrar su producto y beneficiarse de la garantía de E-Smarthy, complete el
+    formulario de registro a continuación.</p>
+  <p class="language english">To register your product and benefit from the E-Smarthy warranty, please complete the
+    registration form below.</p>
+  <p class="language spanish">El período de garantía de E-Smarthy que obtiene al registrar el producto
+    difiere,dependiendo del tipo de producto.</p>
+  <p class="language english">The E-Smarthy warranty period you get when registering the product differs,
+    depending on the type of product.</p>
+  <ul class="language spanish">
     Tenga en cuenta que se deben cumplir las siguientes condiciones:
     <li>
 
@@ -24,21 +24,38 @@
 
       Al registrar el producto, acepta los Términos y condiciones de la garantía registrada de E-Smarthy. </li>
   </ul>
-
+  <ul class="language english">
+    Please note that the following conditions must be met:
+    <li>You made your purchase within the European Union or the United Kingdom (we are currently unable to offer this
+      service in other regions);</li>
+    <li>You can only register your product within two years of the original purchase date;</li>
+    <li>By registering the product, you agree to the E-Smarthy Registered Warranty Terms and Conditions.</li>
+  </ul>
   <form action="#" method="post" novalidate class="form-warranty">
 
-    <div class=" input-group">
-      <label for="username">Nombre</label>
+    <div class="input-group">
+      <label for="username">
+        <p class="language spanish">Nombre</p>
+        <p class="language english">Name</p>
+      </label>
       <input type="text" name="username" id="username" placeholder="E-Smarthy" minlength="4" required>
-      <span class="error-message">Nombre requerido con al menos 4 caracteres</span>
+      <span class="error-message language spanish">Nombre requerido con al menos 4 caracteres</span>
+      <span class="error-message language english">Name required with at least 4 characters</span>
     </div>
     <div class=" input-group">
-      <label for="email">Correo</label>
+      <label for="email">
+        <p class="language spanish">Correo</p>
+        <p class="language english">Email</p>
+      </label>
       <input type="email" name="email" id="email" placeholder="example@esmarthy.com" required> <span
-        class="error-message">Correo inválido o requerido</span>
+        class="error-message language spanish">Correo inválido</span>
+      <span class="error-message language english">invalid email</span>
     </div>
     <div class=" input-group">
-      <label for="model">Elige tu modelo</label>
+      <label for="model">
+        <p class="language spanish">Seleccioná tu modelo</p>
+        <p class="language english">Select your model</p>
+      </label>
       <input type="text" name="model" id="model" required list="model-category">
       <datalist id="model-category">
         <option value="Beauty"></option>
@@ -67,45 +84,54 @@
         <option value="womens-watches"></option>
       </datalist>
     </div>
-    <div class=" input-group">
-      <label for="country">País</label>
-      <input type="email" name="country" id="country" placeholder="example@esmarthy.com" required> <span
-        class="error-message">Correo inválido o requerido</span>
+    <div class="input-group">
+      <label for="country">
+        <p class="language spanish">País</p>
+        <p class="language english">Country</p>
+      </label>
+      <input type="text" name="country" id="country" placeholder="Gotham" minlength="4" required>
+      <span class="error-message language spanish">País requerido</span>
+      <span class="error-message language english">Required country</span>
     </div>
 
-    <div class=" input-group">
-      <label for="where">¿Dónde compró el producto?</label>
-      <input type="text" name="where" id="where" placeholder="..." minlength="4" required>
-      <span class="error-message">Ingrese el lugar</span>
-    </div>
 
     <div class=" input-group">
-      <label for="date">Fecha de la compra</label>
+      <label for="date">
+        <p class="language spanish">Fecha de la compra</p>
+        <p class="language english">Purchase date</p>
+      </label>
       <input type="date" name="date" id="date" required>
-      <span class="error-message">Elige una fecha</span>
+      <span class="error-message language spanish">Elige una fecha</span>
+      <span class="error-message language english">Choose a date</span>
     </div>
-
-
 
     <div class="file-upload-container">
       <div class="file-upload-top">
         <ion-icon name="cloud-upload-outline"></ion-icon>
-
-        <p>Browse File to upload!</p>
+        <p class="language english">Browse File to upload!</p>
+        <p class="language spanish">¡Examine el archivo para cargarlo!</p>
       </div>
       <label for="file" class="file-upload-bottom">
-
         <p>Not selected file</p>
-
       </label>
       <input id="file" type="file">
     </div>
-    <p class="text-info-warranty">Tenga en cuenta que si desea utilizar su garantía E-Smarthy, aún se requiere un
+
+
+    <p class="text-info-warranty language spanish">Tenga en cuenta que si desea utilizar su garantía E-Smarthy, aún se
+      requiere un
       comprobante de compra. Recomendamos
       colocarlo de inmediato.</p>
-    <p class="text-info-warranty">Al registrarse, acepta los Términos y condiciones de la garantía, los Términos y
-      condiciones y comprende que
-      procesaremos sus datos personales de acuerdo con nuestra Política de privacidad.</p>
-    <a href="#" class="btn-division warranty-submit">Completar registro</a>
+
+    <p class="text-info-warranty language english">Please note that if you wish to use your E-Smarthy warranty, a proof
+      of purchase. We recommend place it immediately.</p>
+    <p class="text-info-warranty language spanish">Al registrarse, acepta los Términos y condiciones de la garantía, los
+      Términos y condiciones y comprende que procesaremos sus datos personales de acuerdo con nuestra Política de
+      privacidad.</p>
+    <p class="text-info-warranty language english">By registering, you agree to the Warranty Terms and Conditions, Terms
+      and Conditions.
+      conditions and you understand that we will process your personal data in accordance with our Privacy Policy. </p>
+    <button class="btn-division warranty-submit language spanish">Completar registro</button>
+    <button class="btn-division warranty-submit language english">Complete registration</button>
   </form>
 </section>

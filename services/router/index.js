@@ -110,6 +110,7 @@ const handleHashLocation = async () => {
    // Cargar página de detalle de producto si es una ruta dinámica
    html = await fetch("/views/navbar/product-detail.html").then(response => {
     if (!response.ok) {
+
      throw new Error("Error al cargar la página de detalle de producto");
     }
     return response.text();
@@ -140,7 +141,7 @@ const handleHashLocation = async () => {
   footer.style.display = hideHeaderFooter ? "none" : "block";
 
   // Inicializar contenido dinámico
-  if (isProductDetail && initializeHomePage) {
+  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay) {
    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
    initializeSliderProductDetail();
   } else if (path === "/") {
@@ -149,6 +150,8 @@ const handleHashLocation = async () => {
    initializeProductsPage();
   } else if (path === "/cart") {
    initializeCartPage();
+  } else {
+   updateLanguageDisplay();
   }
  } catch (error) {
   // Manejo de errores

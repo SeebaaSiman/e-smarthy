@@ -67,10 +67,13 @@
   margin-bottom: 4px;
   font-size: 14px;
   display: block;
-  color: var(--text-shadow);
+  color: black;
   font-weight: 800;
 }
 
+.input-group:has(input:focus) label {
+  color: var(--text-shadow);
+}
 .input-group input,
 textarea {
   font-size: 14px;
@@ -94,16 +97,15 @@ textarea:invalid {
 .input-group input:invalid ~ .error-message,
 .input-group textarea:invalid ~ .error-message {
   display: block;
+  scale: 1;
   color: var(--error);
   font-size: 0.9em;
   font-weight: 800;
 }
 
-/* .input-group:has(input:focus) label {
-  border-color: var(--black);
-} */
 .error-message {
   display: none;
+  scale: 0;
 }
 
 .file-upload-container {
@@ -131,11 +133,15 @@ textarea:invalid {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  ion-icon {
+    font-size: 50px;
+  }
 }
 
 .file-upload-top p {
   text-align: center;
   color: black;
+    font-size: 25px;
 }
 
 .file-upload-bottom {
@@ -151,17 +157,6 @@ textarea:invalid {
   color: black;
   border: none;
 }
-
-.file-upload-bottom svg {
-  height: 130%;
-  fill: royalblue;
-  background-color: rgba(70, 66, 66, 0.103);
-  border-radius: 50%;
-  padding: 2px;
-  cursor: pointer;
-  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.205);
-}
-
 .file-upload-bottom p {
   flex: 1;
   text-align: center;

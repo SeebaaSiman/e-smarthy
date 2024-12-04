@@ -125,6 +125,7 @@ const filterProducts = (products) => {
 };
 
 const initializeProductsPage = () => {
+  updateLanguageDisplay();
   const filteredCountElement = document.getElementById("filtered-count");
 
   const availabilityDatalist = document.getElementById('availability');
@@ -248,7 +249,7 @@ const initializeProductDetailPage = (productId) => {
           <div class="details-product-price">
             <span>
               <ion-icon name="caret-down-outline"></ion-icon>
-              ${selectedProduct.discountPercentage} % desc.
+              ${selectedProduct.discountPercentage} % off
             </span>
             <p class="price-card-product">&#8364; ${selectedProduct.price.toFixed(2)}</p>
           </div>
@@ -260,7 +261,8 @@ const initializeProductDetailPage = (productId) => {
                       thumbnail: '${selectedProduct.thumbnail}'
                     });
  showToast({ message: 'Agregaste ${selectedProduct.title} a tu carrito', type: 'success' });"  class="btn-division">
-  Agregar al carrito
+ <p class="language spanish">Agregar al carrito</p>
+ <p class="language english">Add to cart</p>
 </button>
        <div class="footer-pay">
             <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
@@ -283,10 +285,10 @@ const initializeProductDetailPage = (productId) => {
         </div>
         <div class="product-detail-info">
           <span><p>Stock:</p><p>${selectedProduct.stock}</p></span>
-          <span><p>Peso (libras):</p><p>${selectedProduct.weight}</p></span>
-          <span><p>Ancho:</p><p>${selectedProduct.dimensions.width}</p></span>
-          <span><p>Altura:</p><p>${selectedProduct.dimensions.height}</p></span>
-          <span><p>Profundidad:</p><p>${selectedProduct.dimensions.depth}</p></span>
+          <span><p class="language spanish">Peso (libras):</p><p class="language english">Weight:</p><p>${selectedProduct.weight}</p></span>
+          <span><p class="language spanish">Ancho:</p><p class="language english">Width:</p><p>${selectedProduct.dimensions.width}</p></span>
+          <span><p class="language spanish">Altura:</p><p class="language english">Height:</p><p>${selectedProduct.dimensions.height}</p></span>
+          <span><p class="language spanish">Profundidad:</p> <p class="language english">Depth:</p><p>${selectedProduct.dimensions.depth}</p></span>
         </div>
         <p>${selectedProduct.warrantyInformation}</p>
         <p>${selectedProduct.shippingInformation}</p>
@@ -294,11 +296,13 @@ const initializeProductDetailPage = (productId) => {
           <p>${selectedProduct.availabilityStatus}</p>
         </div>
         <p>${selectedProduct.returnPolicy}</p>
-        <p>Orden mínima de ${selectedProduct.minimumOrderQuantity} productos</p>
+        <p class="language spanish">Orden mínima de ${selectedProduct.minimumOrderQuantity} productos</p>
+        <p class="language english">Minimum order of ${selectedProduct.minimumOrderQuantity} products</p>
       </section>
       <section class="reviews-section-product-detail">
         <div class="reviews-rating-product-detail">
-          <h3>Rating</h3>
+          <h3 class="language english">Rating</h3>
+          <h3 class="language spanish">Calificación</h3>
           <div class="banner-rating">
             ${Array(5).fill().map((_, i) => `
               <ion-icon name="${i < Math.round(selectedProduct.rating) ? "star" : "star-outline"}"></ion-icon>
@@ -311,6 +315,8 @@ const initializeProductDetailPage = (productId) => {
   } else {
     console.error("El contenedor para el detalle del producto no existe en el DOM");
   }
+  updateLanguageDisplay();
+
 };
 
 const initializeSliderProductDetail = () => {

@@ -1,16 +1,26 @@
 #toast-container {
   position: fixed;
-  right: 40px;
+  left: 0px;
+  bottom: 20px;
+  width: 80vw;
+  max-width: 410px;
+  /* max-width: 400px; */
+  /* right: 40px;
   bottom: 40px;
   width: 100%;
-  max-width: 400px;
+  max-width: 400px; */
   display: flex;
   flex-direction: column-reverse;
   gap: 8px;
   z-index: 999;
+  transition: all 0.4s ease-in-out;
 }
 
 .toast {
+  margin-left: 10px;
+  width: 80vw;
+  max-width: 410px;
+  height: 100%;
   background: transparent;
   display: flex;
   justify-content: space-between;
@@ -41,6 +51,7 @@
 }
 
 .toast .wrapper {
+  transition: all 0.4s ease-in-out;
   display: grid;
   grid-template-columns: 30px auto;
   align-items: center;
@@ -80,10 +91,10 @@
 
 @keyframes cierre {
   from {
-    transform: translateX(0);
+    transform: translateX(0) scale(1);
   }
   to {
-    transform: translateX(calc(100% + 40px));
+    transform: translateX(calc(100% + 40px)) scale(0.3);
   }
 }
 .toast .barrita {

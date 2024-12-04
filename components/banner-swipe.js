@@ -24,7 +24,7 @@ class BannerSwipe {
         additionalContent = `
       <div class="banner-discountPercentage">
         <ion-icon name="caret-down-outline"></ion-icon>
-        - ${slideData.discountPercentage} % desc.
+        - ${slideData.discountPercentage} % off
       </div>
       `;
       } else if (this.container.id === "top-rating") {

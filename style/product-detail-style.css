@@ -150,8 +150,11 @@
   gap: 4px;
 }
 
-.product-detail-info span p:first-of-type {
+.product-detail-info span p {
   text-decoration: underline;
+}
+.product-detail-info span p:last-of-type {
+  text-decoration: none;
 }
 .product-detail-stock {
   display: flex;
