@@ -4,7 +4,6 @@ const navLanguageMenu = document.querySelector(".nav-language-menu");
 
 let isEnglish = localStorage.getItem('isEnglish') === 'true';
 let languageOption = isEnglish ? "en-EN" : "es-ES";
-console.log(isEnglish, "isEnglish");
 
 const updateLanguageDisplay = () => {
  const languageElementsEnglish = document.querySelectorAll('.language.english');

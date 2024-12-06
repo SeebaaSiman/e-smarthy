@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="style/footer-style.css">
   <link rel="stylesheet" href="style/toast.css">
 
-
   <title>E-Smarthy</title>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -32,10 +31,12 @@
     </aside>
     <aside id="aside-info">
       <div id="clicks-counter">
-        <p>Historial de clicks en E-Smarthy:</p>
+        <p class="language spanish">Historial de clicks en E-Smarthy:</p>
+        <p class="language english">Click history on E-Smarthy:</p>
         <p id="click-counter"></p>
         <button id="reset-counter">
-          <p>Reset</p>
+          <p class="language english">Reset</p>
+          <p class="language spanish">Reinicio</p>
         </button>
       </div>
       <div id="my-clock"></div>
@@ -87,20 +88,24 @@
 
       <div id="nav-links-container">
         <div class="nav-links-language-theme-container">
-          <p class="language english">Language</p>
-          <p class="language spanish">Idioma</p>
-          <div class="nav-language-menu" onclick="onCloseMenu()">
-            <div class="language english">
-              <img src="/assets/flag-language/spain.png" alt="spain flag">
-            </div>
-            <div class="language spanish">
-              <img src="/assets/flag-language/eeuu.png" alt="eeuu flag">
+          <div>
+            <p class="language english">Language</p>
+            <p class="language spanish">Idioma</p>
+            <div class="nav-language-menu" onclick="onCloseMenu()">
+              <div class="language english">
+                <img src="/assets/flag-language/spain.png" alt="spain flag">
+              </div>
+              <div class="language spanish">
+                <img src="/assets/flag-language/eeuu.png" alt="eeuu flag">
+              </div>
             </div>
           </div>
-          <p class="language english">Theme</p>
-          <p class="language spanish">Tema</p>
-          <div class="nav-theme-menu">
-            <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
+          <div>
+            <p class="language english">Theme</p>
+            <p class="language spanish">Tema</p>
+            <div class="nav-theme-menu">
+              <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
+            </div>
           </div>
         </div>
 
@@ -116,8 +121,7 @@
     </nav>
   </header>
 
-  <main id="main-router" style="min-height: 100vh;">
-  </main>
+  <main id="main-router" style="min-height: 100vh;"></main>
 
   <div id="toast-container"></div>
   <button id="btn-scrollTop"><ion-icon name="chevron-up-outline" class="icon-arrow-up"></ion-icon></button>
@@ -224,6 +228,7 @@
   <script src="components/toast.js"></script>
   <script src="components/cart-shop.js"></script>
   <script src="components/banner-swipe.js"></script>
+  <script src="components/upload-file.js"></script>
   <script src="components/clicks-counter.js"></script>
   <script src="components/usePageVisibility.js"></script>
   <script src="components/clock.js"></script>

@@ -44,6 +44,7 @@
   top: 50%;
   opacity: 0;
   left: -100%;
+  border-radius: 12px;
   transform: translate(-3%, 3%);
   background-color: var(--navbar-bg);
   display: flex;
@@ -54,6 +55,7 @@
   height: auto;
   min-height: 120px;
   z-index: 900;
+  overflow: hidden;
   transition: all 0.4s ease-in-out;
 }
 #nav-links-container.open {
@@ -61,6 +63,7 @@
   left: 0%;
   height: auto;
   background-color: var(--navbar-bg);
+
   .nav-link {
     width: 100%;
     padding: 4px;
@@ -98,14 +101,22 @@
   width: 100%;
   padding: 0 8px;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   gap: 8px;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+  }
   p {
     font-family: inherit;
     font-weight: 600;
     margin-bottom: 2px;
   }
 }
+
 .search-container {
   position: relative;
   width: fit-content;

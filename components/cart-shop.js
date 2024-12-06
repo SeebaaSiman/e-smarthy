@@ -8,16 +8,21 @@ const updateCartNumber = () => {
   }
 };
 const cartSubtitle = () => {
+  let isEnglish = localStorage.getItem('isEnglish') === 'true';
   const subtitleContainer = document.getElementById("shipping-cart-title");
   const shipping = calculateShipping();
-  const free = "Envío estándar gratuito disponible para su pedido.";
-  const promo = "Envío gratuito para pedidos que superen los 5.000 €";
+
+  const freeEN = "Free standard shipping available for your order.";
+  const freeES = "Envío estándar gratuito disponible para su pedido.";
+  const promoEN = "Free shipping for orders over €5,000";
+  const promoES = "Envío gratuito para pedidos que superen los 5.000 €";
+
   if (!subtitleContainer) return;
   if (shipping === 0) {
-    subtitleContainer.textContent = free;
+    subtitleContainer.textContent = isEnglish ? freeEN : freeES;
     subtitleContainer.style.color = "#3ab65c"
   } else {
-    subtitleContainer.textContent = promo;
+    subtitleContainer.textContent = isEnglish ? promoEN : promoES;
     subtitleContainer.style.color = "#bf333b"
   }
 }
@@ -37,6 +42,8 @@ const addToCart = (product) => {
   updateCartNumber();
   cartSubtitle();
   updateCartUI();
+  updateLanguageDisplay();
+
 };
 // Eliminar un producto del carrito
 const removeFromCart = (productId) => {
@@ -45,6 +52,8 @@ const removeFromCart = (productId) => {
   updateCartNumber();
   cartSubtitle();
   updateCartUI();
+  updateLanguageDisplay();
+
 };
 // Actualizar cantidad de un producto en el carrito
 const updateQuantity = (productId, change) => {
@@ -55,6 +64,8 @@ const updateQuantity = (productId, change) => {
     updateCartNumber();
     cartSubtitle();
     updateCartUI();
+    updateLanguageDisplay();
+
   }
 };
 
@@ -96,14 +107,15 @@ const updateCartUI = () => {
   </div>
   <div class="cart-product-detail">
     <p class="cart-product-title">${item.title}</p>
-    <div class="cart-product-quantity"> cantidad
+    <div class="cart-product-quantity">
+    <p class="language spanish">cantidad</p>
+    <p class="language english">quantity</p>
       <button onclick="updateQuantity(${item.id},-1)">-</button>
       <p> ${item.quantity}</p>
       <button onclick="updateQuantity(${item.id},+1)">+</button>
     </div>
     <div class="cart-product-wrapper-bottom">
-      <div class="cart-product-price"> Precio
-        <p>
+      <div class="cart-product-price"> total        <p>
         &#8364;
         ${item.price.toFixed(2)}
         </p>
@@ -119,10 +131,13 @@ const updateCartUI = () => {
 </div>
       `).join("")
       : `<div class='empty-cart'>
-      <p>
-      El carrito está vacío.
-      </p>
-        <a href="#/products" class="btn-division btn-cart-buy">Ir a productos</a>
+      <p class="language spanish"> El carrito está vacío.  </p>
+      <p class="language english">The cart is empty.  </p>
+        <a href="#/products" class="btn-division btn-cart-buy">
+<p class="language spanish"> Ir a productos</p>
+<p class="language english"> Go to products</p>
+
+        </a>
       </div>
       `;
 
@@ -141,11 +156,13 @@ const updateCartUI = () => {
         <p>&#8364; ${calculateTotal()}</p>
       </div>
       <div class="cart-price-total">
-        <p>Cupon <ion-icon name="ticket-outline"></ion-icon></p>
+        <p class="language spanish">Cupon <ion-icon name="ticket-outline"></ion-icon></p>
+        <p class="language english">Coupon <ion-icon name="ticket-outline"></ion-icon></p>
         <input type="text" minlength="0" maxlength="8" class="ticket-cupon" placeholder="cupon number">
       </div>
       <div class="cart-price-total">
-        <p>Envío</p>
+        <p class="language spanish">Envío</p>
+        <p class="language english">Shipment</p>
         <p>&#8364;${calculateShipping()}</p>
       </div>
       <div class="cart-price-total">
@@ -157,6 +174,7 @@ const updateCartUI = () => {
       ` : ""}
     `;
   }
+
 };
 
 
@@ -177,5 +195,6 @@ const initializeCartPage = () => {
   // Actualizar la interfaz del carrito.
   updateCartUI();
   cartSubtitle();
+  updateLanguageDisplay();
 };
 

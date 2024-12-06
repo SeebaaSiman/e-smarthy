@@ -141,7 +141,7 @@ const handleHashLocation = async () => {
   footer.style.display = hideHeaderFooter ? "none" : "block";
 
   // Inicializar contenido dinámico
-  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay) {
+  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay && initializeWarrantyUploadFile) {
    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
    initializeSliderProductDetail();
   } else if (path === "/") {
@@ -150,6 +150,10 @@ const handleHashLocation = async () => {
    initializeProductsPage();
   } else if (path === "/cart") {
    initializeCartPage();
+  } else if (path === "/warranty") {
+   initializeWarrantyUploadFile();
+   updateLanguageDisplay();
+
   } else {
    updateLanguageDisplay();
   }

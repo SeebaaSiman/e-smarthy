@@ -105,16 +105,29 @@
       <span class="error-message language english">Choose a date</span>
     </div>
 
-    <div class="file-upload-container">
-      <div class="file-upload-top">
-        <ion-icon name="cloud-upload-outline"></ion-icon>
-        <p class="language english">Browse File to upload!</p>
-        <p class="language spanish">¡Examine el archivo para cargarlo!</p>
+    <div class="dropzone-container">
+      <h2>Upload file</h2>
+      <p>Click to upload or drag and drop</p>
+      <div class="dropzone-area">
+        <ion-icon name="cloud-upload-outline" class="file-upload-icon"></ion-icon>
+        <input type="file" required id="upload-file" name="uploaded-file" accept="image/*" multiple>
+        <div class="file-info">
+          <p>No Files Selected</p>
+         
+        </div>
       </div>
-      <label for="file" class="file-upload-bottom">
-        <p>Not selected file</p>
-      </label>
-      <input id="file" type="file">
+      <span class="language english">Max file size: 25MB</span>
+      <span class="language spanish">Tamaño máximo de archivo: 25MB</span>
+      <div class=" dropzone-actions">
+        <div class="dropzone-help">
+          <ion-icon name="help-circle-outline"></ion-icon>
+          help center
+        </div>
+        <div>
+          <button id="btn-cancel">Cancel</button>
+          <button id="btn-save">Save</button>
+        </div>
+      </div>
     </div>
 
 
@@ -131,7 +144,7 @@
     <p class="text-info-warranty language english">By registering, you agree to the Warranty Terms and Conditions, Terms
       and Conditions.
       conditions and you understand that we will process your personal data in accordance with our Privacy Policy. </p>
-    <button class="btn-division warranty-submit language spanish">Completar registro</button>
-    <button class="btn-division warranty-submit language english">Complete registration</button>
+    <button type="submit" class="btn-division warranty-submit language spanish">Completar registro</button>
+    <button type="submit" class="btn-division warranty-submit language english">Complete registration</button>
   </form>
 </section>

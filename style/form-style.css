@@ -108,7 +108,7 @@ textarea:invalid {
   scale: 0;
 }
 
-.file-upload-container {
+/* .file-upload-container {
   grid-column: 1 / -1;
   margin: 1rem auto;
   height: 300px;
@@ -164,7 +164,7 @@ textarea:invalid {
 
 #file {
   display: none;
-}
+} */
 .text-info-warranty {
   grid-column: 1 / -1;
   margin: auto;
@@ -182,5 +182,121 @@ textarea:invalid {
     width: 70%;
     box-shadow: 4px 4px 4px black;
     background-color: var(--card-bg);
+  }
+}
+
+.dropzone-container {
+  grid-column: 1 / -1;
+  margin: 1rem auto;
+
+  min-width: 300px;
+  max-width: 576px;
+  width: 80%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+  background-color: var(--text-shadow);
+  border-radius: 1rem;
+  box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.3);
+  h2 {
+    font-size: 1.4rem;
+  }
+  p {
+    font-size: 1.15rem;
+  }
+}
+.dropzone-area {
+  padding: 1rem;
+  position: relative;
+  min-height: 14rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px dashed var(--card-bg);
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.file-info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+ }
+.file-info li {
+  list-style: none;
+   text-align: left;
+}
+.file-upload-icon {
+  height: 6rem;
+  max-width: 6rem;
+  width: 100%;
+  color: var(--card-bg);
+}
+.dropzone-area [type="file"] {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.dropzone-area:hover {
+  background-color: #212930;
+}
+.dropzone--over {
+  border: 2px solid var(--card-bg);
+  background-color: var(--card-bg);
+}
+.dropzone-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  button {
+    flex-grow: 1;
+    min-height: 3rem;
+    border: none;
+    transition: background 0.3s ease-in-out;
+  }
+}
+
+.dropzone-help {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 4px;
+}
+#btn-cancel {
+  border-radius: 8px;
+  padding: 8px 16px;
+  color: var(--error);
+  background-color: transparent;
+  cursor: pointer;
+  border: 1px solid var(--error);
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    text-decoration: underline;
+    background-color: var(--error);
+    color: var(--text-shadow);
+  }
+}
+#btn-save {
+  background-color: var(--card-bg);
+  color: var(--black);
+  border-radius: 8px;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+    color: var(--card-bg);
+    background-color: var(--black);
   }
 }
