@@ -1,3 +1,22 @@
+/** Horizontal-scroll */
+#horizontal-scroll-container {
+  display: flex;
+  width: 200vw; /* Dos vistas, cada una con el ancho de la pantalla */
+  /* scroll-behavior: smooth; */
+  transition: transform 0.5s ease-in-out; /* Animación suave */
+}
+.page-horizontal {
+  width: 100vw;
+  /*
+   display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: start;
+  margin: auto;
+  gap: 8px;
+  overflow: hidden; */
+}
+
 .icon-arrow-back {
   font-size: 30px;
   margin: 4px;
@@ -5,6 +24,18 @@
 }
 .icon-arrow-back:active {
   scale: 0.9;
+}
+.btn-cart-shop-prev {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  font-size: 30px;
+  margin: 4px;
+  color: var(--text-shadow);
+  cursor: pointer;
+  &:active {
+    scale: 0.9;
+  }
 }
 #cart-container {
   width: 100%;
@@ -36,6 +67,12 @@
   justify-content: center;
   align-items: start;
   gap: 4px;
+}
+.cart-shop-top {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 1rem;
 }
 .cart-product-title {
   font-family: var(--font-bold);
@@ -111,7 +148,6 @@
   align-items: center;
   gap: 4px;
 }
-
 .cart-price-total {
   width: 100%;
   display: flex;
@@ -138,7 +174,6 @@
 .ticket-cupon:focus {
   width: 125px;
 }
-
 .btn-cart-buy {
   width: 80%;
   margin: auto;
@@ -211,4 +246,232 @@
 #btn-delete-cart:active {
   box-shadow: 5px 5px 5px var(--black);
   scale: 0.9;
+}
+.credit-card-container {
+  margin: 0 auto;
+  background-color: transparent;
+  width: clamp(240px, 70%, 400px);
+  aspect-ratio: 2/1.2;
+  perspective: 1000px;
+  color: var(--card-bg);
+}
+.credit-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.credit-card-front,
+.credit-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+}
+.credit-card-front {
+  padding: 1rem;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #171717;
+}
+.credit-card-front-left,
+.credit-card-front-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.credit-card-front-left {
+  margin-top: auto;
+  align-items: flex-start;
+}
+.credit-card-front-right {
+  align-items: flex-end;
+}
+.credit-card-back {
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+    rgba(0, 0, 0, 0.2) 0px -1px 0px inset;
+  background-color: #171717;
+  transform: rotateY(180deg);
+}
+.credit-card-container:hover .credit-card-inner {
+  transform: rotateY(-180deg);
+}
+.strip-top {
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 2em;
+  top: 2.4em;
+  background: repeating-linear-gradient(45deg, #303030, #303030 10px, #202020 10px, #202020 20px);
+}
+
+.strip-left {
+  position: absolute;
+  background-color: var(--navbar-bg);
+  width: 45%;
+  height: 1.3em;
+  top: 6em;
+  left: 0.8em;
+  border-radius: 2.5px;
+}
+
+.strip-right {
+  position: absolute;
+  background-color: var(--navbar-bg);
+  width: 30%;
+  height: 1.3em;
+  top: 6em;
+  right: 0.8em;
+  border-radius: 2.5px;
+}
+
+.code {
+  font-weight: bold;
+  text-align: center;
+  color: var(--black);
+}
+
+.payments-form-container {
+  margin: 2rem auto;
+  width: fit-content;
+  height: fit-content;
+  background: var(--navbar-bg);
+  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09),
+    0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 26px;
+  max-width: 450px;
+}
+
+.payments-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.payment--options {
+  width: calc(100% - 40px);
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 20px;
+  padding: 10px;
+}
+
+.payment--options button {
+  height: 55px;
+  background-color: var(--card-bg);
+  border-radius: 11px;
+  padding: 0;
+  border: 1px solid var(--text-shadow);
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+.payment--options img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.separator {
+  width: calc(100% - 20px);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 10px;
+  color: var(--text-shadow);
+  margin: 0 10px;
+}
+
+.separator > p {
+  word-break: keep-all;
+  display: block;
+  text-align: center;
+  font-weight: 600;
+  font-size: 12px;
+  margin: auto;
+}
+
+.separator .line {
+  display: inline-block;
+  margin: auto;
+}
+
+.credit-card-info--form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  gap: 15px;
+}
+
+.split input {
+  width: 100%;
+}
+
+.input-label {
+  font-size: 12px;
+  color: #8b8e98;
+  font-weight: 600;
+}
+
+.input-field {
+  width: auto;
+  height: 40px;
+  padding: 0 0 0 16px;
+  border-radius: 9px;
+  outline: none;
+  background-color: #f2f2f2;
+  border: 1px solid #e5e5e500;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.input-field:focus {
+  border: 1px solid transparent;
+  box-shadow: 0px 0px 0px 2px #242424;
+  background-color: transparent;
+}
+
+.purchase--btn {
+  height: 55px;
+  background: #f2f2f2;
+  border-radius: 11px;
+  border: 0;
+  outline: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
+  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+}
+
+.purchase--btn:hover {
+  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
+}
+
+/* Reset input number styles */
+.input-field::-webkit-outer-spin-button,
+.input-field::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

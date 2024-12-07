@@ -1,4 +1,12 @@
-// Inicializar el carrito desde el localStorage o crear uno vacío
+//* efecto horizontal-scroll
+let currentIndex = 0; // Comienza en la primer pág
+// Función para mover el contenedor
+const updateView = (index, container) => {
+  const offset = index * -100; // Calcula el desplazamiento en porcentaje
+  container.style.transform = `translateX(${offset}vw)`;
+};
+
+//* Inicializar el carrito desde el localStorage o crear uno vacío
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 console.log(cart, "cart items:");
 const updateCartNumber = () => {
@@ -43,7 +51,6 @@ const addToCart = (product) => {
   cartSubtitle();
   updateCartUI();
   updateLanguageDisplay();
-
 };
 // Eliminar un producto del carrito
 const removeFromCart = (productId) => {
@@ -53,7 +60,6 @@ const removeFromCart = (productId) => {
   cartSubtitle();
   updateCartUI();
   updateLanguageDisplay();
-
 };
 // Actualizar cantidad de un producto en el carrito
 const updateQuantity = (productId, change) => {
@@ -65,7 +71,6 @@ const updateQuantity = (productId, change) => {
     cartSubtitle();
     updateCartUI();
     updateLanguageDisplay();
-
   }
 };
 
@@ -115,7 +120,7 @@ const updateCartUI = () => {
       <button onclick="updateQuantity(${item.id},+1)">+</button>
     </div>
     <div class="cart-product-wrapper-bottom">
-      <div class="cart-product-price"> total        <p>
+      <div class="cart-product-price"> total<p>
         &#8364;
         ${item.price.toFixed(2)}
         </p>
@@ -170,31 +175,59 @@ const updateCartUI = () => {
         <p>&#8364; ${total.toFixed(2)}</p>
       </div>
       ${cart.length > 0 ? `
-        <a href="#" class="btn-division btn-cart-buy">Comprar</a>
-      ` : ""}
+        <button id="next-horizontal-scroll" class="btn-division btn-cart-buy">
+        <p class="language spanish">Ir a pagos</p>
+        <p class="language english">Go to payments</p>
+        </button>
+       ` : ""}
     `;
   }
-
+  updateLanguageDisplay();
 };
 
 
 document.addEventListener('DOMContentLoaded', () => {
   updateCartNumber(); // Actualiza el número al cargar la página
+  updateLanguageDisplay();
 });
 
 const initializeCartPage = () => {
-  // Asegúrate de que el contenedor de la página del carrito esté listo.
   const cartContainer = document.getElementById('cart-container');
   const totalContainer = document.getElementById('total-container');
 
+  const horizontalScrollContainer = document.getElementById("horizontal-scroll-container");
+  const prevButton = document.getElementById("prev-horizontal-scroll");
 
+  if (!horizontalScrollContainer || !prevButton) {
+    console.error("El contenedor del efecto horizontal scroll no está definido en el DOM")
+    return;
+  }
   if (!cartContainer || !totalContainer) {
     console.error('Los contenedores del carrito no están definidos en el DOM.');
     return;
   }
+
   // Actualizar la interfaz del carrito.
   updateCartUI();
   cartSubtitle();
   updateLanguageDisplay();
+  const nextButton = document.getElementById("next-horizontal-scroll");
+
+  if (nextButton && prevButton) {
+    nextButton.addEventListener("click", (e) => {
+      currentIndex = 1; // Ir al segundo child
+      updateView(currentIndex, horizontalScrollContainer);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = 0; // Ir al primer child
+      updateView(currentIndex, horizontalScrollContainer);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+
 };
+
 
