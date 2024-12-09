@@ -295,6 +295,9 @@
 .credit-card-front-right {
   align-items: flex-end;
 }
+.credit-card-valid {
+  font-size: 11px;
+}
 .credit-card-back {
   flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 2px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -302,12 +305,10 @@
   background-color: #171717;
   transform: rotateY(180deg);
 }
-.credit-card-container:hover .credit-card-inner {
-  transform: rotateY(-180deg);
-}
+
 .strip-top {
   position: absolute;
-  background-color: black;
+  background-color: var(--black);
   width: 100%;
   height: 2em;
   top: 2.4em;
@@ -427,7 +428,12 @@
 .split input {
   width: 100%;
 }
-
+.split-third {
+  display: grid;
+  grid-template-columns: auto 20px auto;
+  align-items: center;
+  gap: 8px;
+}
 .input-label {
   font-size: 12px;
   color: #8b8e98;
@@ -453,20 +459,20 @@
 
 .purchase--btn {
   height: 55px;
-  background: #f2f2f2;
   border-radius: 11px;
   border: 0;
   outline: none;
-  color: #ffffff;
+  color: var(--navbar-bg);
   font-size: 13px;
   font-weight: 700;
-  background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, #000000 100%);
-  box-shadow: 0px 0px 0px 0px #ffffff, 0px 0px 0px 0px #000000;
+  cursor: pointer;
+  background: linear-gradient(180deg, #363636 0%, #1b1b1b 50%, var(--black) 100%);
+  box-shadow: 0px 0px 0px 0px var(--navbar-bg), 0px 0px 0px 0px var(--black);
   transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
 }
 
 .purchase--btn:hover {
-  box-shadow: 0px 0px 0px 2px #ffffff, 0px 0px 0px 4px #0000003a;
+  box-shadow: 0px 0px 0px 2px var(--navbar-bg), 0px 0px 0px 4px #0000003a;
 }
 
 /* Reset input number styles */

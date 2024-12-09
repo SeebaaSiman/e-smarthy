@@ -191,7 +191,6 @@ const initializeProductsPage = () => {
 
 const initializeProductDetailPage = (productId) => {
   const selectedProduct = productsFromLocalStorage.find(product => product.id == productId);
-  console.log(selectedProduct, "producto seleccionado para product-detail-page");
 
   if (!selectedProduct) {
     console.error("Producto no encontrado");
@@ -227,7 +226,6 @@ const initializeProductDetailPage = (productId) => {
       </div>
     </div>
   `).join("");
-  console.log(selectedProduct.availabilityStatus.toLowerCase(), "stock de product selected");
 
   // Renderizar los detalles en el contenedor
   const productDetailContainer = document.getElementById("product-detail");

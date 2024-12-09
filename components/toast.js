@@ -69,22 +69,7 @@ const showToast = ({ message, type, autoCierre = true }) => {
 
 
 //* Forma de uso
-// const addMessageButton = document.getElementById('addMessage');
-// if (addMessageButton) {
-//   addMessageButton.addEventListener('click', () => {
-//     showToast({ message: 'Bienvenido a E-Smarthy, esperamos que disfrutes tu recorrido', type: 'info' });
-//   })
-// }
 
+//showToast({ message: 'Bienvenido a E-Smarthy, esperamos que disfrutes tu recorrido', type: 'info' });
 
-// const initializeLoremPage = () => {
-//  const addMessageButton = document.getElementById('addMessage');
-//  if (addMessageButton) {
-//   addMessageButton.addEventListener('click', () => {
-//    showToast({ message: 'Formulario enviado correctamente', type: 'success' });
-//    console.log('Botón de mensaje agregado y evento de click funcionando');
-//   });
-//  } else {
-//   console.log("Botón no encontrado en la página");
-//  }
-// };
+// showToast({ message: 'Formulario enviado correctamente', type: 'success' });

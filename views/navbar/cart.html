@@ -1,27 +1,4 @@
 <div id="horizontal-scroll-container">
-
-  <section class="page-horizontal">
-    <div class="page">
-      <div class="cart-shop-top">
-        <a href="#/products" class="icon-arrow-back"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
-        <h2 class="language spanish">Carrito de compras</h2>
-        <h2 class="language english">Cart shop</h2>
-      </div>
-      <p id="shipping-cart-title"></p>
-      <hr>
-      <div id="cart-container"></div>
-      <div class="cart-price-container" id="total-container"></div>
-      <div class="footer-pay" style="margin: 2rem auto;">
-        <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
-        <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
-        <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">
-        <img loading="lazy" src="assets/cards/mastercard.png" alt="card mastercard image">
-        <img loading="lazy" src="assets/cards/paypal.jpg" alt="paypal image">
-        <img loading="lazy" src="assets/cards/shop-pay.webp" alt="card shop pay image">
-        <img loading="lazy" src="assets/cards/visa.png" alt="card visa image">
-      </div>
-    </div>
-  </section>
   <section class="page-horizontal">
     <div class="page">
 
@@ -63,15 +40,16 @@
               MjMtMDItMTNUMDg6MTU6MjkrMDA6MDA0eo8JAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTAy
               LTEzVDA4OjE1OjI5KzAwOjAwY2+u1gAAAABJRU5ErkJggg=="></image>
               </svg>
-              <p class="valid-thru">VALID THRU</p>
-              <p class="date-8264">1 2 / 2 4</p>
-              <p class="name">BRUCE WAYNE</p>
+              <p id="credit-card-number">0000 0000 0000 0000</p>
+              <p class="credit-card-valid">VALID THRU</p>
+              <p id="credit-card-date">1 2 / 2 4</p>
+              <p id="credit-card-name">BRUCE WAYNE</p>
             </div>
             <div class="credit-card-front-right">
-              <p class="credit-card-type mastercard">MASTERCARD</p>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-                y="0px" width="20px" height="20px" viewBox="0 0 50 50" xml:space="preserve">
-                <image width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+              <p id="credit-card-type"></p>
+              <div><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                  x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" xml:space="preserve">
+                  <image width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
               AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
               cwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0IEzgIwaKTAAADDklEQVRYw+1XS0iUURQ+f5qPyjQf
               lGRFEEFK76koKGxRbWyVVLSOgsCgwjZBJJYuKogSIoOonUK4q3U0WVBWFPZYiIE6kuArG3VGzK/F
@@ -91,22 +69,15 @@
               MTNUMDg6MTk6NTYrMDA6MDCjlq7LAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTAyLTEzVDA4OjE5
               OjU2KzAwOjAw0ssWdwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wMi0xM1QwODoxOTo1Nisw
               MDowMIXeN6gAAAAASUVORK5CYII="></image>
-              </svg>
-              <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36"
-                viewBox="0 0 48 48">
-                <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path>
-                <path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path>
-                <path fill="#ff3d00"
-                  d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z">
-                </path>
-              </svg>
+                </svg></div>
+              <div id="credit-card-logo"></div>
             </div>
           </div>
           <div class="credit-card-back">
             <div class="strip-top"></div>
             <div class="strip-left"></div>
             <div class="strip-right">
-              <p class="code">***</p>
+              <p class="code" id="credit-card-code">***</p>
             </div>
           </div>
         </div>
@@ -133,8 +104,8 @@
           <div class="credit-card-info--form">
             <div class="input-container">
               <label for="select-card" class="input-label">Choose you credit card</label>
-              <input id="select-card" class="input-field" type="text" name="input-name" placeholder="Credit card"
-                list="credit-card-list">
+              <input id="select-card" class="input-field" type="text" name="input-list" placeholder="Credit card"
+                required list="credit-card-list">
               <datalist id="credit-card-list">
                 <option value="mastercard">mastercard</option>
                 <option value="visa">visa</option>
@@ -142,23 +113,55 @@
               </datalist>
             </div>
             <div class="input-container">
-              <label for="" class="input-label">Card holder full name</label>
-              <input id="" class="input-field" type="text" name="input-name" placeholder="Enter your full name">
+              <label for="credit-name" class="input-label">Card holder full name</label>
+              <input id="credit-name" class="input-field" type="text" name="credit-name"
+                placeholder="Enter your full name" required minlength="6">
             </div>
             <div class="input-container">
-              <label for="" class="input-label">Card Number</label>
-              <input id="" class="input-field" type="number" name="input-name" placeholder="0000 0000 0000 0000">
+              <label for="credit-number" class="input-label">Card Number</label>
+              <input id="credit-number" class="input-field" type="number" name="credit-number" maxlength="16"
+                placeholder="0000 0000 0000 0000" required>
             </div>
             <div class="input-container">
-              <label for="" class="input-label">Expiry Date / CVV</label>
+              <label class="input-label">Expiry Date / CVV</label>
               <div class="split">
-                <input id="" class="input-field" type="text" name="input-name" title="Expiry Date" placeholder="01/23">
-                <input id="" class="input-field" type="number" name="cvv" title="CVV" placeholder="CVV">
+                <div class="split-third">
+
+                  <input id="expiry-date" class="input-field" type="text" name="expiry-date" maxlength="2" required
+                    placeholder="01">/
+                  <input id="expiry-month" class="input-field" type="text" name="expiry-month" maxlength="2" required
+                    placeholder="23">
+                </div>
+                <input id="cvv" class="input-field" type="number" name="cvv" maxlength="3" required placeholder="CVV">
               </div>
             </div>
           </div>
-          <button class="purchase--btn">Checkout</button>
+          <button class="purchase--btn" type="submit">Checkout</button>
         </form>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="page-horizontal">
+    <div class="page">
+      <div class="cart-shop-top">
+        <a href="#/products" class="icon-arrow-back"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+        <h2 class="language spanish">Carrito de compras</h2>
+        <h2 class="language english">Cart shop</h2>
+      </div>
+      <p id="shipping-cart-title"></p>
+      <hr>
+      <div id="cart-container"></div>
+      <div class="cart-price-container" id="total-container"></div>
+      <div class="footer-pay" style="margin: 2rem auto;">
+        <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
+        <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
+        <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">
+        <img loading="lazy" src="assets/cards/mastercard.png" alt="card mastercard image">
+        <img loading="lazy" src="assets/cards/paypal.jpg" alt="paypal image">
+        <img loading="lazy" src="assets/cards/shop-pay.webp" alt="card shop pay image">
+        <img loading="lazy" src="assets/cards/visa.png" alt="card visa image">
       </div>
     </div>
   </section>

@@ -2,7 +2,7 @@
 
 Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 24225, profesores Nicolás Fernandez y Paz Aliaga.
 
-E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios productos de diversas marcas que se encarga de la distribución y garantía de diversos productos.
+E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios productos de diversas marcas que se encarga de la distribución y garantía de diversos productos a lo largo y ancho del mundo.
 
 ## Tech Stack
 
@@ -16,17 +16,40 @@ E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios producto
 
 ## Estructura del Proyecto
 
+Esquema básico de la estructura del proyecto
+
 ```bash
-├── index.html
+├── assets
+│   └── cards
+│        └── amex.png
+│        └── apple-pay.png
+│        └── google-pay.png
+│   └── flag-language
+│        └── eeuu.png
+│        └── spain.png
+├── components
+│   ├── banner-swipe.js
+│   ├── language.js
+│   ├── navbar.js
+│   └── toast.js
+├── services
+│   └── api
+│        └── products.js
+│   └── router
+│        └── index.js
+├── styles
+│   └── font
+│        └── GT-Walsheim-Pro-Bold.ttf
+│        └── GT-Walsheim-Pro-Ultra-Light.ttf
+│   └── cart-style.css
+│   └── footer-style.css
+│   └── global-style.css
 ├── views
 │   ├── cart.html
 │   ├── products.html
 │   ├── contact.html
 │   └── error.html
-├── styles
-│   └── styles.css
-│   └── font
-│        └── styles.css
+├── index.html
 └── README.md
 
 ```
