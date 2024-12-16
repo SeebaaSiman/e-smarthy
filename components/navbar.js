@@ -51,6 +51,7 @@ const loginCheck = () => {
    loginIconContainer.forEach((wrapper) => {
     wrapper.innerHTML = loginIcon.logout;
     wrapper.addEventListener("click", () => {
+     showToast({ message: `Adios ${user} 😄`, type: 'success' });
      localStorage.removeItem("user");
      loginCheck()
     })
