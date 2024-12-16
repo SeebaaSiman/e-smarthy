@@ -1,8 +1,76 @@
 <div id="horizontal-scroll-container">
   <section class="page-horizontal">
     <div class="page">
+      <div class="cart-shop-top">
+        <a href="#/products" class="icon-arrow-back"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
+        <h2 class="language spanish">Carrito de compras</h2>
+        <h2 class="language english">Cart shop</h2>
+      </div>
+      <p id="shipping-cart-title"></p>
+      <hr>
+      <div id="cart-container"></div>
+      <div class="cart-price-container" id="total-container"></div>
+      <button class="btn-division btn-cart-buy second-horizontal-scroll" id="btn-cart-buy">
+        <p class="language spanish">Comprar</p>
+        <p class="language english">Buy</p>
+      </button>
+      <div class="footer-pay" style="margin: 2rem auto;">
+        <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
+        <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
+        <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">
+        <img loading="lazy" src="assets/cards/mastercard.png" alt="card mastercard image">
+        <img loading="lazy" src="assets/cards/paypal.jpg" alt="paypal image">
+        <img loading="lazy" src="assets/cards/shop-pay.webp" alt="card shop pay image">
+        <img loading="lazy" src="assets/cards/visa.png" alt="card visa image">
+      </div>
+    </div>
+  </section>
 
-      <button class="btn-cart-shop-prev" id="prev-horizontal-scroll">
+  <section class="page-horizontal">
+    <button class="btn-cart-shop-prev first-horizontal-scroll">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </button>
+
+    <form action="" class="user-form">
+      <p class="language spanish">- Datos personales</p>
+      <p class="language english">- Personal information</p>
+
+      <div class="input-container">
+        <label for="user-name" class="input-label">Name</label>
+        <input id="user-name" class="input-field" type="text" name="user-name" placeholder="..." required>
+      </div>
+      <div class="input-container">
+        <label for="user-mail" class="input-label">Email</label>
+        <input id="user-mail" class="input-field" type="email" name="user-mail" placeholder="..." required>
+      </div>
+      <p class="language spanish">- Datos de envío</p>
+      <p class="language english">- Shipping information</p>
+
+      <div class="input-container">
+        <label for="user-address" class="input-label">Address</label>
+        <input id="user-address" class="input-field" type="text" name="user-address" placeholder="..." required>
+      </div>
+      <div class="input-container">
+        <label for="user-phone" class="input-label">Phone number</label>
+        <input id="user-phone" class="input-field" type="number" name="user-phone" placeholder="..." required>
+      </div>
+      <div class="input-container">
+        <label for="user-other" class="input-label">Coments</label>
+        <textarea id="user-other" name="user-other" placeholder="..." type="textarea"></textarea>
+      </div>
+      <button id="third-horizontal-scroll" class="btn-division btn-cart-buy">
+        <span class="language spanish">Ir a pagos</span>
+        <span class="language english">Go to payments</span>
+      </button>
+    </form>
+
+  </section>
+
+
+
+  <section class="page-horizontal">
+    <div class="page">
+      <button class="btn-cart-shop-prev second-horizontal-scroll">
         <ion-icon name="arrow-back-circle-outline"></ion-icon>
       </button>
 
@@ -141,30 +209,4 @@
       </div>
     </div>
   </section>
-
-
-  <section class="page-horizontal">
-    <div class="page">
-      <div class="cart-shop-top">
-        <a href="#/products" class="icon-arrow-back"><ion-icon name="arrow-back-circle-outline"></ion-icon></a>
-        <h2 class="language spanish">Carrito de compras</h2>
-        <h2 class="language english">Cart shop</h2>
-      </div>
-      <p id="shipping-cart-title"></p>
-      <hr>
-      <div id="cart-container"></div>
-      <div class="cart-price-container" id="total-container"></div>
-      <div class="footer-pay" style="margin: 2rem auto;">
-        <img loading="lazy" src="assets/cards/amex.png" alt="card amex image">
-        <img loading="lazy" src="assets/cards/apple-pay.png" alt="card apple pay image">
-        <img loading="lazy" src="assets/cards/google-pay.jpg" alt="card google pay image">
-        <img loading="lazy" src="assets/cards/mastercard.png" alt="card mastercard image">
-        <img loading="lazy" src="assets/cards/paypal.jpg" alt="paypal image">
-        <img loading="lazy" src="assets/cards/shop-pay.webp" alt="card shop pay image">
-        <img loading="lazy" src="assets/cards/visa.png" alt="card visa image">
-      </div>
-    </div>
-  </section>
-
-
 </div>

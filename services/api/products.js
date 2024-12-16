@@ -31,33 +31,27 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
 console.log(productsFromLocalStorage, "productos en mi localStorage");
 
-
+//* Uso map para crear un array dentro de un Set para evitar duplicados, luego
+//map crea un nuevo array extrayendo solo las categorías de cada objeto del array original
+//Set elimina los duplicados, asegurando que solo tengamos categorías únicas
+//Convertimos el Set a un array usando el operador de propagación spread (...) para obtener un array con las categorías únicas
 const categories = new Set(productsFromLocalStorage.map(producto => producto.category));
 const allCategoriesProducts = [...categories];
-//map crea un nuevo array extrayendo solo las categorías de cada objeto del array original
-//Set elimina los duplicados, asegurando que solo tengamos categorías únicas
-//Convertimos el Set a un array usando el operador de propagación spread (...) para obtener un array con las categorías únicas
 
 //* Según estén en stock o no
-
 const availabilityStatus = new Set(productsFromLocalStorage.map(producto => producto.availabilityStatus));
 const allavailabilityStatus = [...availabilityStatus];
-//map crea un nuevo array extrayendo solo las categorías de cada objeto del array original
-//Set elimina los duplicados, asegurando que solo tengamos categorías únicas
-//Convertimos el Set a un array usando el operador de propagación spread (...) para obtener un array con las categorías únicas
 
 
-const depurRating = productsFromLocalStorage.sort((a, b) => b.rating - a.rating);
-const top6Rating = depurRating.slice(0, 6);
+
 // sort es un método para ordenar
 // (a, b) => b.rating - a.rating ordena de manera descendente, si el resultado de la resta es positivo + B va antes que A (descendete), si el resultado es negativo - A va antes que B (orden ascendente), si el resultado es cero los elementos mantienen su orden relativo
 // slice(0, 6) crea un nuevo array con los primeros 6 elementos
+const depurRating = productsFromLocalStorage.sort((a, b) => b.rating - a.rating);
+const top6Rating = depurRating.slice(0, 6);
 
 const depurdiscount = productsFromLocalStorage.sort((a, b) => b.discountPercentage - a.discountPercentage);
 const top6DiscountPercentage = depurdiscount.slice(0, 6);
-// sort es un método para ordenar
-// (a, b) => b.rating - a.rating ordena de manera descendente, si el resultado de la resta es positivo + B va antes que A (descendete), si el resultado es negativo - A va antes que B (orden ascendente), si el resultado es cero los elementos mantienen su orden relativo
-// slice(0, 6) crea un nuevo array con los primeros 6 elementos
 
 
 //*Fx que se encarga de renderizar cada card product dentro de un div contenedor
@@ -78,9 +72,9 @@ const renderProducts = (products, productsContainer) => {
                       id: ${product.id},
                       title: '${product.title}',
                       price: ${product.price},
+                      stock: ${product.stock},
                       thumbnail: '${product.thumbnail}'
-                    });
-                               showToast({ message: 'Agregaste ${product.title} a tu carrito', type: 'success' });"
+                    });"
   class="btn-division">
   Agregar al carrito
 </button>
@@ -122,6 +116,17 @@ const filterProducts = (products) => {
     }
     return true; // Si pasa todos los filtros, incluir en los resultados
   });
+};
+// Función para actualizar los productos filtrados
+const updateFilteredProducts = () => {
+  const filteredCountElement = document.getElementById("filtered-count");
+  const cardProducts = document.getElementById('card-products-list');
+  const filteredProducts = filterProducts(productsFromLocalStorage);
+  renderProducts(filteredProducts, cardProducts);
+  // Actualizar el número de productos filtrados
+  filteredCountElement.textContent = `${filteredProducts.length}`;
+
+  console.log(filteredProducts, "productos filtrados")
 };
 
 const initializeProductsPage = () => {
@@ -176,19 +181,8 @@ const initializeProductsPage = () => {
         updateFilteredProducts();
       });
     });
-    // Función para actualizar los productos filtrados
-    const updateFilteredProducts = () => {
-
-      const filteredProducts = filterProducts(productsFromLocalStorage);
-      renderProducts(filteredProducts, cardProducts);
-      // Actualizar el número de productos filtrados
-      filteredCountElement.textContent = `${filteredProducts.length}`;
-
-      console.log(filteredProducts, "productos filtrados")
-    };
   }
 }
-
 const initializeProductDetailPage = (productId) => {
   const selectedProduct = productsFromLocalStorage.find(product => product.id == productId);
 
@@ -256,9 +250,10 @@ const initializeProductDetailPage = (productId) => {
                       id: ${selectedProduct.id},
                       title: '${selectedProduct.title}',
                       price: ${selectedProduct.price},
+                      stock: ${selectedProduct.stock},
                       thumbnail: '${selectedProduct.thumbnail}'
                     });
- showToast({ message: 'Agregaste ${selectedProduct.title} a tu carrito', type: 'success' });"  class="btn-division">
+   "  class="btn-division">
  <p class="language spanish">Agregar al carrito</p>
  <p class="language english">Add to cart</p>
 </button>
@@ -291,6 +286,7 @@ const initializeProductDetailPage = (productId) => {
         <p>${selectedProduct.warrantyInformation}</p>
         <p>${selectedProduct.shippingInformation}</p>
         <div class="product-detail-stock ${selectedProduct.availabilityStatus.toLowerCase()}">
+        <p>${selectedProduct.stock}</p>
           <p>${selectedProduct.availabilityStatus}</p>
         </div>
         <p>${selectedProduct.returnPolicy}</p>
@@ -316,7 +312,6 @@ const initializeProductDetailPage = (productId) => {
   updateLanguageDisplay();
 
 };
-
 const initializeSliderProductDetail = () => {
 
   const asideImageContainer = document.querySelector('.aside-image-container');

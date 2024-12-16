@@ -7,6 +7,7 @@ const errorPage = () => "/views/error.html";
 const homePage = () => "/views/navbar/home.html";
 const usPage = () => "/views/navbar/us.html";
 const cartPage = () => "/views/navbar/cart.html";
+const loginPage = () => "/views/navbar/login.html";
 const productsPage = () => "/views/navbar/product.html";
 const productDetailPage = () => "/views/navbar/product.html";
 const privacyPage = () => "/views/footer/terms/privacy-and-cookie-policy.html"
@@ -27,6 +28,7 @@ const routes = {
  "/": homePage,
  "/us": usPage,
  "/cart": cartPage,
+ "/login": loginPage,
  "/products": productsPage,
  "/products/product-detail": productDetailPage,
  //footer/terms
@@ -47,6 +49,7 @@ const routes = {
 const routesCSS = {
  '/': 'banner-and-logos-style.css',
  "/cart": "cart-style.css",
+ "/login": "login-style.css",
  "/products": "product-style.css",
  "/products/product-detail": "product-detail-style.css",
  "/us": "us-style.css",
@@ -136,21 +139,27 @@ const handleHashLocation = async () => {
   loadCSS(isProductDetail ? "/products/product-detail" : path);
 
   // Configurar visibilidad de header y footer
-  const hideHeaderFooter = path === "/cart";
+  const hideHeaderFooter = path === "/cart" || path === "/login";
   header.style.display = hideHeaderFooter ? "none" : "block";
   footer.style.display = hideHeaderFooter ? "none" : "block";
 
   // Inicializar contenido dinámico
-  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay && initializeWarrantyUploadFile && initializePayments) {
+  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay && initializeWarrantyUploadFile && initializePayments && initializeLogin) {
    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
    initializeSliderProductDetail();
   } else if (path === "/") {
+   updateLanguageDisplay();
    initializeHomePage();
   } else if (path === "/products") {
    initializeProductsPage();
+  } else if (path === "/login") {
+   updateLanguageDisplay();
+   initializeLogin();
   } else if (path === "/cart") {
    initializeCartPage();
+   initializeUserInfo();
    initializePayments();
+   initializeScrollHorizontal();
   } else if (path === "/warranty") {
    initializeWarrantyUploadFile();
    updateLanguageDisplay();
@@ -178,4 +187,3 @@ const handleHashLocation = async () => {
 
 window.addEventListener("hashchange", handleHashLocation);
 handleHashLocation(); // Inicializar la carga en la primera visita
-

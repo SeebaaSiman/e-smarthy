@@ -11,7 +11,7 @@ class Toast {
         <div class="icono">
           ${iconos[type]}
         </div>
-          <p class="titulo">${message}</p>
+          <p class="toast-message">${message}</p>
           <div class="barrita"></div>
             </div>
     `;
@@ -66,10 +66,3 @@ const showToast = ({ message, type, autoCierre = true }) => {
     }
   });
 };
-
-
-//* Forma de uso
-
-//showToast({ message: 'Bienvenido a E-Smarthy, esperamos que disfrutes tu recorrido', type: 'info' });
-
-// showToast({ message: 'Formulario enviado correctamente', type: 'success' });

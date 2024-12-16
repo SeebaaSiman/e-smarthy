@@ -62,8 +62,10 @@
             <img src="/assets/flag-language/eeuu.png" alt="eeuu flag">
           </div>
         </div>
-        <div class="nav-theme">
-          <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
+        <div class="nav-login">
+          <p class="language english login-text">Login</p>
+          <p class="language spanish login-text">Iniciar sesión</p>
+          <div class="nav-login-icon"></div>
         </div>
 
 
@@ -87,7 +89,7 @@
       </div>
 
       <div id="nav-links-container">
-        <div class="nav-links-language-theme-container">
+        <div class="nav-links-language-login-container">
           <div>
             <p class="language english">Language</p>
             <p class="language spanish">Idioma</p>
@@ -101,10 +103,10 @@
             </div>
           </div>
           <div>
-            <p class="language english">Theme</p>
-            <p class="language spanish">Tema</p>
-            <div class="nav-theme-menu">
-              <ion-icon name="contrast-outline"></ion-icon> <ion-icon name="sunny-outline"></ion-icon>
+            <p class="language english login-text" onclick="onCloseMenu()">Login</p>
+            <p class="language spanish login-text" onclick="onCloseMenu()">Iniciar sesión</p>
+            <div class="nav-login-icon" onclick="onCloseMenu()">
+
             </div>
           </div>
         </div>
@@ -224,6 +226,7 @@
       &copy; <span id="current-year"></span> E-Smarthy.
     </div>
   </footer>
+  <script src="services/login.js"></script>
   <script src="services/api/products.js"></script>
   <script src="components/toast.js"></script>
   <script src="components/cart-shop.js"></script>

@@ -281,3 +281,153 @@
   height: 50px;
   margin: 0 40px;
 }
+
+.glitch-container {
+  max-width: 992px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 0rem;
+  height: 100vh;
+  width: 100vw;
+  @media (min-width: 700px) {
+    gap: 1.5rem;
+  }
+}
+.glitch-item {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+  @media (min-width: 700px) {
+    border-radius: 22px;
+  }
+  p {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 46px;
+    letter-spacing: normal;
+    font-family: var(--font-bold);
+    color: var(--text-shadow);
+    text-shadow: 1px 2px 3px var(--body-bg);
+    @media (min-width: 600px) {
+      font-size: 42px;
+    }
+  }
+}
+
+.kitchen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/home-category/kitchen.jpg");
+  background-size: cover;
+  animation: glitch-kitchen 2.5s infinite steps(1);
+}
+@keyframes glitch-kitchen {
+  0%,
+  100% {
+    background: url("../assets/home-category/kitchen.jpg");
+    background-size: cover;
+  }
+  92.5% {
+    background: url("../assets/home-category/kitchen-glitch.png");
+    background-size: cover;
+  }
+  95% {
+    background: url("../assets/home-category/kitchen-glitch2.png");
+    background-size: cover;
+  }
+  97.5% {
+    background: url("../assets/home-category/kitchen-glitch3.png");
+    background-size: cover;
+  }
+}
+
+.smartphones {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/home-category/smartphones.jpg");
+  background-size: cover;
+  animation: glitch-smartphones 2.5s infinite steps(1);
+  animation-delay: 0.25s;
+}
+@keyframes glitch-smartphones {
+  0%,
+  100% {
+    background: url("../assets/home-category/smartphones.jpg");
+    background-size: cover;
+  }
+  92.5% {
+    background: url("../assets/home-category/smartphones-glitch.png");
+    background-size: cover;
+  }
+  95% {
+    background: url("../assets/home-category/smartphones-glitch2.png");
+    background-size: cover;
+  }
+  97.5% {
+    background: url("../assets/home-category/smartphones-glitch3.png");
+    background-size: cover;
+  }
+}
+.mens-shoes {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/home-category/mens-shoes.jpg");
+  background-size: cover;
+  animation: glitch-mens-shoes 2.5s infinite steps(1);
+  animation-delay: 0.75s;
+}
+@keyframes glitch-mens-shoes {
+  0%,
+  100% {
+    background: url("../assets/home-category/mens-shoes.jpg");
+    background-size: cover;
+  }
+  92.5% {
+    background: url("../assets/home-category/mens-shoes-glitch.png");
+    background-size: cover;
+  }
+  95% {
+    background: url("../assets/home-category/mens-shoes-glitch2.png");
+    background-size: cover;
+  }
+  97.5% {
+    background: url("../assets/home-category/mens-shoes-glitch3.png");
+    background-size: cover;
+  }
+}
+.women {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("../assets/home-category/women.jpg");
+  background-size: cover;
+  animation: glitch-women 2.5s infinite steps(1);
+
+  animation-delay: 0.5s;
+}
+@keyframes glitch-women {
+  0%,
+  100% {
+    background: url("../assets/home-category/women.jpg");
+    background-size: cover;
+  }
+  92.5% {
+    background: url("../assets/home-category/women-glitch.png");
+    background-size: cover;
+  }
+  95% {
+    background: url("../assets/home-category/women-glitch2.png");
+    background-size: cover;
+  }
+  97.5% {
+    background: url("../assets/home-category/women-glitch3.png");
+    background-size: cover;
+  }
+}

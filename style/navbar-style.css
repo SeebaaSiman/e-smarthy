@@ -76,10 +76,17 @@
 }
 
 .nav-language,
-.nav-theme {
+.nav-login {
   display: none;
 }
-
+.nav-login {
+  align-items: center;
+  color: var(--text-shadow);
+  p {
+    height: 100%;
+    margin-bottom: 6px;
+  }
+}
 .nav-language div,
 .nav-language-menu div {
   width: 100%;
@@ -95,16 +102,18 @@
   margin-top: 6px;
   height: 24px;
 }
-.nav-links-language-theme-container {
+.nav-links-language-login-container {
   font-size: 16px;
   color: var(--text-shadow);
   width: 100%;
-  padding: 0 8px;
   display: flex;
-  flex-direction: column;
-  align-items: start;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
   gap: 8px;
-  div {
+  div,
+  a {
+    color: var(--text-shadow);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,14 +280,13 @@
 }
 
 /* Only mobile */
-/* Hamburuger icon */
 #nav-icon-hamburguer {
   position: relative;
   width: 30px;
   height: 20px;
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
-  cursor: pointer;
+  cursor: none;
   display: flex;
 }
 #nav-icon-hamburguer span {
@@ -372,10 +380,12 @@
       gap: 8px;
     }
     .nav-language,
-    .nav-theme {
+    .nav-login {
       display: flex;
+      align-items: center;
+      cursor: pointer;
     }
-    .nav-links-language-theme-container {
+    .nav-links-language-login-container {
       display: none;
     }
     .nav-icons-container {

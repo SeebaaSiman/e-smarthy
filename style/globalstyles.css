@@ -15,15 +15,15 @@
 }
 @font-face {
   font-family: "Walsheim-bold";
-  src: url("./fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
-  font-weight: bold; /* Puedes ajustar esto si es necesario */
-  font-style: normal; /* Cambia a 'italic' si es una fuente en cursiva */
+  src: url("./fonts/GT-Walsheim-Pro-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 @font-face {
   font-family: "Walsheim";
-  src: url("./fonts/GT-Walsheim-Pro-Ultra-Light.ttf") format("truetype"); /* Ruta hacia tu archivo .ttf */
-  font-weight: normal; /* Puedes ajustar esto si es necesario */
-  font-style: normal; /* Cambia a 'italic' si es una fuente en cursiva */
+  src: url("./fonts/GT-Walsheim-Pro-Ultra-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 * {
   margin: 0;
@@ -65,14 +65,12 @@ article {
 }
 main {
   opacity: 1;
-  /* scale: 1; */
   transform: translateX(0px);
   transition: all 0.4s ease-in-out;
 }
 
 main.hidden {
   opacity: 0;
-  /* scale: 0.5; */
   transform: translateX(-1000px);
 }
 
@@ -200,7 +198,7 @@ p {
   border-radius: 0.625em;
   font-size: 16px;
   font-family: var(--font-bold);
-  cursor: pointer;
+  cursor: none;
   z-index: 100;
   overflow: hidden;
   display: flex;
@@ -241,8 +239,8 @@ p {
   color: var(--body-bg);
   border: none;
   padding: 10px;
-  cursor: pointer;
   z-index: 699;
+  cursor: pointer;
   border-radius: 50%;
   aspect-ratio: 1;
   opacity: 0;

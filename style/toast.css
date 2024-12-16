@@ -66,9 +66,10 @@
   opacity: 0.4;
 }
 
-.toast .titulo {
+.toast-message {
   font-size: 16px;
   font-weight: 600;
+  color: var(--navbar-bg);
   margin-bottom: 5px;
 }
 

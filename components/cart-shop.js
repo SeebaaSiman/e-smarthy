@@ -1,6 +1,5 @@
 //* efecto horizontal-scroll
-let currentIndex = 0; // Comienza en la primer pág
-// Función para mover el contenedor
+let currentIndex = 0;
 const updateView = (index, container) => {
   const offset = index * -100; // Calcula el desplazamiento en porcentaje
   container.style.transform = `translateX(${offset}vw)`;
@@ -12,8 +11,15 @@ console.log(cart, "cart items:");
 const updateCartNumber = () => {
   const cartNumberElement = document.querySelector('.cart-number');
   if (cartNumberElement) {
-    cartNumberElement.textContent = cart.length === 0 ? "" : cart.length; // Actualiza con la longitud del carrito
+    cartNumberElement.textContent = cart.length === 0 ? "" : cart.length;
   }
+};
+const order = {
+  cartItems: cart,
+  totalBuy: null,
+  userInfo: null,
+  ticket: null,
+  date: new Date()
 };
 const cartSubtitle = () => {
   let isEnglish = localStorage.getItem('isEnglish') === 'true';
@@ -40,9 +46,21 @@ const saveCartToLocalStorage = () => {
 };
 // Agregar un producto al carrito
 const addToCart = (product) => {
+  if (product.stock <= 0) {
+    showToast({ message: 'Lo sentimos, este producto está agotado.', type: 'error' });
+    return;
+  }
+
   const existingProduct = cart.find((item) => item.id === product.id);
   if (existingProduct) {
-    existingProduct.quantity += 1; // Incrementar cantidad si ya está en el carrito
+    // Verificar si la cantidad en el carrito supera el stock disponible
+    if (existingProduct.quantity >= product.stock) {
+      showToast({ message: 'La cantidad solicitada supera el stock disponible.', type: 'error' });
+      existingProduct.quantity = product.stock; // Ajustar la cantidad al stock máximo
+    } else {
+      existingProduct.quantity += 1; // Incrementar cantidad si ya está en el carrito
+      showToast({ message: `Agregaste ${product.title} a tu carrito`, type: 'success' });
+    }
   } else {
     cart.push({ ...product, quantity: 1 });
   }
@@ -63,9 +81,20 @@ const removeFromCart = (productId) => {
 };
 // Actualizar cantidad de un producto en el carrito
 const updateQuantity = (productId, change) => {
+  console.log(change, "change");
+
   const product = cart.find((item) => item.id === productId);
+
   if (product) {
-    product.quantity = Math.max(1, product.quantity + change); // Asegúrate de que la cantidad no sea menor a 1
+    if (product.quantity >= product.stock && change == "1") {
+      showToast({ message: 'La cantidad solicitada supera el stock disponible.', type: 'error' })
+      existingProduct.quantity = product.stock; // Ajustar la cantidad al stock máximo
+    } else if (product.quantity >= product.stock && change === "-1") {
+      product.quantity = Math.max(1, product.quantity + change);
+    }
+    else {
+      product.quantity = Math.max(1, product.quantity + change);
+    }
     saveCartToLocalStorage();
     updateCartNumber();
     cartSubtitle();
@@ -78,9 +107,9 @@ const updateQuantity = (productId, change) => {
 const calculateTotal = () => {
   return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
 };
-// Calcular costos de envío (puedes personalizar según peso, ubicación, etc.)
+// Calcular costos de envío
 const calculateShipping = () => {
-  const shippingRate = 3500; // Por ejemplo, 5€ por pedido
+  const shippingRate = 3500;
   const subTotal = calculateTotal();
   return subTotal < 5000 ? shippingRate : 0;
 };
@@ -148,7 +177,7 @@ const updateCartUI = () => {
 
     // Renderizar la sección de precios
     const total = parseFloat(calculateTotal()) + parseFloat(calculateShipping());
-
+    order.totalBuy = total.toFixed(2);
     totalContainer.innerHTML = `
       ${cart.length > 0 ? `
         <button  onclick="clearCart();
@@ -163,7 +192,7 @@ const updateCartUI = () => {
       <div class="cart-price-total">
         <p class="language spanish">Cupon <ion-icon name="ticket-outline"></ion-icon></p>
         <p class="language english">Coupon <ion-icon name="ticket-outline"></ion-icon></p>
-        <input type="text" minlength="0" maxlength="8" class="ticket-cupon" placeholder="cupon number">
+        <input type="text" name="cupon" minlength="0" maxlength="8" class="ticket-cupon" placeholder="cupon number">
       </div>
       <div class="cart-price-total">
         <p class="language spanish">Envío</p>
@@ -174,59 +203,112 @@ const updateCartUI = () => {
         <p>Total</p>
         <p>&#8364; ${total.toFixed(2)}</p>
       </div>
-      ${cart.length > 0 ? `
-        <button id="next-horizontal-scroll" class="btn-division btn-cart-buy">
-        <p class="language spanish">Ir a pagos</p>
-        <p class="language english">Go to payments</p>
-        </button>
-       ` : ""}
     `;
+  }
+  const btnCartBuy = document.getElementById("btn-cart-buy");
+
+  if (cart.length > 0) {
+    btnCartBuy.style.scale = 1;
+    btnCartBuy.style.opacity = 1;
+    btnCartBuy.style.position = "relative";
+  } else {
+    btnCartBuy.style.scale = 0;
+    btnCartBuy.style.opacity = 0;
+    btnCartBuy.style.position = "absolute";
+
   }
   updateLanguageDisplay();
 };
-
 
 document.addEventListener('DOMContentLoaded', () => {
   updateCartNumber(); // Actualiza el número al cargar la página
   updateLanguageDisplay();
 });
 
+const initializeScrollHorizontal = () => {
+  const horizontalScrollContainer = document.getElementById("horizontal-scroll-container");
+
+  const firstBtnScroll = document.querySelectorAll(".first-horizontal-scroll");
+  const secondBtnScroll = document.querySelectorAll(".second-horizontal-scroll");
+
+
+  if (!horizontalScrollContainer) {
+    console.error("El contenedor del efecto horizontal scroll no está definido en el DOM")
+    return;
+  }
+  if (secondBtnScroll && firstBtnScroll) {
+    secondBtnScroll.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentIndex = 1;
+        updateView(currentIndex, horizontalScrollContainer);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+    firstBtnScroll.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        currentIndex = 0;
+        updateView(currentIndex, horizontalScrollContainer);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  }
+}
 const initializeCartPage = () => {
   const cartContainer = document.getElementById('cart-container');
   const totalContainer = document.getElementById('total-container');
 
-  const horizontalScrollContainer = document.getElementById("horizontal-scroll-container");
-  const prevButton = document.getElementById("prev-horizontal-scroll");
 
-  if (!horizontalScrollContainer || !prevButton) {
-    console.error("El contenedor del efecto horizontal scroll no está definido en el DOM")
-    return;
-  }
   if (!cartContainer || !totalContainer) {
     console.error('Los contenedores del carrito no están definidos en el DOM.');
     return;
   }
-
   // Actualizar la interfaz del carrito.
   updateCartUI();
   cartSubtitle();
   updateLanguageDisplay();
-  const nextButton = document.getElementById("next-horizontal-scroll");
 
-  if (nextButton && prevButton) {
-    nextButton.addEventListener("click", (e) => {
-      currentIndex = 1; // Ir al segundo child
-      updateView(currentIndex, horizontalScrollContainer);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    prevButton.addEventListener("click", () => {
-      currentIndex = 0; // Ir al primer child
-      updateView(currentIndex, horizontalScrollContainer);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
 };
+
+const initializeUserInfo = () => {
+  const horizontalScrollContainer = document.getElementById("horizontal-scroll-container");
+  const thirdBtnScroll = document.getElementById("third-horizontal-scroll");
+
+  const formContainer = document.querySelector(".user-form")
+  const userName = document.getElementById("user-name");
+  const userMail = document.getElementById("user-mail");
+  const userAddress = document.getElementById("user-address");
+  const userPhone = document.getElementById("user-phone");
+  const userComents = document.getElementById("user-other");
+
+  if (!horizontalScrollContainer || !formContainer || !userName || !userAddress || !userMail || !userPhone || !thirdBtnScroll || !userComents) return;
+
+  const allInputsValid = () => {
+    return (
+      userAddress.checkValidity() &&
+      userMail.checkValidity() &&
+      userPhone.checkValidity() &&
+      userName.checkValidity()
+    );
+  }
+
+  thirdBtnScroll.addEventListener("click", (e) => {
+    if (allInputsValid()) {
+      e.preventDefault();
+      order.userInfo = {
+        name: userName.value,
+        email: userMail.value,
+        address: userAddress.value,
+        phone: userPhone.value,
+        coments: userComents.value || ""
+      };
+      currentIndex = 2;
+      updateView(currentIndex, horizontalScrollContainer);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      showToast({ message: 'Completa toda la información de envío', type: 'warning' });
+    }
+  });
+}
 
 const cardLogo = {
   visa: `<svg width="36px" height="36px" viewBox="0 0 141.732 141.732"
@@ -302,7 +384,29 @@ const cardLogo = {
 </g>
 </svg>`
 };
+function generarTicket() {
+  // Array con las letras del alfabeto
+  const letras = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
+  // Función para obtener un número aleatorio entre un rango
+  function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  // Generar dos letras aleatorias
+  const letra1 = letras[getRandomInt(0, letras.length - 1)];
+  const letra2 = letras[getRandomInt(0, letras.length - 1)];
+
+  // Generar tres números aleatorios entre 0 y 9
+  const numero1 = getRandomInt(0, 9);
+  const numero2 = getRandomInt(0, 9);
+  const numero3 = getRandomInt(0, 9);
+
+  // Concatenar las letras y los números para formar el ticket
+  const ticket = letra1 + letra2 + '-' + numero1 + numero2 + numero3;
+
+  return ticket;
+}
 const initializePayments = () => {
   const formContainer = document.querySelector(".payments-form")
   const creditCardType = document.getElementById("credit-card-type");
@@ -403,13 +507,16 @@ const initializePayments = () => {
   btnSubmit.addEventListener("click", (e) => {
     if (allInputsValid()) {
       e.preventDefault();
+      const miTicket = generarTicket();
+      order.ticket = miTicket;
       showToast({ message: 'Nos vemos pronto 🥂', type: 'success' });
-      showToast({ message: 'Te estará llegando un email con información de tu compra', type: 'info' });
+      showToast({ message: `Te enviamos un mail. Tu orden es ${miTicket}`, type: 'info' });
       showToast({ message: 'Felicitaciones por tu compra!!🎉', type: 'success' });
+      console.log(order, "Envío de orden");
       setTimeout(() => {
+        window.location.href = "#/";
         clearCart();
-        window.location.href = "/";
-      }, 6500);
+      }, 4800);
     } else {
       showToast({ message: 'Completa toda la información para terminar el pago', type: 'warning' });
     }

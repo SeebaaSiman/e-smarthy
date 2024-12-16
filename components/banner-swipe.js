@@ -72,10 +72,9 @@ class BannerSwipe {
       indicator.classList.add('indicator');
       indicatorsContainer.appendChild(indicator);
     });
-    // Select all created indicators (more efficient)
+
     const indicators = indicatorsContainer.querySelectorAll('.indicator');
-    // Add click event listener to each indicator
-    indicators.forEach((indicator, index) => {
+     indicators.forEach((indicator, index) => {
       indicator.addEventListener('click', () => {
 
         this.goToSlide(index);
@@ -105,11 +104,54 @@ class BannerSwipe {
     this.container.style.transform = `translateX(-${this.currentSlide * this.slideWidth}px)`;
     this.updateIndicators();
   }
-}
+};
 
+const navigateToProductsAndFilter = async (category) => {
+
+  window.location.href = "#/products";
+
+  // Esperar a que el contenedor de productos exista
+  const cardProducts = await waitForElement('#card-products-list');
+
+  // Aplicar el filtro
+  filters.category = category;
+  const inputCategory = document.querySelector("[list='category']");
+  if (inputCategory) {
+    inputCategory.value = category;
+  }
+  updateFilteredProducts();
+};
+
+//* Función auxiliar para esperar a que un elemento exista
+const waitForElement = async (selector) => {
+  //creo una promesa con resolve para resolver la promesa cuando se encuentra el elemento.
+  return new Promise(resolve => {
+    //si el elemento ya existe en el DOM se resuelve la promesa inmediatamente con el elemento encontrado.
+    if (document.querySelector(selector)) {
+      return resolve(document.querySelector(selector));
+    }
+    //Se crea un observador de mutaciones que permite monitorear cambios en el DOM, como la adición o eliminación de elementos.
+    const observer = new MutationObserver(mutations => {
+      if (document.querySelector(selector)) {
+        observer.disconnect();
+        resolve(document.querySelector(selector));
+      }
+    });
+    //El observador se configura para observar todo el cuerpo del documento (document.body) en busca de cambios en la lista de hijos y en todos los subárboles
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true
+    });
+  });
+};
 
 const initializeHomePage = () => {
   const banner = document.querySelector('.banner-container');
+  const kitchen = document.querySelector('.kitchen');
+  const smartphones = document.querySelector('.smartphones');
+  const mensShoes = document.querySelector('.mens-shoes');
+  const women = document.querySelector('.women');
+
 
   if (banner && top6DiscountPercentage && top6Rating) {
     new BannerSwipe('#top-descount', top6DiscountPercentage, {
@@ -118,8 +160,20 @@ const initializeHomePage = () => {
     new BannerSwipe('#top-rating', top6Rating, {
       autoPlayInterval: 3000
     });
-
   } else {
     console.error("No se creó el banner");
   }
+  if (!smartphones || !kitchen || !mensShoes || !women) return;
+  kitchen.addEventListener("click", () => {
+    navigateToProductsAndFilter("kitchen-accessories");
+  });
+  smartphones.addEventListener("click", () => {
+    navigateToProductsAndFilter("smartphones");
+  });
+  mensShoes.addEventListener("click", () => {
+    navigateToProductsAndFilter("mens-shoes");
+  });
+  women.addEventListener("click", () => {
+    navigateToProductsAndFilter("womens-bags");
+  });
 };
