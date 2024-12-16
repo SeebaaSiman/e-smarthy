@@ -5,10 +5,8 @@ const calculateTotalFileSize = (files) => {
 };
 const updateDropzoneFileList = (dropZoneElement, filesArr) => {
  let dropzoneFileMessage = dropZoneElement.querySelector(".file-info");
- if (!dropzoneFileMessage) {
-  console.error("No se encontró el elemento .file-info en la zona de carga.");
-  return;
- }
+ if (!dropzoneFileMessage) return;
+
  const cutFileName = (name, maxLength) => {
   return name.length > maxLength ? name.substring(0, maxLength) + "..." : name;
  };
@@ -62,10 +60,7 @@ const initializeWarrantyUploadFile = () => {
   btnCancel.addEventListener("click", (e) => {
    e.preventDefault();
    const dropzoneFileMessage = dropZoneElement.querySelector(".file-info");
-   if (!dropzoneFileMessage) {
-    console.error("No se encontró el elemento .file-info en la zona de carga.");
-    return;
-   }
+   if (!dropzoneFileMessage) return;
 
    if (!inputElement.value) {
     showToast({ message: 'No hay archivos para eliminar.', type: 'warning' });

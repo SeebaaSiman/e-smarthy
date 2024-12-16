@@ -81,8 +81,6 @@ const removeFromCart = (productId) => {
 };
 // Actualizar cantidad de un producto en el carrito
 const updateQuantity = (productId, change) => {
-  console.log(change, "change");
-
   const product = cart.find((item) => item.id === productId);
 
   if (product) {
@@ -126,10 +124,7 @@ const updateCartUI = () => {
   const cartContainer = document.getElementById("cart-container");
   const totalContainer = document.getElementById("total-container");
 
-  if (!cartContainer || !totalContainer) {
-    console.error("No se encontraron los contenedores del carrito en el DOM.");
-    return;
-  }
+  if (!cartContainer || !totalContainer) return;
 
   if (cartContainer && totalContainer) {
     // Renderizar los productos del carrito
@@ -232,10 +227,8 @@ const initializeScrollHorizontal = () => {
   const secondBtnScroll = document.querySelectorAll(".second-horizontal-scroll");
 
 
-  if (!horizontalScrollContainer) {
-    console.error("El contenedor del efecto horizontal scroll no está definido en el DOM")
-    return;
-  }
+  if (!horizontalScrollContainer) return;
+
   if (secondBtnScroll && firstBtnScroll) {
     secondBtnScroll.forEach((btn) => {
       btn.addEventListener("click", () => {
@@ -258,10 +251,7 @@ const initializeCartPage = () => {
   const totalContainer = document.getElementById('total-container');
 
 
-  if (!cartContainer || !totalContainer) {
-    console.error('Los contenedores del carrito no están definidos en el DOM.');
-    return;
-  }
+  if (!cartContainer || !totalContainer) return;
   // Actualizar la interfaz del carrito.
   updateCartUI();
   cartSubtitle();

@@ -40,9 +40,6 @@ const loginIconContainer = document.querySelectorAll(".nav-login-icon");
 
 const loginCheck = () => {
  let user = JSON.parse(localStorage.getItem("user"));
- console.log(user, "user name");
- console.log(loginTagP, "login tag p");
- console.log(loginIconContainer, "loginIconContainer ");
  if (loginTagP && loginIconContainer) {
   if (user) {
    loginTagP.forEach((p) => {
