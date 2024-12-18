@@ -81,10 +81,12 @@ const suggestionsList = document.getElementById('search-suggestions');
 const path = window.location.hash;
 
 searchBar.addEventListener('input', (event) => {
+
  let searchContent = event.target.value;
  suggestionsList.innerHTML = ''; // Limpiar la lista de sugerencias
 
  if (path === "#/products") {
+  if (!suggestionsList) return;
   suggestionsList.style.display = "block";
   filters.title = event.target.value;
   updateFilteredProducts();
