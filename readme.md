@@ -37,6 +37,14 @@ Le guardo un cariño especial a este e-commerce ya que fue mi primer proyecto co
 - **Al terminar la compra en _console_ sale la orden** La orden dispone de la info del usuario (como mail, nombre, dirección y teléfono), array de productos, un número de ticket generado de panera random, la fecha de la compra y el total abonado.
 - **Search bar del Navbar funcional** Si no se encuentra en el path ="products" al escribir redireccionará allí (/products), estando en "/products" se puede buscar y filtrar por título en tiempo real. Aparecen sugerencias por 1,5 segundos para mejora de experiencia de navegación.
 
+## Datos que aparecerán en consola
+
+- **Cart items** array que contiene al carrito actual.
+- **Envío de orden** al completar el pago se arma la orden dentro de un objeto.
+- **Files to warranty** Se pueden ver los archivos que el usuario subió para enviar la garantía.
+- **Productos en mi localStorage** se guardan 194 objetos de productos dentro de un array.
+- **Productos filtrados** Cada vez que se usa algún filtro se actualiza el nuevo array de objetos que contiene a los productos.
+
 ## Estructura del Proyecto
 
 Esquema básico de la estructura del proyecto

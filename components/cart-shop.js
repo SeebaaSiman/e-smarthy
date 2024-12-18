@@ -523,10 +523,7 @@ const GiftCardProduct = {
   stock: 999,
   thumbnail: "../assets/gift-card/gift-card-logo.jpg"
 };
-// id= btn-buy-giftcard
-// getALl () saber valor de los hijos
-// / square
-//id="btn-buy-giftcard" evento click sabe el valor y lo agrega, al id le suma el price, entonces puede haber nada más que 6 opciones
+
 const initializeGiftCard = () => {
   const inputsRadio = document.getElementsByName("square");
   const btnBuyGiftcard = document.getElementById("btn-buy-giftcard");
@@ -542,7 +539,6 @@ const initializeGiftCard = () => {
       const contentTagP = selectedRadio.nextElementSibling.textContent;
       // content sin el símbolo euro, será el value del carrito
       const price = parseFloat(contentTagP.replace('€', ''));
-      console.log(price, "price");
       addToCart({
         id: 999 + price,
         title: `Gift card premium ${price}`,

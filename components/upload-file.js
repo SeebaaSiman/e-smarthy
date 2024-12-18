@@ -86,7 +86,6 @@ const initializeWarrantyUploadFile = () => {
    }
    showToast({ message: 'Files saved', type: 'success' });
    console.log("Files to warranty:", inputElement.files);
-
   })
 
  }

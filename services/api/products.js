@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", fetchAndStoreProducts);
 
 //* Depur
 const productsFromLocalStorage = getProductsFromLocalStorage()?.data?.products;
-console.log(productsFromLocalStorage, "productos en mi localStorage");
+console.log(productsFromLocalStorage, "Productos en mi localStorage");
 
 //* Uso map para crear un array dentro de un Set para evitar duplicados, luego
 //map crea un nuevo array extrayendo solo las categorías de cada objeto del array original
@@ -135,7 +135,7 @@ const updateFilteredProducts = () => {
   // Actualizar el número de productos filtrados
   filteredCountElement.textContent = `${filteredProducts.length}`;
 
-  console.log(filteredProducts, "productos filtrados")
+  console.log(filteredProducts, "Productos filtrados")
 };
 
 const initializeProductsPage = () => {
