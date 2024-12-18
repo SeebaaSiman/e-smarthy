@@ -4,7 +4,7 @@ Es un e-commerce como trabajo final para el curso Talento Tech 2.024, comisión 
 
 E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios productos de diversas marcas que se encarga de la distribución y garantía de diversos productos a lo largo y ancho del mundo.
 
-Le guardo un cariño especial a este e-commerce ya que fue mi primer proyecto con Javascript puro, siempre utilizaba frameworks. Fue un viaje muy lindo porque me sirvió para entender algunas "magias" que hacía React y para entender mejor Javascript. La idea inicial fue aprovar la cursada y a la vez dejar algo funcional un futuro. Espero que les guste
+Le guardo un cariño especial a este e-commerce ya que fue mi primer proyecto con Javascript puro, siempre utilizaba frameworks. Fue un viaje muy lindo porque me sirvió para entender algunas "magias" que hacía React y para entender mejor Javascript. La idea inicial fue aprovar la cursada y a la vez dejar algo funcional un futuro. Espero que les guste !!
 
 ## Tech Stack
 
