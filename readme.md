@@ -30,8 +30,10 @@ E-Smarthy funciona como ejemplo de un emprendimiento que engloba varios producto
 - **Navbar y footer responsive**
 - **Filtros para los productos por categoría, rating, precios máximo y mínimo y stock**
 - **Carrito y uso:** El carrito en navbar visualiza el total de tipos de productos. En el path="/cart" se ven el total de productos, total subtotal y costo de envío (superados los 5.000 es gratis). Los productos en el carrito se pueden eliminar, agregar y vaciar. No se pueden agregar más productos del stock que se disponga. Si hay productos en el carrito aparece el <button>Comprar</button>
+- **Gift-cards** Cada giftcard tiene su id para que aparezca en el carrito de compra de manera individual.
 - **Formularios de compra** Al estar lleno el carrito se puede comprar, primero un formulario con los datos del usuario luego los datos de la tarjeta. Debe elegir la tarjeta (visa, master o amex) y llenar con los datos de la tarjeta. Visualmente se va llenando la tarjeta a medida que el usuario completa el formulario. También aparecen las formas de pago digitales como paypal, google pay y applepay que no fueron implementadas. En un futuro al hacer click redireccionan a una página externa para utilizar esas apps de pago.
 - **Al terminar la compra en _console_ sale la orden** La orden dispone de la info del usuario (como mail, nombre, dirección y teléfono), array de productos, un número de ticket generado de panera random, la fecha de la compra y el total abonado.
+- **Search bar del Navbar funcional** Si no se encuentra en el path ="products" al escribir redireccionará allí (/products), estando en "/products" se puede buscar y filtrar por título en tiempo real. Aparecen sugerencias por 1,5 segundos para mejora de experiencia de navegación.
 
 ## Estructura del Proyecto
 
