@@ -70,12 +70,14 @@
 
 
         <div class="search-container">
-          <input checked="" class="search-checkbox" type="checkbox">
+          <input checked class="search-checkbox" type="checkbox" id="search-checkbox">
           <div class="mainbox">
             <div class="search-icon-container">
               <ion-icon name="search-outline" class="icon-search"></ion-icon>
             </div>
-            <input class="search-input" placeholder="search" type="text">
+            <input class="search-input" placeholder="search products by title" type="text" id="search-bar"
+              aria-placeholder="search products by title">
+            <ul id="search-suggestions"></ul>
           </div>
         </div>
 

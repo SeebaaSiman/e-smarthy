@@ -21,6 +21,7 @@ const order = {
   ticket: null,
   date: new Date()
 };
+
 const cartSubtitle = () => {
   let isEnglish = localStorage.getItem('isEnglish') === 'true';
   const subtitleContainer = document.getElementById("shipping-cart-title");
@@ -511,4 +512,47 @@ const initializePayments = () => {
       showToast({ message: 'Completa toda la información para terminar el pago', type: 'warning' });
     }
   });
+}
+
+
+
+const GiftCardProduct = {
+  id: 999,
+  title: "Gift card premium",
+  price: null,
+  stock: 999,
+  thumbnail: "../assets/gift-card/gift-card-logo.jpg"
+};
+// id= btn-buy-giftcard
+// getALl () saber valor de los hijos
+// / square
+//id="btn-buy-giftcard" evento click sabe el valor y lo agrega, al id le suma el price, entonces puede haber nada más que 6 opciones
+const initializeGiftCard = () => {
+  const inputsRadio = document.getElementsByName("square");
+  const btnBuyGiftcard = document.getElementById("btn-buy-giftcard");
+  if (!inputsRadio || !btnBuyGiftcard) return;
+  // creo un array ya que inputsRadio es un node list y únicamente tiene la función forEach
+  const inputsRadioArray = Array.from(inputsRadio);
+
+  btnBuyGiftcard.addEventListener("click", () => {
+    const selectedRadio = inputsRadioArray.find(input => input.checked);
+
+    if (selectedRadio) {
+      // accedo al hijo <p> y extraigo su contenido
+      const contentTagP = selectedRadio.nextElementSibling.textContent;
+      // content sin el símbolo euro, será el value del carrito
+      const price = parseFloat(contentTagP.replace('€', ''));
+      console.log(price, "price");
+      addToCart({
+        id: 999 + price,
+        title: `Gift card premium ${price}`,
+        price: price,
+        stock: 999,
+        thumbnail: "../assets/gift-card/gift-card-logo.jpg"
+      });
+      showToast({ message: `Gift card premium de ${price} agregada al carrito`, type: 'success' });
+    } else {
+      showToast({ message: 'Selecciona primero una gift card', type: 'warning' });
+    };
+  })
 }

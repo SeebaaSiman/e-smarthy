@@ -144,7 +144,7 @@ const handleHashLocation = async () => {
   footer.style.display = hideHeaderFooter ? "none" : "block";
 
   // Inicializar contenido dinámico
-  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay && initializeWarrantyUploadFile && initializePayments && initializeLogin) {
+  if (isProductDetail && initializeHomePage && initializeProductDetailPage && initializeSliderProductDetail && initializeCartPage && initializeProductsPage && updateLanguageDisplay && initializeWarrantyUploadFile && initializePayments && initializeLogin && initializeGiftCard) {
    initializeProductDetailPage(dynamicSegment); // Inicializar con el ID del producto
    initializeSliderProductDetail();
   } else if (path === "/") {
@@ -163,7 +163,9 @@ const handleHashLocation = async () => {
   } else if (path === "/warranty") {
    initializeWarrantyUploadFile();
    updateLanguageDisplay();
-
+  } else if (path === "/gift-card") {
+   updateLanguageDisplay();
+   initializeGiftCard();
   } else {
    updateLanguageDisplay();
   }
@@ -173,6 +175,7 @@ const handleHashLocation = async () => {
    const errorResponse = await fetch(routes["error"]());
    const errorHtml = await errorResponse.text();
    mainRouter.innerHTML = errorHtml;
+   updateLanguageDisplay();
    loadCSS("/error");
    header.style.display = "none";
    footer.style.display = "none";

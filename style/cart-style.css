@@ -196,7 +196,7 @@
 }
 /* Button delete cart */
 #btn-delete-cart {
-  width: 40%;
+  width: 50%;
   margin: auto;
   display: flex;
   justify-content: center;
@@ -244,10 +244,13 @@
 .credit-card-container {
   margin: 0 auto;
   background-color: transparent;
-  width: clamp(240px, 70%, 400px);
-  aspect-ratio: 2/1.2;
+  width: clamp(240px, 80%, 400px);
+  aspect-ratio: 2/1.5;
   perspective: 1000px;
   color: var(--card-bg);
+  @media (min-width: 500px) {
+    aspect-ratio: 2/1.2;
+  }
 }
 .credit-card-inner {
   position: relative;

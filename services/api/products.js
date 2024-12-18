@@ -41,7 +41,9 @@ const allCategoriesProducts = [...categories];
 //* Según estén en stock o no
 const availabilityStatus = new Set(productsFromLocalStorage.map(producto => producto.availabilityStatus));
 const allavailabilityStatus = [...availabilityStatus];
-
+//* Todos los títulos
+const titleProducts = new Set(productsFromLocalStorage.map(producto => producto.title));
+const allTitleProducts = [...titleProducts];
 
 
 // sort es un método para ordenar
@@ -90,10 +92,13 @@ const filters = {
   priceMin: null,
   priceMax: null,
   availability: "",
+  title: ""
 };
 
 const filterProducts = (products) => {
   return products.filter((product) => {
+    const searchTerm = document.getElementById("search-bar").value.toLowerCase();
+
     // Filtro por categoría
     if (filters.category && product.category.toLowerCase() !== filters.category.toLowerCase()) {
       return false;
@@ -112,6 +117,10 @@ const filterProducts = (products) => {
     }
     // Filtrar por disponibilidad
     if (filters.availability && product.availabilityStatus !== filters.availability) {
+      return false;
+    }
+    // Filtrar por título
+    if (filters.title && !product.title.toLowerCase().includes(searchTerm)) {
       return false;
     }
     return true; // Si pasa todos los filtros, incluir en los resultados

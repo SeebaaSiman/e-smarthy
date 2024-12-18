@@ -145,7 +145,27 @@
   border-radius: 160px;
   transition: all 0.3s ease;
 }
-
+#search-suggestions {
+  position: absolute;
+  width: 200px;
+  min-height: 0px;
+  max-height: 250px;
+  height: auto;
+  overflow: hidden;
+  /* background-color: var(--body-bg); */
+  border-radius: 0 0 22px 22px;
+  cursor: pointer;
+  top: 45px;
+  left: 13px;
+  opacity: 1;
+  scale: 1;
+  transition: all 0.4s ease-in-out;
+  list-style: none;
+  padding: 4px;
+  li {
+    color: black;
+  }
+}
 .search-checkbox:focus {
   border: none;
   outline: none;
@@ -164,6 +184,11 @@
 .search-checkbox:checked ~ .mainbox .search-input {
   width: 0;
   height: 0px;
+}
+.search-checkbox:checked ~ .mainbox #search-suggestions {
+  opacity: 0;
+  scale: 0;
+  width: 0px;
 }
 
 .search-checkbox:checked ~ .mainbox .search-icon-container {
@@ -186,8 +211,8 @@
   background-color: transparent;
   border: none;
   outline: none;
-  padding-bottom: 4px;
-  padding-left: 10px;
+  /* padding-bottom: 4px;
+  padding-left: 4px; */
   font-size: 1em;
   color: var(--text-shadow);
   transition: all 0.3s ease;

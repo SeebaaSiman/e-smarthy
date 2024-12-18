@@ -70,6 +70,48 @@ const loginCheck = () => {
    });
   }
  }
-}
-
+};
 document.addEventListener("DOMContentLoaded", loginCheck());
+
+
+
+const searchBar = document.getElementById('search-bar');
+const checkBox = document.getElementById("search-checkbox");
+const suggestionsList = document.getElementById('search-suggestions');
+const path = window.location.hash;
+
+searchBar.addEventListener('input', (event) => {
+ let searchContent = event.target.value;
+ suggestionsList.innerHTML = ''; // Limpiar la lista de sugerencias
+
+ if (path === "#/products") {
+  suggestionsList.style.display = "block";
+  filters.title = event.target.value;
+  updateFilteredProducts();
+  const suggestionsArr = allTitleProducts.filter(suggestion => suggestion.toLowerCase().includes(searchContent));
+  suggestionsArr.forEach(suggestion => {
+   const suggestionItem = document.createElement('li');
+   suggestionItem.textContent = suggestion;
+   suggestionsList.appendChild(suggestionItem);
+  });
+
+  if (searchContent != "" && suggestionsArr.length > 0) {
+   suggestionsList.style.backgroundColor = "#e6e4e2";
+  } else {
+   suggestionsList.style.backgroundColor = "transparent";
+  }
+
+  setTimeout(() => {
+   suggestionsList.innerHTML = '';
+  }, 1500);
+
+ } else {
+  window.location.href = "#/products";
+ }
+})
+const resetSearchBar = () => {
+ if (!searchBar || !checkBox) return;
+ searchBar.value = "";
+ // checkBox.checked = false;
+}
+window.addEventListener("hashchange", resetSearchBar);
