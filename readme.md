@@ -84,10 +84,20 @@ Esquema básico de la estructura del proyecto
 
 ## Colores del proyecto
 
-| Color       | Hex                                                         |
-| ----------- | ----------------------------------------------------------- |
-| Body bg     | ![#e6e4e2](https://fakeimg.pl/10x10/e6e4e2/e6e4e2) #e6e4e2  |
-| Card bg     | ![#e2dfdd](https://fakeimg.pl/10x10/e2dfdd/e2dfdd) #e2dfdd  |
+| Color       | Hex                                                        |
+| ----------- | ---------------------------------------------------------- |
+| Body bg     | ![#e6e4e2](https://fakeimg.pl/10x10/e6e4e2/e6e4e2) #e6e4e2 |
+| Card bg     | ![#e2dfdd](https://fakeimg.pl/10x10/e2dfdd/e2dfdd) #e2dfdd |
 | Navbar bg   | ![#ffffff](https://fakeimg.pl/10x10/ffffff/ffffff) #ffffff |
-| Text shadow | ![#4a5c6a](https://fakeimg.pl/10x10/4a5c6a/4a5c6a) #4a5c6a  |
-| Black       | ![#040404](https://fakeimg.pl/10x10/040404/040404) #040404  |
+| Text shadow | ![#4a5c6a](https://fakeimg.pl/10x10/4a5c6a/4a5c6a) #4a5c6a |
+| green       | ![#54be84](https://fakeimg.pl/10x10/54be84/54be84) #54be84 |
+| grey        | ![#292524](https://fakeimg.pl/10x10/292524/292524) #292524 |
+| success     | ![#3ab65c](https://fakeimg.pl/10x10/3ab65c/3ab65c) #3ab65c |
+| error       | ![#bf333b](https://fakeimg.pl/10x10/bf333b/bf333b) #bf333b |
+| warning     | ![#bc8c12](https://fakeimg.pl/10x10/bc8c12/bc8c12) #bc8c12 |
+| info        | ![#1898c0](https://fakeimg.pl/10x10/1898c0/1898c0) #1898c0 |
+
+## Fuentes
+
+- GT-Walsheim-Pro-Bold
+- GT-Walsheim-Pro-Ultra-Light
